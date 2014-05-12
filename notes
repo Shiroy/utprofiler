@@ -1,6 +1,46 @@
-Question : Comment modéliser les filières libres ?
-Intégration d'un éditeur de filière
+Question :
 
+Comment modéliser les filières libres ?
+	Intégration d'un éditeur de filière
+
+Que faire du cas des UV de filières qui peuvent être des TM pour certains, et des CS pour d'autres ?
+	Il faut l'implémenter
+
+
+===========================
 Algo de recherche des UV :
-Auto-complétion ?
+Fonction d'auto-complétion
+
+Il faudrait avant tout essayer de catégoriser et de hiérarchiser les différentes conditions pour le choix des UV :
+Obligatoire pour la branche
+Obligatoire pour la filière
+Prise en compte des X ECTS manquants en CS
+Prise en compte des X ECTS manquants en TM
+Prise en compte des X ECTS manquants en TSH
+Prise en compte des deux semestres de stage pendant lesquels aucune UV ne peut être réalisée
+
+Il faudra connaître tous les PCB, tous les PCF (entrés grâce à l'éditeur de filière et sauvegardés)
+
+Mettre un système de voeux et de rejet, càd attribuer un coefficient à chaque UV (de -2 à +2 ) ?
+
+-2 Ne veut absolument pas être inscrit à cette UV
+-1 Voudrait si possible ne pas être inscrit à cette UV
+0  Neutre (Valeur pas défaut)
++1 Voudrait si possible s'inscrire à cette UV
++2 Veut absolument faire cette UV
+
+Dans un cas de conflit entre les voeux de l'utilisateur et les CN d'obtention du diplôme (en un nombre de semestres raisonnable), le programme doit l'indiquer.
+(Cela peut alors arriver dans les cas de notations de valeurs +2 et -2).
+
+
+Par ailleurs, il doit pouvoir s'adapter à mise à jour du système d'UV (rajout d'une catégorie, UV qui donnent des ECTS dans plusieurs catégories).
+
+Comment prendre en compte le système de 'grille de validation' de la branche TSH ? Il n'y a pas une solution possible
+	En l'état actuel des choses, il s'agit d'un système 2 lignes sur 3, 2 colonnes sur 2.
+	Peut-on implémenter un système ((X colonnes parmi A) ET (Y lignes parmi B) ET (listeDesColonnesObligatoires) ET (listesDesLignesObligatoires) ET (listesDesUvObligatoires))
+
+
+
+
+=============================
 
