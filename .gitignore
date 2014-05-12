@@ -28,3 +28,4 @@ Makefile*
 *.autosave
 
 code_genere/
+doc/html/
