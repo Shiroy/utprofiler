@@ -14,9 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    uv.cpp
+    uv.cpp \
+    uvmanager.cpp \
+    uvstream.cpp
 
 HEADERS  += mainwindow.h \
-    uv.h
+    uv.h \
+    uvmanager.h \
+    uvstream.h
 
 FORMS    += mainwindow.ui
