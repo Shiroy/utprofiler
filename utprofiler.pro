@@ -16,11 +16,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     uv.cpp \
     uvmanager.cpp \
-    uvstream.cpp
+    uvstream.cpp \
+    inscription.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
     uvmanager.h \
-    uvstream.h
+    uvstream.h \
+    inscription.h
 
 FORMS    += mainwindow.ui
