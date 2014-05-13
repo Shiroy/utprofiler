@@ -3,6 +3,8 @@
 
 #include "uv.h"
 
+class SemestreCours;
+
 enum Resultat
 {
     A, B, C, D, E, F, FX, RES, EN_COURS
@@ -16,9 +18,9 @@ class Inscription
 
     Inscription(const Inscription& o);
 public:
-    Inscription(const UV& uv, const SemestreCours &semestre, Resultat res = EN_COURS);
+    Inscription(const UV& uv, const SemestreCours &smstr, Resultat res = EN_COURS);
 
-    SemestreCours *getSemestre() const { return smestre; }
+    const SemestreCours& getSemestre() const { return semestre; }
     const UV& getUV() const { return m_uv; }
     Resultat getResultat() const {return m_resultat;}
 

@@ -1,9 +1,5 @@
 #include "uvmanager.h"
 
-UVManager::UVManager()
-{
-}
-
 UVManager* UVManager::getInstance()
 {
     if(!instance)

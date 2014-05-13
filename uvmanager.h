@@ -38,7 +38,7 @@ public:
      * @brief Permet de spécifier une méthode de chargement des UVs. Tous les chargeurs sont des classe UVStream spécialisée.
      * @param stream Le chargeur
      */
-    void setUVStream(UVStream const* stream) { loader = stream; }
+    void setUVStream(UVStream* stream) { loader = stream; }
 
 private:
     static UVManager* instance;
