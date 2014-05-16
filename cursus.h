@@ -3,6 +3,7 @@
 
 #include <QVector>
 #include "semestrecours.h"
+#include "branche.h"
 
 class Cursus
 {

@@ -7,10 +7,10 @@
  */
 enum CategorieUV
 {
-    CS, /*!< Connaissance scientifique*/
-    TM, /*!< Technique et méthode*/
-    TSH, /*!< Technologie et science de l'homme*/
-    SP /*!< Stage et projet*/
+    CS=1, /*!< Connaissance scientifique*/
+    TM=2, /*!< Technique et méthode*/
+    TSH=3, /*!< Technologie et science de l'homme*/
+    SP=4 /*!< Stage et projet*/
 };
 
 /**
@@ -54,7 +54,7 @@ public:
      */
     unsigned int getNombreCredit() const { return nombreCredit; }
     /**
-     * @brief Renvoie la catégorie à laquelle appartient l'UV
+     * @brief Renvoie la catégorie �  laquelle appartient l'UV
      * @return
      */
     CategorieUV getCategorie() const { return categorie; }
