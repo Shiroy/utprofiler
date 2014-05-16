@@ -18,13 +18,15 @@ SOURCES += main.cpp\
     uvmanager.cpp \
     uvstream.cpp \
     inscription.cpp \
-    semestrecours.cpp
+    semestrecours.cpp \
+    cursus.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
     uvmanager.h \
     uvstream.h \
     inscription.h \
-    semestrecours.h
+    semestrecours.h \
+    cursus.h
 
 FORMS    += mainwindow.ui
