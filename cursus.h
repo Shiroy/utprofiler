@@ -13,20 +13,20 @@ public:
     Cursus();
 
     /**
-      *@brief Renvoie tous les smestres que l'étudiant doit valider
+      *@brief Renvoie tous les smestres que l'Ã©tudiant doit valider
       */
     QVector<SemestreCours>& getTousLesSemestres() { return semestreAValider; }
     /**
-      *@brief Ajoute un semestre d'étude au cursus
+      *@brief Ajoute un semestre d'Ã©tude au cursus
       */
     void ajouterSemestre(const SemestreCours& sme);
 
     /**
-      *@brief Renvoie toutes les branches auxquelles l'étudiant est inscrit
+      *@brief Renvoie toutes les branches auxquelles l'Ã©tudiant est inscrit
       */
     QVector<Branche> &getAllBranche() { return brancheAValider; }
     /**
-      *@brief Ajoute une branche au cursus de l'étudiant
+      *@brief Ajoute une branche au cursus de l'Ã©tudiant
       */
     void ajouterBranche(const Branche& brch);
 };
