@@ -30,6 +30,11 @@ public:
     unsigned int getMinimumTSH() const { return minimumCredit[TSH]; }
     ///Renvoie le minimum de crédit SP nécessaires pour valider la branche
     unsigned int getMinimumSP() const { return minimumCredit[SP]; }
+
+    ///Renvoie le nom de la branche (ex: Tronc commun)
+    const QString& getNom() const { return nom; }
+    ///Renvoie le sigle de la branche (ex: TC)
+    const QString& getSigle() const { return sigle; }
 };
 
 #endif // BRANCHE_H
