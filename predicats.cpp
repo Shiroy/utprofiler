@@ -14,16 +14,17 @@ bool PredicatUVObligatoire::predicatSatifait(QVector<const UV*> uvValidee)
     return false;
 }
 
-PredicatUneUVParmis::PredicatUneUVParmis(const QStringList &candidat) : Predicat(), candidats(candidat) {}
-bool PredicatUneUVParmis::predicatSatifait(QVector<const UV *> uvValidee)
+PredicatXUVParmis::PredicatXUVParmis(const QStringList &candidat, unsigned int minimumAValider) : Predicat(), candidats(candidat), minimumUV(minimumAValider) {}
+bool PredicatXUVParmis::predicatSatifait(QVector<const UV *> uvValidee)
 {
+    int nbUvValider = 0;
     for(auto it = uvValidee.begin() ; it != uvValidee.end() ; it++)
     {
         if(candidats.contains((*it)->getCode()))
-            return true;
+            nbUvValider++;
     }
 
-    return false;
+    return nbUvValider >= minimumUV;
 }
 
 PredicatMinimumCreditInCategory::PredicatMinimumCreditInCategory(CategorieUV categorie, unsigned int min) : Predicat(), cat(categorie), minimum(min) {}

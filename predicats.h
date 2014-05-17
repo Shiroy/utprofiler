@@ -17,12 +17,13 @@ public:
     bool predicatSatifait(QVector<const UV*> uvValidee) override;
 };
 
-class PredicatUneUVParmis : public Predicat
+class PredicatXUVParmis : public Predicat
 {
     QStringList candidats;
+    unsigned int minimumUV;
 
 public:
-    explicit PredicatUneUVParmis(const QStringList& candidat);
+    explicit PredicatXUVParmis(const QStringList& candidat, unsigned int minimumAValide);
 
     bool predicatSatifait(QVector<const UV *> uvValidee) override;
 };
