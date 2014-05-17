@@ -3,18 +3,18 @@
 
 #include <QString>
 /**
- * @brief CategorieUV Toutes les catégories d'UV
+ * @brief CategorieUV Toutes les catÃ©gories d'UV
  */
 enum CategorieUV
 {
     CS=1, /*!< Connaissance scientifique*/
-    TM=2, /*!< Technique et méthode*/
+    TM=2, /*!< Technique et mÃ©thode*/
     TSH=3, /*!< Technologie et science de l'homme*/
     SP=4 /*!< Stage et projet*/
 };
 
 /**
- * @brief Réprésente une UV
+ * @brief RÃ©prÃ©sente une UV
  */
 
 class UV
@@ -28,8 +28,8 @@ public:
      * @brief Construit un objet de type UV. Les paramètres sont recopiés dans les attributs de l'objet
      * @param cde Code de l'UV
      * @param ttr Titre de l'UV
-     * @param nbCredit Nombre de crédit que rapporte l'UV
-     * @param cat Catégorie de l'UV
+     * @param nbCredit Nombre de crÃ©dit que rapporte l'UV
+     * @param cat CatÃ©gorie de l'UV
      */
 
     UV(const QString &cde, const QString& ttr, unsigned int nbCredit, CategorieUV cat) :
@@ -54,7 +54,7 @@ public:
      */
     unsigned int getNombreCredit() const { return nombreCredit; }
     /**
-     * @brief Renvoie la catégorie �  laquelle appartient l'UV
+     * @brief Renvoie la catÃ©gorie à  laquelle appartient l'UV
      * @return
      */
     CategorieUV getCategorie() const { return categorie; }

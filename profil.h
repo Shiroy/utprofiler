@@ -12,15 +12,19 @@ class Predicat
 {
 public:
     ///À partir de la liste des UV valiéee, détermine si la condition géré par ce prédicat est satisfaite ou non
-    virtual bool predicatSatifait(QVector<UV> uvValidee) = 0;
+    virtual bool predicatSatifait(QVector<const UV*> uvValidee) = 0;
 };
 
+/**
+ * @brief Classe représentant un profil à valider pour le diplome
+ */
 class Profil
 {
     QString nomProfile;
-    QVector<Predicat> conditions;
+    QVector<Predicat*> conditions;
 public:
     Profil();
+    ~Profil(); //TODO : Détruire les prédicats
 
     ///Renvoie le nom du profil
     const QString& getNomProfile() const { return nomProfile; }

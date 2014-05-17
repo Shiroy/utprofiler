@@ -11,6 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = utprofiler
 TEMPLATE = app
 
+QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -21,7 +22,8 @@ SOURCES += main.cpp\
     semestrecours.cpp \
     cursus.cpp \
     branche.cpp \
-    profil.cpp
+    profil.cpp \
+    predicats.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
@@ -31,6 +33,7 @@ HEADERS  += mainwindow.h \
     semestrecours.h \
     cursus.h \
     branche.h \
-    profil.h
+    profil.h \
+    predicats.h
 
 FORMS    += mainwindow.ui
