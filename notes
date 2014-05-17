@@ -39,6 +39,27 @@ Comment prendre en compte le système de 'grille de validation' de la branche TS
 	En l'état actuel des choses, il s'agit d'un système 2 lignes sur 3, 2 colonnes sur 2.
 	Peut-on implémenter un système ((X colonnes parmi A) ET (Y lignes parmi B) ET (listeDesColonnesObligatoires) ET (listesDesLignesObligatoires) ET (listesDesUvObligatoires))
 
+140517 : 
+Création d'une classe autocompletion ou bien simple méthode de la classe étudiant ?
+Dans le cas d'une classe autocomplétion, est-ce qu'un étudiant agrège une autocompletion ?
+Design Pattern Singleton ?
+Design pattern Strategy ? -> Car de nouvelles méthodes de complétion doivent pouvoir être implémentées
+Ou bien doivent-elles être implémentées dans les prédicats ? NON -> C'est l'algo en lui-même qui doit pouvoir être modifié ->
+Classe abstraite ou Strategy ?
+Classe abstraite ET Strategy
+
+Auto-completion pour le semestre à venir uniquement ? ou bien pour tous les semestres que doit encore effectuer l'étudiant ?
+-> Tous les semestres (Hors TN09 et TN10 + semestres à l'étranger)
+Demander à l'utilisateur quel(s) semestre(s) sont potentiellement effectués hors de l'UTC
+Renvoyer le semestre potentiel d'obtention du diplome correspondant
+
+N'a-t-on pas intérêt à créer une classe dossier, ou bien Cursus suffit-elle à elle eule à contenir toutes les infos nécessaires ?
+
+
+
+
+
+
 
 
 
