@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     inscription.cpp \
     semestrecours.cpp \
     cursus.cpp \
-    branche.cpp
+    branche.cpp \
+    profil.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
@@ -29,6 +30,7 @@ HEADERS  += mainwindow.h \
     inscription.h \
     semestrecours.h \
     cursus.h \
-    branche.h
+    branche.h \
+    profil.h
 
 FORMS    += mainwindow.ui
