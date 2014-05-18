@@ -16,7 +16,6 @@ QMAKE_CXXFLAGS += -std=c++11
 SOURCES += main.cpp\
         mainwindow.cpp \
     uv.cpp \
-    uvmanager.cpp \
     uvstream.cpp \
     inscription.cpp \
     semestrecours.cpp \
@@ -25,11 +24,11 @@ SOURCES += main.cpp\
     profil.cpp \
     predicats.cpp \
     etudiant.cpp \
-    autocompletion.cpp
+    autocompletion.cpp \
+    utmanager.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
-    uvmanager.h \
     uvstream.h \
     inscription.h \
     semestrecours.h \
@@ -39,6 +38,7 @@ HEADERS  += mainwindow.h \
     predicats.h \
     etudiant.h \
     autocompletion.h \
-    utprofilerexception.h
+    utprofilerexception.h \
+    utmanager.h
 
 FORMS    += mainwindow.ui
