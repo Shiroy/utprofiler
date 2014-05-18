@@ -38,6 +38,7 @@ HEADERS  += mainwindow.h \
     profil.h \
     predicats.h \
     etudiant.h \
-    autocompletion.h
+    autocompletion.h \
+    utprofilerexception.h
 
 FORMS    += mainwindow.ui

@@ -1,7 +1,7 @@
 #ifndef UVMANAGER_H
 #define UVMANAGER_H
 
-#include <QVector>
+#include <QMap>
 #include "uv.h"
 #include "uvstream.h"
 
@@ -28,7 +28,7 @@ public:
      * @param code Code de l'UV désirée
      * @return
      */
-    const UV& getUV(const QString& code);
+    UV& getUV(const QString& code);
     /**
      * @brief Charge les UV
      * @return
@@ -45,9 +45,7 @@ private:
 
     UVStream* loader;
 
-    QVector<UV> m_uvs;
+    QMap<QString, UV> m_uvs;
 };
-
-UVManager* UVManager::instance = 0;
 
 #endif // UVMANAGER_H
