@@ -25,6 +25,7 @@ SOURCES += main.cpp\
     profil.cpp \
     predicats.cpp \
     etudiant.cpp
+    autocompletion.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
@@ -37,5 +38,6 @@ HEADERS  += mainwindow.h \
     profil.h \
     predicats.h \
     etudiant.h
+    autocompletion.h
 
 FORMS    += mainwindow.ui
