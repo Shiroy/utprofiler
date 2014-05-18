@@ -65,3 +65,55 @@ N'a-t-on pas intérêt à créer une classe dossier, ou bien Cursus suffit-elle 
 
 =============================
 
+Voici le format de fichier que je propose pour le stockage des données, c'est du XML : 
+
+<SectionUV>
+	<uv>
+		<code>LO21</code>
+		<nom>Programmation orienté objet</nom>
+		<credit type="TM">6</credit> <!-- Si il y a plus d'un type de crédit (ex : UV équivalence (EQ01 pour le sigle :) ) on créer une UV du type UV plusieur catégorie -->
+		<branche>GI</branche>
+	</uv>
+	...
+</SectionUV>
+<SectionBranche>
+	<branche>
+		<sigle>GI</sigle>
+		<nom>Génie informatique</nom>
+		<PCB>GI_PCB</PCB>
+		<PSF>GI_FDD</PSF>
+		<PSF>GI_ADEL</PSF>
+		...
+	</branche>
+	...
+</SectionBranche>
+<SectionProfil>
+	<profil>
+		<nom>TC_PCB</nom>
+		
+		<predicat type="1"> <!-- Le type 1 est par exemple PredicatMinimumCreditInCategory (DP : Factory grace au type) -->
+			<donnee>CS</donnee>
+			<donnee>48</donnee>
+		</predicat>
+		<predicat type="1">
+			<donnee>TM</donnee>
+			<donnee>24</donnee>
+		</predicat>
+		<predicat type="1">
+			<donnee>TSH</donnee>
+			<donnee>24</donnee>
+		</predicat>
+		<predicat type="1">
+			<donnee>SP</donnee>
+			<donnee>6</donnee>
+		</predicat>
+	</profil>
+	...
+</SectionProfil>
+<Etudiant>
+	<prenom>Jean-Pierre</prenom>
+	<nom>Merguez</nom>
+	...
+</Etudiant>
+
+Du coup, je pense qu'il faut généraliser la clase UVManager et la transformer en UTManager par exemple pour faire en sorte que ça soit elle qui s'occupe de tout.
