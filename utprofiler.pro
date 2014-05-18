@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     cursus.cpp \
     branche.cpp \
     profil.cpp \
-    predicats.cpp
+    predicats.cpp \
+    etudiant.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
@@ -34,6 +35,7 @@ HEADERS  += mainwindow.h \
     cursus.h \
     branche.h \
     profil.h \
-    predicats.h
+    predicats.h \
+    etudiant.h
 
 FORMS    += mainwindow.ui
