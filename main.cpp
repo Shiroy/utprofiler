@@ -11,7 +11,8 @@ int main(int argc, char *argv[])
 
     try
     {
-        UTManager::getInstance()->getUV("LO21");
+        if(!UTManager::getInstance()->getUV("LO21"))
+            std::cerr << "UV LO21 introuvable\n";
     }
     catch(const std::exception &e)
     {

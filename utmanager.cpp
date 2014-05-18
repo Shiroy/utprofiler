@@ -3,6 +3,15 @@
 
 UTManager* UTManager::instance = 0;
 
+UTManager::~UTManager()
+{
+    for(auto it = m_uvs.begin() ; it != m_uvs.end() ; it++)
+        delete it.value();
+
+    for(auto it = m_branches.begin() ; it != m_branches.end() ; it++)
+        delete it.value();
+}
+
 UTManager* UTManager::getInstance()
 {
     if(!instance)

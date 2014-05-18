@@ -47,6 +47,7 @@ public:
 
 private:
     static UTManager* instance;
+    ~UTManager();
 
     UVStream* loader;
 
