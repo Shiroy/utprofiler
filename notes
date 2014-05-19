@@ -56,7 +56,15 @@ Renvoyer le semestre potentiel d'obtention du diplome correspondant
 N'a-t-on pas intérêt à créer une classe dossier, ou bien Cursus suffit-elle à elle eule à contenir toutes les infos nécessaires ?
 
 
+140519 : 
+Il faut trouver ici le moyen de realiser la connexion avec la barre de recherche qui sera implémentée dans l'interface graphique
+il faut exploiter le comportement de signaux et de slots de tout QObject : 2 possibilités : 
+	Dériver la classe StrategieAutocompletion d'un QObject, ou bien créer un lien d'agrégation, voire de composition entre mainwindow et StrategieAutocompletion
 
+Choix de l'agrégation ?
+Ne 
+Mettre en place
+ 
 
 
 
@@ -117,3 +125,7 @@ Voici le format de fichier que je propose pour le stockage des données, c'est d
 </Etudiant>
 
 Du coup, je pense qu'il faut généraliser la clase UVManager et la transformer en UTManager par exemple pour faire en sorte que ça soit elle qui s'occupe de tout.
+
+===========
+
+Slot dans l'autocomplétion avec en paramètre ce qui a été écrit dans la barre de recherche, la classe doit pouvoir retrouver une liste d'UV favorables (en prenant en compte l'objet étudiant qu'elle agrège).

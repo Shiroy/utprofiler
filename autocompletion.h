@@ -1,7 +1,8 @@
 #ifndef AUTOCOMPLETION_H
 #define AUTOCOMPLETION_H
 
-#include "cursus.h"
+#include "etudiant.h"
+
 /**
   *@brief Classe implémentant les outils d'autocompletion
   *
@@ -11,7 +12,14 @@
     */
 
 
-    //enum ExigenceUV {(-3), (-2), (-1) ,0 ,1 ,2};
+    enum ExigenceUV {
+        Refus =-3,
+        ReportMax = -2,
+        ReportUnSem=-1,
+        Neutre = 0,
+        PlusTotPossible = 1,
+        ProchainSem = 2
+    };
     /*
       Signication des notes :
       -3 : l'etudiant refuse de faire l'UV
@@ -24,10 +32,13 @@
 
 
 
+
+
 class StrategieAutocompletion {
     // Pour l'instant la classe Etudiant n'est pas implementee -> attribut principal : pointeur sur un Cursus
-    Cursus* ptCursus;
-    StrategieAutocompletion(Cursus* c) : ptCursus(c){};
+protected :
+    Etudiant& refEtu; //Et on respecte bien la relation d'agrégation entre StrategieAutocompletion et Etudiant
+    StrategieAutocompletion(Etudiant* e) : ptEtu(e){};
     /**
       *@brief
       *@param
