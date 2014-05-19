@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,7 +16,6 @@ QMAKE_CXXFLAGS += -std=c++11
 SOURCES += main.cpp\
         mainwindow.cpp \
     uv.cpp \
-    uvstream.cpp \
     inscription.cpp \
     semestrecours.cpp \
     cursus.cpp \
@@ -25,11 +24,12 @@ SOURCES += main.cpp\
     predicats.cpp \
     etudiant.cpp \
     autocompletion.cpp \
-    utmanager.cpp
+    utmanager.cpp \
+    utstreamxml.cpp \
+    utstream.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
-    uvstream.h \
     inscription.h \
     semestrecours.h \
     cursus.h \
@@ -39,6 +39,11 @@ HEADERS  += mainwindow.h \
     etudiant.h \
     autocompletion.h \
     utprofilerexception.h \
-    utmanager.h
+    utmanager.h \
+    utstreamxml.h \
+    utstream.h
 
 FORMS    += mainwindow.ui
+
+OTHER_FILES += \
+    donne_test.xml

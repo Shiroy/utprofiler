@@ -1,7 +1,27 @@
 #include "predicats.h"
 
-PredicatUVObligatoire::PredicatUVObligatoire(const QString &codeUV) : Predicat(), uv(codeUV) {}
-PredicatUVObligatoire::PredicatUVObligatoire(const UV &uv) : PredicatUVObligatoire(uv.getCode()) {}
+Predicat* PredicatFactory(int type)
+{
+    switch (type) {
+    case PREDICAT_UV_OBLIGATOIRE:
+        return new PredicatUVObligatoire;
+        break;
+    case PREDICAT_X_UV_PARMIS:
+        return new PredicatXUVParmis;
+        break;
+    case PREDICAT_MINIMUM_CREDIT_IN_CATEGORY:
+        return new PredicatMinimumCreditInCategory;
+        break;
+    case PREDICAT_MINIMUM_CREDIT:
+        return new PredicatMinimumCredit;
+        break;
+    default:
+        return 0;
+        break;
+    }
+}
+
+PredicatUVObligatoire::PredicatUVObligatoire() : Predicat() {}
 bool PredicatUVObligatoire::predicatSatifait(QVector<const UV*> uvValidee)
 {
     //Merci auto :-)
@@ -13,8 +33,13 @@ bool PredicatUVObligatoire::predicatSatifait(QVector<const UV*> uvValidee)
 
     return false;
 }
+bool PredicatUVObligatoire::chargerParametres(QStringList &list)
+{
+    uv = list.first();
+    return true;
+}
 
-PredicatXUVParmis::PredicatXUVParmis(const QStringList &candidat, unsigned int minimumAValider) : Predicat(), candidats(candidat), minimumUV(minimumAValider) {}
+PredicatXUVParmis::PredicatXUVParmis() : Predicat() {}
 bool PredicatXUVParmis::predicatSatifait(QVector<const UV *> uvValidee)
 {
     int nbUvValider = 0;
@@ -26,8 +51,13 @@ bool PredicatXUVParmis::predicatSatifait(QVector<const UV *> uvValidee)
 
     return nbUvValider >= minimumUV;
 }
+bool PredicatXUVParmis::chargerParametres(QStringList &list)
+{
+    candidats = list;
+    return true;
+}
 
-PredicatMinimumCreditInCategory::PredicatMinimumCreditInCategory(CategorieUV categorie, unsigned int min) : Predicat(), cat(categorie), minimum(min) {}
+PredicatMinimumCreditInCategory::PredicatMinimumCreditInCategory() : Predicat() {}
 bool PredicatMinimumCreditInCategory::predicatSatifait(QVector<const UV *> uvValidee)
 {
     unsigned int total = 0;
@@ -41,8 +71,21 @@ bool PredicatMinimumCreditInCategory::predicatSatifait(QVector<const UV *> uvVal
 
     return total >= minimum;
 }
+bool PredicatMinimumCreditInCategory::chargerParametres(QStringList &list)
+{
+    bool ok = true;
 
-PredicatMinimumCredit::PredicatMinimumCredit(unsigned int min) : Predicat(), minimum(min) {}
+    cat = static_cast<CategorieUV>(list[0].toInt(&ok));
+    if(!ok)
+        return false;
+    minimum = list[1].toInt(&ok);
+    if(!ok)
+        return false;
+
+    return true;
+}
+
+PredicatMinimumCredit::PredicatMinimumCredit() : Predicat() {}
 bool PredicatMinimumCredit::predicatSatifait(QVector<const UV *> uvValidee)
 {
     unsigned int total = 0;
@@ -54,4 +97,13 @@ bool PredicatMinimumCredit::predicatSatifait(QVector<const UV *> uvValidee)
     }
 
     return total >= minimum;
+}
+bool PredicatMinimumCredit::chargerParametres(QStringList &list)
+{
+    bool ok = true;
+    list.first().toInt(&ok);
+    if(!ok)
+        return false;
+
+    return true;
 }

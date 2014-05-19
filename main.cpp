@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "utmanager.h"
+#include "utstreamxml.h"
+#include <QMessageBox>
+#include <QFileDialog>
 #include <QApplication>
 #include <iostream>
 
@@ -11,8 +14,22 @@ int main(int argc, char *argv[])
 
     try
     {
-        if(!UTManager::getInstance()->getUV("LO21"))
-            std::cerr << "UV LO21 introuvable\n";
+        QString file = QFileDialog::getOpenFileName(0, QString(), "donne_test.xml", QString());
+        UTStreamXML *stream = new UTStreamXML(file);
+        sUTManager->setUTStream(stream);
+        if(!sUTManager->charger())
+        {
+            QMessageBox::critical(0, "Erreur au chargement des UVs", stream->getError());
+        }
+
+        UV* lo21 = sUTManager->getUV("LO21");
+
+        if(lo21)
+        {
+            QMessageBox::critical(0, "Erreur au chargement des UVs", "LO21 n'existe pas");
+        }
+
+        UTManager::destroy();
     }
     catch(const std::exception &e)
     {

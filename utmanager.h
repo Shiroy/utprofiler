@@ -6,7 +6,7 @@
 #include "branche.h"
 #include "etudiant.h"
 #include "profil.h"
-#include "uvstream.h"
+#include "utstream.h"
 
 /**
  * @brief The UTManager class
@@ -14,6 +14,8 @@
  */
 class UTManager
 {
+    friend class UTStream;
+
 public:    
 
     /**
@@ -43,16 +45,26 @@ public:
      * @brief Permet de spécifier une méthode de chargement des données. Tous les chargeurs sont des classe UVStream spécialisée.
      * @param stream Le chargeur
      */
-    void setUTStream(UVStream* stream) { loader = stream; }
+    void setUTStream(UTStream* stream) { loader = stream; }
+
+    UV* nouvelleUV(const QString& code);
+    Branche* nouvelleBranche(const QString& sigle);
+    Profil* nouveauProfil(const QString& nom);
+
+    static CategorieUV categorieUVTextToEnum(const QString& txt);
 
 private:
+    Profil* getProfile(const QString& nom);
     static UTManager* instance;
     ~UTManager();
 
-    UVStream* loader;
+    UTStream* loader;
 
     QMap<QString, UV*> m_uvs;
     QMap<QString, Branche*> m_branches;
+    QMap<QString, Profil*> m_profils;
 };
+
+#define sUTManager UTManager::getInstance()
 
 #endif // UVMANAGER_H

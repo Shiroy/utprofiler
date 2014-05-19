@@ -25,18 +25,10 @@ class UV
 
 public:
     /**
-     * @brief Construit un objet de type UV. Les paramètres sont recopiés dans les attributs de l'objet
-     * @param cde Code de l'UV
-     * @param ttr Titre de l'UV
-     * @param nbCredit Nombre de crÃ©dit que rapporte l'UV
-     * @param cat CatÃ©gorie de l'UV
+     * @brief Construit un objet de type UV. Les paramètres sont recopiés dans les attributs de l'objet     
      */
 
-    UV(const QString &cde, const QString& ttr, unsigned int nbCredit, CategorieUV cat) :
-        code(cde),
-        titre(ttr),
-        nombreCredit(nbCredit),
-        categorie(cat) {}
+    UV() {}
 
     /**
      * @brief Renvoie le code de l'UV

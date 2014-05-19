@@ -5,6 +5,8 @@
 #include <QVector>
 #include <QMap>
 #include "uv.h"
+#include "profil.h"
+#include <QStringList>
 
 /**
   *@brief Classe représentant une branche
@@ -15,26 +17,28 @@ class Branche
 {
     QString nom;
     QString sigle;
-    //Profil PCB;
-    //QVector<Profil> PSF;
-    QMap<CategorieUV, unsigned int> minimumCredit;
+    Profil PCB;
+    QVector<Profil> PSF;
+
+    QStringList psfString;
+    QString PCBString;
 
 public:
     Branche();
-
-    ///Renvoie le minimum de crédit CS nécessaires pour valider la branche
-    unsigned int getMinimumCS() const { return minimumCredit[CS]; }
-    ///Renvoie le minimum de crédit TM nécessaires pour valider la branche
-    unsigned int getMinimumTM() const { return minimumCredit[TM]; }
-    ///Renvoie le minimum de crédit TSH nécessaires pour valider la branche
-    unsigned int getMinimumTSH() const { return minimumCredit[TSH]; }
-    ///Renvoie le minimum de crédit SP nécessaires pour valider la branche
-    unsigned int getMinimumSP() const { return minimumCredit[SP]; }
 
     ///Renvoie le nom de la branche (ex: Tronc commun)
     const QString& getNom() const { return nom; }
     ///Renvoie le sigle de la branche (ex: TC)
     const QString& getSigle() const { return sigle; }
+
+    void setNom(const QString& nNom) { nom = nNom; }
+    void setSigle(const QString& nSigle) { sigle = nSigle; }
+    void setPCB(const QString& pcbStr) { PCBString = pcbStr; }
+    void addPsf(const QString& newPsf)
+    {
+        if(!psfString.contains(newPsf))
+            psfString << newPsf;
+    }
 };
 
 #endif // BRANCHE_H
