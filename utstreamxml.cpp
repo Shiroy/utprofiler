@@ -42,6 +42,12 @@ bool UTStreamXML::load()
         brancheSection(branches);
     }
 
+    QDomNode profile = doc.firstChildElement("ProfileSection");
+    if(!profile.isNull())
+    {
+        profilSection(profile);
+    }
+
     return true;
 }
 

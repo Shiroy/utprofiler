@@ -7,4 +7,22 @@
 			<branche>GI</branche>
 		</uv>
 	</UVSection>
+    <BrancheSection>
+        <branche>
+            <sigle>GI</sigle>
+            <nom>Génie informatique</nom>
+            <PCB>PCB_GI</PCB>
+            <PSF>PSF_GI_ADEL</PSF>
+            <PSF>PSF_GI_FDD</PSF>
+        </branche>
+    </BrancheSection>
+    <ProfileSection>
+        <profil>
+            <nom>PCB_GI</nom>
+            <predicat type="3" param="1,30"/>
+            <predicat type="3" param="2,30"/>
+            <predicat type="3" param="3,28"/>
+            <predicat type="3" param="4,60"/>
+        </profil>
+    </ProfileSection>
 </utprofiler>
