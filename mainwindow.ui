@@ -1,24 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>610</width>
+    <height>640</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A propos de moi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QFormLayout" name="formLayout">
+          <property name="fieldGrowthPolicy">
+           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Nom</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Prenom</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="lineEdit_2"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lineEdit_3"/>
+          </item>
+          <item row="4" column="1">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Branche</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="comboBox">
+            <item>
+             <property name="text">
+              <string>GI</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QListWidget" name="listWidget_2"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Mes filières :</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Mon parcours&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="listWidget">
+          <item>
+           <property name="text">
+            <string>MT90</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MT91</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MT22</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>PS90</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>PS91</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>PS93</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>PS94</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>PS95</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>PS96</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>NF01</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>NF92</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>NF93</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SO04</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>LA13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>LA23</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>HE01</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SI11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SI20</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>NP90</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolButton">
+            <property name="text">
+             <string>+</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolButton_2">
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QTableWidget" name="tableWidget">
+        <row>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string>2</string>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string>UV</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Titre</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Catégorie</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Crédit</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>J'en veux</string>
+         </property>
+        </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string>LO21</string>
+         </property>
+        </item>
+        <item row="0" column="1">
+         <property name="text">
+          <string>Programmation orientée objet</string>
+         </property>
+        </item>
+        <item row="0" column="2">
+         <property name="text">
+          <string>TM</string>
+         </property>
+        </item>
+        <item row="0" column="3">
+         <property name="text">
+          <string>6</string>
+         </property>
+        </item>
+        <item row="0" column="4">
+         <property name="text">
+          <string>Je m'en fiche</string>
+         </property>
+        </item>
+        <item row="1" column="0">
+         <property name="text">
+          <string>MT23</string>
+         </property>
+        </item>
+        <item row="1" column="1">
+         <property name="text">
+          <string>Algèbre linéaire</string>
+         </property>
+        </item>
+        <item row="1" column="2">
+         <property name="text">
+          <string>CS</string>
+         </property>
+        </item>
+        <item row="1" column="3">
+         <property name="text">
+          <string>6</string>
+         </property>
+        </item>
+        <item row="1" column="4">
+         <property name="text">
+          <string>Pas du tout</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Recherche rapide par code :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Suggerer une fin de parcours</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+   <zorder>verticalLayoutWidget_3</zorder>
+   <zorder>horizontalLayoutWidget_3</zorder>
+   <zorder>label_4</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>610</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuUTProfiler">
+    <property name="title">
+     <string>UTProfiler</string>
+    </property>
+    <widget class="QMenu" name="menuCharger_des_donn_es">
+     <property name="title">
+      <string>Charger des données</string>
+     </property>
+     <addaction name="actionDepuis_un_fichier_XML"/>
+    </widget>
+    <widget class="QMenu" name="menuCharger_un_profil">
+     <property name="title">
+      <string>Charger un profil</string>
+     </property>
+     <addaction name="actionDepuis_un_fichier_XML_2"/>
+    </widget>
+    <addaction name="menuCharger_un_profil"/>
+    <addaction name="menuCharger_des_donn_es"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <addaction name="menuUTProfiler"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionDepuis_un_fichier_XML">
+   <property name="text">
+    <string>Depuis un fichier XML</string>
+   </property>
+  </action>
+  <action name="actionDepuis_un_fichier_XML_2">
+   <property name="text">
+    <string>Depuis un fichier XML</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>
