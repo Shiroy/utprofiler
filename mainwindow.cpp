@@ -15,10 +15,12 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+    UTManager::destroy();
 }
 
 void MainWindow::on_quickSearch_textChanged(const QString &txt)
 {
+    m_searchModel->clearAllUV();
     UVMap& allUvs = sUTManager->getAllUVs();
 
     for(auto it = allUvs.begin() ; it != allUvs.end() ; it++)

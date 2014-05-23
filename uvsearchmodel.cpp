@@ -10,7 +10,7 @@ UVSearchModel::UVSearchModel(QObject *parent) : QStandardItemModel(parent)
 
 void UVSearchModel::addUv(const UV &uv)
 {
-    Q_ASSERT(false);
+    //Q_ASSERT(false);
     /*QList<QStandardItem*> newRow;
     newRow.push_back(new QStandardItem(uv.getCode()));
     newRow.push_back(new QStandardItem(uv.getTitre()));

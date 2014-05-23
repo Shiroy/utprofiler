@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
         UV* lo21 = sUTManager->getUV("LO21");
 
-        if(lo21)
+        if(!lo21)
         {
             QMessageBox::critical(0, "Erreur au chargement des UVs", "LO21 n'existe pas");
         }
@@ -36,6 +36,5 @@ int main(int argc, char *argv[])
         std::cout << e.what();
     }
 
-    UTManager::destroy();
     return a.exec();
 }

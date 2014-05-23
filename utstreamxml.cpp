@@ -23,14 +23,14 @@ bool UTStreamXML::load()
         setError("Impossible d'ouvrir le fichier");
         return false;
     }
-    QDomDocument doc;
-    QDomElement docElem = doc.documentElement();
+    QDomDocument doc;    
     if(!doc.setContent(&f))
     {
         setError("Erreur lors de l'analyse du XML");
         return false;
     }
 
+    QDomElement docElem = doc.documentElement();
     QDomNode uvs = docElem.firstChildElement("UVSection");
     if(!uvs.isNull())
     {
@@ -54,15 +54,25 @@ bool UTStreamXML::load()
 
 void UTStreamXML::uvSection(QDomNode &e)
 {
-    QDomElement uv = e.nextSiblingElement("uv");
+    QDomElement uv = e.firstChildElement();
     while(!uv.isNull())
     {
         QDomElement name, credit, code, branche;
 
-        name = uv.firstChildElement("nom");
-        code = uv.firstChildElement("code");
-        credit = uv.firstChildElement("credit");
-        branche = uv.firstChildElement("branche");
+        QDomElement child = uv.firstChildElement();
+        while(!child.isNull())
+        {
+            if(child.nodeName() == "nom")
+                name = child;
+            else if(child.nodeName() == "credit")
+                credit = child;
+            else if(child.nodeName() == "code")
+                code = child;
+            else if(child.nodeName() == "branche")
+                branche = child;
+
+            child = child.nextSiblingElement();
+        }
 
         if(!name.isNull() && !code.isNull() && !credit.isNull() && !branche.isNull() && credit.hasAttribute("type"))
         {
@@ -75,7 +85,7 @@ void UTStreamXML::uvSection(QDomNode &e)
             ///@todo Gerer les branches
         }
 
-        uv = uv.nextSiblingElement("uv");
+        uv = uv.nextSiblingElement();
     }
 }
 
