@@ -1,11 +1,1554 @@
 <utprofiler>
 	<UVSection>
-		<uv>
-			<code>LO21</code>
-            <nom>Programmation orientée objet</nom>
-			<credit type="TM">6</credit>
-			<branche>GI</branche>
-		</uv>
+    <uv>
+        <code>BL01</code>
+        <nom>Sciences Biologiques Pour L'Ingénieur</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BL10</code>
+        <nom>Structures Et Physicochimie Des Molécules Biologiques</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BL22</code>
+        <nom>Microbiologie Et Biologie Moléculaire</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>CM01</code>
+        <nom>Physique De La Matière</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>CM11</code>
+        <nom>Chimie Générale</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>CM12</code>
+        <nom>Chimie Physique Minérale</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>CM13</code>
+        <nom>Chimie Des Substances Organiques Et Biologiques</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>CM15</code>
+        <nom>Systemes Colloidaux - Applications Agroalimentaires</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>EL01</code>
+        <nom>Phénomènes Electromagnétiques</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>EN21</code>
+        <nom>Bases De L'électronique Analogique</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>IA02</code>
+        <nom>Résolution De Problèmes Et Programmation Logique</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ01</code>
+        <nom>éléments De Resistance Des Matériaux</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ03</code>
+        <nom>Mécanique Des Vibrations I</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ17</code>
+        <nom>Introduction Aux Propriétés Mécaniques Et à L'Ingénierie Des Matériaux</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ18</code>
+        <nom>Cinématique Et Dynamique Des Systèmes</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MT10</code>
+        <nom>Structures,Calcul Formel Et Algorithmes</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MT12</code>
+        <nom>Methodes Mathematiques Pour L'Analyse Du Signal Et De L'Image</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MT22</code>
+        <nom>Fonctions De Plusieurs Variables Réelles Et Applications</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MT23</code>
+        <nom>Algèbre Linéaire Et Applications</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MT90</code>
+        <nom>Fonctions D'Une Variable Reelle 1</nom>
+        <credit type="CS">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MT91</code>
+        <nom>Fonctions D'Une Variable Reelle 2</nom>
+        <credit type="CS">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF04</code>
+        <nom>Modélisation Numérique Des Problèmes De L'Ingénieur</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF16</code>
+        <nom>Algorithmique Et Structures De Données</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PS04</code>
+        <nom>Thermodynamique</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PS91</code>
+        <nom>Mecanique Physique</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PS92</code>
+        <nom>Dynamique Des Systemes Et Des Solides</nom>
+        <credit type="CS">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PS93</code>
+        <nom>Optique Geometrique</nom>
+        <credit type="CS">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PS94</code>
+        <nom>Electricite</nom>
+        <credit type="CS">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>RO03</code>
+        <nom>Recherche Opérationnelle, Optimisation Combinatoire</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>RR01</code>
+        <nom>Cinétique Chimique Et Réacteurs Homogènes</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SR02</code>
+        <nom>Systèmes D'Exploitation : Des Concepts à La Programmation</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SY01</code>
+        <nom>éléments De Probabilités</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SY02</code>
+        <nom>Méthodes Statistiques Pour L'Ingénieur</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SY04</code>
+        <nom>Systèmes Asservis Linéaires : Analyse Et Commande</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SY14</code>
+        <nom>éléments D'Automatique</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TF01</code>
+        <nom>Mécanique Des Fluides Incompressibles</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TF06</code>
+        <nom>Transfert De Chaleur</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN06</code>
+        <nom>Transmission Des Efforts En Mécanique</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BA07</code>
+        <nom>Modes Opératoires De La Construction</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BL09</code>
+        <nom>Biophysique Des Systèmes Biologiques</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BM01</code>
+        <nom>Introduction à L'Instrumentation Biomédicale</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BT02</code>
+        <nom>Opérations Agro-Industrielles</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>C2I1</code>
+        <nom>Certificat Informatique Et Internet Niveau 1</nom>
+        <credit type="TM">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>CM70</code>
+        <nom>Travaux Pratiques De Gp (1)</nom>
+        <credit type="TM">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>DD02</code>
+        <nom>Introduction A L'Eco-Conception Et A L'Analyse De Cycle De Vie</nom>
+        <credit type="TM">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>EL02</code>
+        <nom>électricité Industrielle Appliquée</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>FQ01</code>
+        <nom>économie Globale Et Maitrise De La Qualité</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE37</code>
+        <nom>Gestion De Projet</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LO01</code>
+        <nom>Bases De La Programmation</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LO21</code>
+        <nom>Programmation Et Conception Orientees Objet</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LO22</code>
+        <nom>Genie Logiciel</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MT94</code>
+        <nom>Introduction Aux Mathematiques Appliquées</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF01</code>
+        <nom>Algorithmique Et Programmation</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF02</code>
+        <nom>Du Circuit Intégré Au Microprocesseur</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF15</code>
+        <nom>Microprocesseurs, Interfaces Et Logiciels De Bases</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF17</code>
+        <nom>Conception De Bases De Données</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF22</code>
+        <nom>Micro-Ordinateurs Et Applications</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF92</code>
+        <nom>Traitement Automatique De L'Information</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NP90</code>
+        <nom>Nano-Projets</nom>
+        <credit type="TM">2</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NX17</code>
+        <nom>Introduction Aux Bases De Donnees</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PR</code>
+        <nom>Réalisation De Projet</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PS09</code>
+        <nom>Acoustique Appliquée</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PS90</code>
+        <nom>Introduction A La Mesure</nom>
+        <credit type="TM">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TF14</code>
+        <nom>Les Opérations De Transfert De Matière</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN01</code>
+        <nom>éléments De Dessin Technique</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN02</code>
+        <nom>Introduction A La Conception Mécanique</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN03</code>
+        <nom>Fabrication Mécanique</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN04</code>
+        <nom>Réalisation</nom>
+        <credit type="TM">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN08</code>
+        <nom>Dessin De Communication</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN20</code>
+        <nom>Cao : Modélisation Géométrique</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN22</code>
+        <nom>éléments De Bureau D'études</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TR91</code>
+        <nom>Techniques De Recherche D'Information Pour L'Ingenieur</nom>
+        <credit type="TM">2</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TS01</code>
+        <nom>Maitrise Des Risques</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TX</code>
+        <nom>étude Expérimentale</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>UB04</code>
+        <nom>Ambiances Et Environnement Lumineux</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>UR03</code>
+        <nom>Cartographie Sémiologie Graphique Et Cao/Dao</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>UR05</code>
+        <nom>Aménagement Et Environnement</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>AR03</code>
+        <nom>Art Et Technologies Contemporaines</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>DI01</code>
+        <nom>Initiation Au Design Industriel</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>DI02</code>
+        <nom>Initiation Au Design Graphique</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>EI03</code>
+        <nom>Communication Interculturelle En Entreprises, Organisations Transnationales</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>EI04</code>
+        <nom>Intelligence économique : Stratégie D'Entreprise, Démarche Et Outils</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>EI05</code>
+        <nom>Science, Technologie Et Société Dans L'Union Européenne</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE10</code>
+        <nom>économie Politique</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE12</code>
+        <nom>Géographie Et économie Des Territoires</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE13</code>
+        <nom>Les Risques Entre Technique Et Societe</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE15</code>
+        <nom>Initiation A La Création Et Gestion D'Entreprises Innovantes</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE20</code>
+        <nom>économie Industrielle</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE21</code>
+        <nom>économie Et Gestion De L'Innovation Et Du Numérique</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE22</code>
+        <nom>économie Internationale</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE23</code>
+        <nom>Transferts De Technologies Et Développements</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE24</code>
+        <nom>Recherche Developpement : Ingenieur Et Investisseurs</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE25</code>
+        <nom>Gestion Et Organisation De La Production</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE26</code>
+        <nom>Management Stratégique Des Ressources Humaines</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE28</code>
+        <nom>économie Et Droit De La Propriété Intellectuelle (Industrielle Et Artistique) Dans Une économie Reposant Sur La Connaissance</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE29</code>
+        <nom>Gestion Et Management International De L'Entreprise</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE36</code>
+        <nom>Marketing</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE90</code>
+        <nom>Organisation, Innovation Et International</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>HE01</code>
+        <nom>épistémologie Et Histoire Des Sciences</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>HE03</code>
+        <nom>Logique : Histoire Et Formalisme</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>HE05</code>
+        <nom>Culture Et Histoire Des Techniques</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>IC01</code>
+        <nom>Histoire Et Prospective Des Industries Culturelles</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>IC03</code>
+        <nom>Le Numérique : Des Formats Aux Chaines De Production</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>IC05</code>
+        <nom>Technologies Pour La Documentation Et L'Indexation Dans L'Hypermédia</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>IC07</code>
+        <nom>Techniques Et Technologies Du Musical Et Du Sonore</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA00</code>
+        <nom>Allemand Initiation</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA01</code>
+        <nom>Allemand Niveau I</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA02</code>
+        <nom>Allemand Niveau II</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA03</code>
+        <nom>Allemand Niveau III</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA04</code>
+        <nom>Pratique De La Communication En Allemand</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA11</code>
+        <nom>Anglais Niveau I</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA12</code>
+        <nom>Anglais Niveau II</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA13</code>
+        <nom>Anglais Niveau III</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA14</code>
+        <nom>Civilisation Du Monde Anglophone</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA15</code>
+        <nom>Anglais Professionnel - Niveau V</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA20</code>
+        <nom>Espagnol Initiation</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA21</code>
+        <nom>Espagnol Niveau I</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA22</code>
+        <nom>Espagnol Niveau II</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA23</code>
+        <nom>Espagnol Niveau III</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA24</code>
+        <nom>Le Monde Hispanique Contemporain : L'Amérique Latine (Niveau IV)</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA91</code>
+        <nom>Francais Langue étrangère Niveau I</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA92</code>
+        <nom>Francais Langue étrangère Niveau II</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA93</code>
+        <nom>Francais Langue étrangère Niveau III</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LA94</code>
+        <nom>Francais Langue étrangère Niveau IV</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LB04</code>
+        <nom>Interculturalité Franco-Allemande</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LB14</code>
+        <nom>Interculturalité Appliquée Aux Pays Anglophones</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LB24</code>
+        <nom>Le Monde Hispanique (Niveau IV): L'Espagne</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LC14</code>
+        <nom>Communication Scientifique Et Technique En Anglais</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LG30</code>
+        <nom>Japonais Initiation</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LG31</code>
+        <nom>Japonais Niveau I</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LG40</code>
+        <nom>Portugais Initiation</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LG41</code>
+        <nom>Portugais Niveau I</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LG42</code>
+        <nom>Portugais Niveau II</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LG50</code>
+        <nom>Italien Initiation</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LG51</code>
+        <nom>Italien Niveau I</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LG52</code>
+        <nom>Italien Niveau II</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LG60</code>
+        <nom>Chinois Initiation</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LG61</code>
+        <nom>Chinois Niveau I</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MU01</code>
+        <nom>Pratique Instrumentale D'Ensemble</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MU02</code>
+        <nom>Pratique Instrumentale De Haut Niveau</nom>
+        <credit type="TSH">8</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MU03</code>
+        <nom>Pratique Collective Des Musiques Contemporaines</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PH01</code>
+        <nom>Introduction à La Philosophie</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PH09</code>
+        <nom>éthiques : Approche Pluridisciplinaire</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SA11</code>
+        <nom>Pratiques Théatrales</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SC01</code>
+        <nom>Séminaire Interdisciplinaire De Sciences Et Technologies Cognitives</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SC11</code>
+        <nom>Théorie Des Sciences Cognitives : Computation Et énaction</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SC12</code>
+        <nom>Technologie, Cognition, Perception</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SC21</code>
+        <nom>Linguistique Et Philosophie Du Langage</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SC22</code>
+        <nom>Sociologie Cognitive, Lien Social Et Techniques</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI01</code>
+        <nom>Science Et Debat Public</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI02</code>
+        <nom>Communication Professionnelle De L'Ingénieur</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI05</code>
+        <nom>Theories De La Communication</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI06</code>
+        <nom>La Documentattion Cross-Media Pour Les Entreprises Et Les Collectivites Locales</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI07</code>
+        <nom>Medias Classiques Et Medias Numeriques</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI11</code>
+        <nom>Expression Orale- Parole Publique</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI14</code>
+        <nom>Parole Publique En Anglais</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI20</code>
+        <nom>Rhetorique Et Arts Du Discours</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI22</code>
+        <nom>Signes Et Contenus Numeriques</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI24</code>
+        <nom>études Des écritures Numériques Ordinaires</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI28</code>
+        <nom>écriture Interactive Et Multimédia</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SI90</code>
+        <nom>Séminaire De Communication Des Connaissances Technologiques</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SL</code>
+        <nom>Suivi Linguistique</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SO04</code>
+        <nom>Initiation Au Droit</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SO05</code>
+        <nom>Sociologie, Organisations Et Dynamiques Des Collectifs</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SP01</code>
+        <nom>Un Corps Pour Comprendre Et Apprendre</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SP02</code>
+        <nom>Conduire Un Projet Sportif</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN16</code>
+        <nom>étude Interculturelle</nom>
+        <credit type="TSH">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TO01</code>
+        <nom>Module De Preparation Au Toeic</nom>
+        <credit type="TSH">2</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MT34</code>
+        <nom>Analyse 2 : Mesures, Intégrations, Probabilités</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MT37</code>
+        <nom>Logiques, Quelques Approfondissements Mathématiques Et Philosophiques</nom>
+        <credit type="CS">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MT38</code>
+        <nom>Probabilités</nom>
+        <credit type="CS">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>AP</code>
+        <nom>Atelier Projet</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>API06</code>
+        <nom>Analyse De Donnees Et Data Mining (Apprentissage)</nom>
+        <credit type="CS">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>API07</code>
+        <nom>Architecture Des Applications Internet, Programmation Web Et Securite (Apprentissage)</nom>
+        <credit type="TM">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>API08</code>
+        <nom>Ihm Et Multimédia (Apprentissage)</nom>
+        <credit type="TM">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>API09</code>
+        <nom>Méthodes Et Outils Pour L'Optimisation Et La Simulation (Apprentissage)</nom>
+        <credit type="CS">4</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>API10</code>
+        <nom>Méthodes De Vérification Et Validation De Logiciel Et Programmation Sous Linux (Apprentissage)</nom>
+        <credit type="TM">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BA01</code>
+        <nom>Equipements Techniques Du Batiment</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BA02</code>
+        <nom>Gestion Technique Du Patrimoine Immobilier</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BA04</code>
+        <nom>Conversion Et Gestion Des Energies Renouvelables</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BA09</code>
+        <nom>Introduction Au Calcul Des Structures Du Batiment</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BI01</code>
+        <nom>Modeles Pour La Bioinformatique</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BL30</code>
+        <nom>Physiologie Des Systèmes Intégrés</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BL40</code>
+        <nom>Génie Cellulaire</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BM02</code>
+        <nom>Organes Artificiels Et Biorheologie</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BM08</code>
+        <nom>Modélisation Des Systèmes Biomécaniques</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BT06</code>
+        <nom>Analyse Des Produits Biologiques Et Alimentaires</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BT10</code>
+        <nom>Risques Biologiques Et Sécurité Alimentaire</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BT21</code>
+        <nom>Biotechnologies Moleculaires Et Genie Genetique</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>BT22</code>
+        <nom>Les Agroressources</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>CM06</code>
+        <nom>Calcul D'Une Opération Industrielle</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>CM40</code>
+        <nom>Catalyse Heterogene</nom>
+        <credit type="CS">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>CT02</code>
+        <nom>Maitrise Statistique Des Processus</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>CT04</code>
+        <nom>Controles Non Destructifs</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>DI03</code>
+        <nom>Conception Formelle Des Produits</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>DI05</code>
+        <nom>Methodologie Et Analyse De La Valeur</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>DI06</code>
+        <nom>Analyse Des Produits De Consommation</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>EG01</code>
+        <nom>Ergonomie</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>EN14</code>
+        <nom>Fonctions Électroniques Pour L'Ingénieur</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>EV01</code>
+        <nom>Procédés De Traitement Des Déchets</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>FPP02</code>
+        <nom>Fiabilite Et Ingenierie Robuste De Produits (Apprentissage)</nom>
+        <credit type="CS">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>FQ07</code>
+        <nom>La Qualité Des Services A L'Industrie</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE38</code>
+        <nom>Management Et Outils D'Aide à La Créativité Industrielle Et à L'Innovation</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GE39</code>
+        <nom>Management Et Marketing De L'Innovation</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>GPL01</code>
+        <nom>Gestion De Production Et Erp (Apprentissage)</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>IA04</code>
+        <nom>Systèmes Multiagents</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LO17</code>
+        <nom>Indexation Et Recherche D'Information</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>LO18</code>
+        <nom>Projets Multimédia Pour La Formation</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MAT03</code>
+        <nom>Mecanique Des Materiaux (Apprentissage)</nom>
+        <credit type="CS">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MB11</code>
+        <nom>Révision D'Analyse Et D'Algèbre (Gb, Gi, Gsu)</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MC01</code>
+        <nom>Machines Électriques</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MC05</code>
+        <nom>Machines De Transfert De Fluides</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MC07</code>
+        <nom>Électronique De Puissance</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MEQ03</code>
+        <nom>Dynamique Des Solides (Apprentissage)</nom>
+        <credit type="CS">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MI03</code>
+        <nom>Systèmes Temps Réel</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MP02</code>
+        <nom>Introduction Aux Méthodes De La Gpao</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ02</code>
+        <nom>Mécanique Des Solides Déformables</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ04</code>
+        <nom>Polymères</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ06</code>
+        <nom>Modélisation Des Structures Par Éléments Finis</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ08</code>
+        <nom>Elaboration Et Proprietes D'Usage Des Metaux</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ09</code>
+        <nom>Mécanique Des Vibrations II</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ10</code>
+        <nom>Comportement Mécanique Des Matériaux</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ11</code>
+        <nom>Mise En Oeuvre Des Matériaux</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ14</code>
+        <nom>Optimisation En Mécanique</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MQ19</code>
+        <nom>Dynamique Des Structures</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MS02</code>
+        <nom>Principes Physiques Des Capteurs Et Instrumentation</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>MS03</code>
+        <nom>Pratique Expérimentale En Acoustique Et Vibrations</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF11</code>
+        <nom>Théorie Des Langages De Programmation</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF24</code>
+        <nom>Modelisation Et Simulation Des Procedes</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF26</code>
+        <nom>Data Warehouse Et Outils Décisionnels</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF28</code>
+        <nom>Ingénierie Des Systèmes Intéractifs</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>NF33</code>
+        <nom>Conception Et Architecture De Systèmes Numériques Informatiques</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>PS05</code>
+        <nom>Fondements De L'Acoustique Et Modélisations</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>RO04</code>
+        <nom>Optimisation Et Recherche Opérationnelle</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SCI08</code>
+        <nom>Introduction A L'Ingenierie Systeme</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SR03</code>
+        <nom>Architecture Des Applications Internet</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SY05</code>
+        <nom>Conduite Des Procédés</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SY06</code>
+        <nom>Analyse Et Traitement Du Signal</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SY09</code>
+        <nom>Analyse Des Données Et Data Mining</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SY12</code>
+        <nom>Modélisation Et Performance Des Systèmes De Production</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SY15</code>
+        <nom>Automatique Avancée</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>SY26</code>
+        <nom>Télécommunications</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TA02</code>
+        <nom>Évaluation Économique Des Procédés</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TF07</code>
+        <nom>Calcul Des Échangeurs Thermiques Industriels</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TF08</code>
+        <nom>Hydrodynamique Des Systèmes Dispersés</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TMI01</code>
+        <nom>Conception Niveau 2 (Apprentissage)</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TMI05</code>
+        <nom>Fabrication Assistee Par Ordinateur Et Machines A Commande Numerique (Apprentissage)</nom>
+        <credit type="TM">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN12</code>
+        <nom>Conception Mécanique</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN13</code>
+        <nom>Dimensionnement Pour La Conception Des Systemes Mecaniques</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN15</code>
+        <nom>Création De Produit, D'Activité, D'Entreprise</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN24</code>
+        <nom>Technologies De Fabrication Et Outils Méthodes</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN29</code>
+        <nom>Outils De Definition Et De Developpement De Systemes</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>TN30</code>
+        <nom>Xao En Milieu Professionnel</nom>
+        <credit type="TM">3</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>UB02</code>
+        <nom>Systemes De Transport Urbain</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>UB06</code>
+        <nom>Mises En Scènes Urbaines</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>UB08</code>
+        <nom>Hydrologie Urbaine</nom>
+        <credit type="CS">6</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>UR01</code>
+        <nom>Droit De L'Urbanisme, De La Construction Et De L'Environnement</nom>
+        <credit type="TM">5</credit>
+        <branche>Unk</branche>
+    </uv>
+    <uv>
+        <code>UXD01</code>
+        <nom>Design D'Experience</nom>
+        <credit type="TM">6</credit>
+        <branche>Unk</branche>
+    </uv>
+
 	</UVSection>
     <BrancheSection>
         <branche>

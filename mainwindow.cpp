@@ -20,6 +20,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_quickSearch_textChanged(const QString &txt)
 {
+    if(txt.isEmpty())
+        return;
+
     m_searchModel->clearAllUV();
     UVMap& allUvs = sUTManager->getAllUVs();
 
