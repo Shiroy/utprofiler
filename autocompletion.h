@@ -38,7 +38,7 @@ class StrategieAutocompletion {
     // Pour l'instant la classe Etudiant n'est pas implementee -> attribut principal : pointeur sur un Cursus
 protected :
     Etudiant& refEtu; //Et on respecte bien la relation d'agrégation entre StrategieAutocompletion et Etudiant
-    StrategieAutocompletion(Etudiant* e) : ptEtu(e){};
+    StrategieAutocompletion(Etudiant& e) : refEtu(e){};
     /**
       *@brief
       *@param

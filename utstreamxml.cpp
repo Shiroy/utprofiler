@@ -24,25 +24,26 @@ bool UTStreamXML::load()
         return false;
     }
     QDomDocument doc;
+    QDomElement docElem = doc.documentElement();
     if(!doc.setContent(&f))
     {
         setError("Erreur lors de l'analyse du XML");
         return false;
     }
 
-    QDomNode uvs = doc.firstChildElement("UVSection");
+    QDomNode uvs = docElem.firstChildElement("UVSection");
     if(!uvs.isNull())
     {
         uvSection(uvs);
     }
 
-    QDomNode branches = doc.firstChildElement("BrancheSection");
+    QDomNode branches = docElem.firstChildElement("BrancheSection");
     if(!branches.isNull())
     {
         brancheSection(branches);
     }
 
-    QDomNode profile = doc.firstChildElement("ProfileSection");
+    QDomNode profile = docElem.firstChildElement("ProfileSection");
     if(!profile.isNull())
     {
         profilSection(profile);

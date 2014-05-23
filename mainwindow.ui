@@ -261,93 +261,7 @@ p, li { white-space: pre-wrap; }
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QTableWidget" name="tableWidget">
-        <row>
-         <property name="text">
-          <string>1</string>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </row>
-        <column>
-         <property name="text">
-          <string>UV</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Titre</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Catégorie</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Crédit</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>J'en veux</string>
-         </property>
-        </column>
-        <item row="0" column="0">
-         <property name="text">
-          <string>LO21</string>
-         </property>
-        </item>
-        <item row="0" column="1">
-         <property name="text">
-          <string>Programmation orientée objet</string>
-         </property>
-        </item>
-        <item row="0" column="2">
-         <property name="text">
-          <string>TM</string>
-         </property>
-        </item>
-        <item row="0" column="3">
-         <property name="text">
-          <string>6</string>
-         </property>
-        </item>
-        <item row="0" column="4">
-         <property name="text">
-          <string>Je m'en fiche</string>
-         </property>
-        </item>
-        <item row="1" column="0">
-         <property name="text">
-          <string>MT23</string>
-         </property>
-        </item>
-        <item row="1" column="1">
-         <property name="text">
-          <string>Algèbre linéaire</string>
-         </property>
-        </item>
-        <item row="1" column="2">
-         <property name="text">
-          <string>CS</string>
-         </property>
-        </item>
-        <item row="1" column="3">
-         <property name="text">
-          <string>6</string>
-         </property>
-        </item>
-        <item row="1" column="4">
-         <property name="text">
-          <string>Pas du tout</string>
-         </property>
-        </item>
-       </widget>
+       <widget class="QTableView" name="uvPanel"/>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -359,7 +273,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="quickSearch"/>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton">
@@ -373,9 +287,6 @@ p, li { white-space: pre-wrap; }
      </layout>
     </item>
    </layout>
-   <zorder>verticalLayoutWidget_3</zorder>
-   <zorder>horizontalLayoutWidget_3</zorder>
-   <zorder>label_4</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

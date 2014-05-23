@@ -8,9 +8,11 @@
 #include "profil.h"
 #include "utstream.h"
 
+typedef QMap<QString, UV*> UVMap;
+
 /**
  * @brief The UTManager class
- * Cette classe à la responsabilité de la création et de la destruction des toutes les données utilisées par le programme. C'est un singleton.
+ * Cette classe �  la responsabilité de la création et de la destruction des toutes les données utilisées par le programme. C'est un singleton.
  */
 class UTManager
 {
@@ -51,7 +53,10 @@ public:
     Branche* nouvelleBranche(const QString& sigle);
     Profil* nouveauProfil(const QString& nom);
 
+    UVMap& getAllUVs();
+
     static CategorieUV categorieUVTextToEnum(const QString& txt);
+    static QString categorieUVEnumToText(CategorieUV cat);
 
 private:
     Profil* getProfile(const QString& nom);

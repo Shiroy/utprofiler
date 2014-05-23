@@ -104,6 +104,11 @@ bool UTManager::charger()
     return true;
 }
 
+UVMap& UTManager::getAllUVs()
+{
+    return m_uvs;
+}
+
 CategorieUV UTManager::categorieUVTextToEnum(const QString &txt)
 {
     if(txt == "CS")
@@ -116,4 +121,26 @@ CategorieUV UTManager::categorieUVTextToEnum(const QString &txt)
         return SP;
     else
         UTPROFILER_EXCEPTION(QString("CatÃ©gorie d'UV inconnue : %1").arg(txt).toStdString().c_str());
+}
+
+QString UTManager::categorieUVEnumToText(CategorieUV cat)
+{
+    switch(cat)
+    {
+    case CS:
+        return "CS";
+        break;
+    case TM:
+        return "TM";
+        break;
+    case TSH:
+        return "TSH";
+        break;
+    case SP:
+        return "SP";
+        break;
+    default:
+        UTPROFILER_EXCEPTION("UTManager::categorieUVEnumToText : catégorie d'UV inconnue");
+        break;
+    }
 }

@@ -15,6 +15,10 @@ unix{
     QMAKE_CXXFLAGS += -std=c++11
 }
 
+win32{
+    QMAKE_CXXFLAGS= -std=c++0x -U__STRICT_ANSI__ -Doverride="" -Dnoexcept="throw()"
+}
+
 SOURCES += main.cpp\
         mainwindow.cpp \
     uv.cpp \
@@ -28,7 +32,8 @@ SOURCES += main.cpp\
     autocompletion.cpp \
     utmanager.cpp \
     utstreamxml.cpp \
-    utstream.cpp
+    utstream.cpp \
+    uvsearchmodel.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
@@ -43,7 +48,8 @@ HEADERS  += mainwindow.h \
     utprofilerexception.h \
     utmanager.h \
     utstreamxml.h \
-    utstream.h
+    utstream.h \
+    uvsearchmodel.h
 
 FORMS    += mainwindow.ui
 

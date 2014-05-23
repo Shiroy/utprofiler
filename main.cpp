@@ -9,8 +9,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    /*MainWindow w;
-    w.show();*/
+    MainWindow w;
+    w.show();
 
     try
     {
@@ -29,10 +29,13 @@ int main(int argc, char *argv[])
             QMessageBox::critical(0, "Erreur au chargement des UVs", "LO21 n'existe pas");
         }
 
-        UTManager::destroy();
+
     }
     catch(const std::exception &e)
     {
         std::cout << e.what();
     }
+
+    UTManager::destroy();
+    return a.exec();
 }

@@ -13,11 +13,12 @@ class UTProfilerException : public std::exception
     int lineno;
 public:
     UTProfilerException(const char* filename, int line, const std::string& message) noexcept : file(filename), lineno(line), msg(message) {}
+    ~UTProfilerException() noexcept {}
 
     const char* what() const noexcept
     {
         std::stringstream ss;
-        ss << "[Exception fichier " << file << " ligne nÂ°" << lineno << " : " << msg << "\n";
+        ss << "[Exception fichier " << file << " ligne n°" << lineno << " : " << msg << "\n";
         return ss.str().c_str();
     }
 };
