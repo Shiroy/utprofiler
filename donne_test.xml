@@ -1567,5 +1567,11 @@
             <predicat type="3" param="3,28"/>
             <predicat type="3" param="4,60"/>
         </profil>
+        <profil>
+            <nom>PSF_GI_ADEL</nom>
+        </profil>
+        <profil>
+            <nom>PSF_GI_FDD</nom>
+        </profil>
     </ProfileSection>
 </utprofiler>

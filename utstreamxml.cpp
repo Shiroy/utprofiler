@@ -59,20 +59,10 @@ void UTStreamXML::uvSection(QDomNode &e)
     {
         QDomElement name, credit, code, branche;
 
-        QDomElement child = uv.firstChildElement();
-        while(!child.isNull())
-        {
-            if(child.nodeName() == "nom")
-                name = child;
-            else if(child.nodeName() == "credit")
-                credit = child;
-            else if(child.nodeName() == "code")
-                code = child;
-            else if(child.nodeName() == "branche")
-                branche = child;
-
-            child = child.nextSiblingElement();
-        }
+        name = uv.firstChildElement("nom");
+        credit = uv.firstChildElement("credit");
+        code = uv.firstChildElement("code");
+        branche = uv.firstChildElement("branche");
 
         if(!name.isNull() && !code.isNull() && !credit.isNull() && !branche.isNull() && credit.hasAttribute("type"))
         {
@@ -91,7 +81,7 @@ void UTStreamXML::uvSection(QDomNode &e)
 
 void UTStreamXML::brancheSection(QDomNode &e)
 {
-    QDomElement branche = e.nextSiblingElement("branche");
+    QDomElement branche = e.firstChildElement();
     while(!branche.isNull())
     {
         QDomElement sigle, nom, PCB, PSF;
@@ -107,7 +97,7 @@ void UTStreamXML::brancheSection(QDomNode &e)
             br->setSigle(sigle.text());
             br->setPCB(PCB.text());
 
-            QDomElement psf = e.firstChildElement("PSF");
+            QDomElement psf = branche.firstChildElement("PSF");
             while(!psf.isNull())
             {
                 br->addPsf(psf.text());
@@ -115,13 +105,13 @@ void UTStreamXML::brancheSection(QDomNode &e)
             }
         }
 
-        branche = branche.nextSiblingElement("branche");
+        branche = branche.nextSiblingElement();
     }
 }
 
 void UTStreamXML::profilSection(QDomNode &e)
 {
-    QDomNode profil = e.nextSiblingElement("profil");
+    QDomNode profil = e.firstChildElement("profil");
     while(!profil.isNull())
     {
         QDomElement nom = profil.firstChildElement("nom");
@@ -146,6 +136,8 @@ void UTStreamXML::profilSection(QDomNode &e)
                 predicat = predicat.nextSiblingElement("predicat");
             }
         }
+
+        profil = profil.nextSiblingElement("profil");
     }
 }
 

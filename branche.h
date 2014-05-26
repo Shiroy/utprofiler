@@ -17,8 +17,8 @@ class Branche
 {
     QString nom;
     QString sigle;
-    Profil PCB;
-    QVector<Profil> PSF;
+    Profil *PCB;
+    QVector<Profil*> PSF;
 
     QStringList psfString;
     QString PCBString;
@@ -39,6 +39,8 @@ public:
         if(!psfString.contains(newPsf))
             psfString << newPsf;
     }
+
+    void link();
 };
 
 #endif // BRANCHE_H

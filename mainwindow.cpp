@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_searchModel = new UVSearchModel(this);
     ui->uvPanel->setModel(m_searchModel);
+
+    on_uvEditable_toggled(ui->uvEditable->isChecked());
 }
 
 MainWindow::~MainWindow()
@@ -31,4 +33,12 @@ void MainWindow::on_quickSearch_textChanged(const QString &txt)
         if(it.key().contains(txt, Qt::CaseInsensitive))
             m_searchModel->addUv(*(it.value()));
     }
+}
+
+void MainWindow::on_uvEditable_toggled(bool state)
+{
+    if(!state)
+        ui->uvPanel->setEditTriggers(QTableView::NoEditTriggers);
+    else
+        ui->uvPanel->setEditTriggers(QTableView::DoubleClicked);
 }

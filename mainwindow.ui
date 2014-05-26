@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>610</width>
-    <height>640</height>
+    <width>1154</width>
+    <height>648</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -264,7 +264,64 @@ p, li { white-space: pre-wrap; }
        <widget class="QTableView" name="uvPanel"/>
       </item>
       <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="createUv">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Créer une UV</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="deleteUv">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Supprimer l'UV selectionnée</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QCheckBox" name="uvEditable">
+          <property name="text">
+           <string>Mode édition des UVs</string>
+          </property>
+         </widget>
+        </item>
         <item>
          <widget class="QLabel" name="label_5">
           <property name="text">
@@ -293,8 +350,8 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>610</width>
-     <height>18</height>
+     <width>1154</width>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuUTProfiler">
@@ -347,5 +404,38 @@ p, li { white-space: pre-wrap; }
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>uvEditable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>createUv</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>88</x>
+     <y>603</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>484</x>
+     <y>572</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>uvEditable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>deleteUv</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>88</x>
+     <y>603</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>624</x>
+     <y>572</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

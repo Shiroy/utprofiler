@@ -1,15 +1,14 @@
 #include "utmanager.h"
 #include "utprofilerexception.h"
+#include <QMessageBox>
 
 UTManager* UTManager::instance = 0;
 
 UTManager::~UTManager()
 {
-    for(auto it = m_uvs.begin() ; it != m_uvs.end() ; it++)
-        delete it.value();
-
-    for(auto it = m_branches.begin() ; it != m_branches.end() ; it++)
-        delete it.value();
+    if(loader)
+        delete loader;
+    clearAll();
 }
 
 UTManager* UTManager::getInstance()
@@ -91,15 +90,26 @@ Profil* UTManager::nouveauProfil(const QString &nom)
 
 bool UTManager::charger()
 {
-    if(!loader->prepareLoading())
-        return false;
-
-    if(!loader->load())
+    try
     {
+        if(!loader->prepareLoading())
+            return false;
+
+        if(!loader->load())
+        {
+            loader->clearAfterLoad();
+            return false;
+        }
         loader->clearAfterLoad();
+
+        lierLesElements();
+    }
+    catch(UTProfilerException &e)
+    {
+        clearAll();
+        QMessageBox::critical(0, QString("Erreur au chargement"), QString(e.what()));
         return false;
     }
-    loader->clearAfterLoad();
 
     return true;
 }
@@ -140,7 +150,40 @@ QString UTManager::categorieUVEnumToText(CategorieUV cat)
         return "SP";
         break;
     default:
-        UTPROFILER_EXCEPTION("UTManager::categorieUVEnumToText : catégorie d'UV inconnue");
+        UTPROFILER_EXCEPTION("UTManager::categorieUVEnumToText : catÃ©gorie d'UV inconnue");
         break;
     }
+}
+
+void UTManager::lierLesElements()
+{
+    /*UVMap allUvs = getAllUVs();
+    for(auto it = allUvs.begin() ; it != allUvs.end() ; it++)
+    {
+
+    }*/
+
+    for(auto it = m_branches.begin() ; it != m_branches.end() ; it++)
+    {
+        Branche* br = it.value();
+        br->link();
+    }
+}
+
+void UTManager::clearAll()
+{
+    for(auto it = m_uvs.begin() ; it != m_uvs.end() ; it++)
+        delete it.value();
+
+    m_uvs.clear();
+
+    for(auto it = m_branches.begin() ; it != m_branches.end() ; it++)
+        delete it.value();
+
+    m_branches.clear();
+
+    for(auto it = m_profils.begin() ; it != m_profils.end() ; it++)
+        delete it.value();
+
+    m_profils.clear();
 }

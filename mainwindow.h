@@ -19,12 +19,13 @@ public:
 
 public slots:
     void on_quickSearch_textChanged(const QString& txt);
+    void on_uvEditable_toggled(bool state);
 
 private:
     Ui::MainWindow *ui;
     StrategieAutocompletion* Completion;
 
-    UVSearchModel *m_searchModel; //Utiliser pou l'affichage des résultat de recherche
+    UVSearchModel *m_searchModel; //Utiliser pou l'affichage des rÃ©sultat de recherche
 };
 
 #endif // MAINWINDOW_H
