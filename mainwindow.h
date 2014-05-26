@@ -19,7 +19,6 @@ public:
 
 public slots:
     void on_quickSearch_textChanged(const QString& txt);
-    void on_uvEditable_toggled(bool state);
 
 private:
     Ui::MainWindow *ui;
