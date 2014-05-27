@@ -54,4 +54,6 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 OTHER_FILES += \
-    donne_test.xml
+    donne_test.xml \
+    donne2_test.xml \
+    antoine_wacheux.xml

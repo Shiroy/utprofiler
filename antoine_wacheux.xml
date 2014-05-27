@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<etudiant>
+    <nom>Wacheux</nom>
+    <prenom>Antoine</prenom>
+    <parcours>
+        <semestre date="A12">
+            <resultat uv="MT90" note="F"/>
+        </semestre>
+    </parcours>
+</etudiant>
