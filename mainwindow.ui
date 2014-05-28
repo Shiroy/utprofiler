@@ -385,16 +385,9 @@ p, li { white-space: pre-wrap; }
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton">
+           <widget class="QPushButton" name="pushButton_2">
             <property name="text">
-             <string>+</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="toolButton_2">
-            <property name="text">
-             <string>-</string>
+             <string>Editer le parcours</string>
             </property>
            </widget>
           </item>
