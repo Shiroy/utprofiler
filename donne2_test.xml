@@ -1562,6 +1562,7 @@
     </BrancheSection>
     <ProfileSection>
         <profil>
+            <description></description>
             <nom>PCB_GI</nom>
             <predicat type="3" param="1,30"/>
             <predicat type="3" param="2,30"/>
@@ -1569,9 +1570,11 @@
             <predicat type="3" param="4,60"/>
         </profil>
         <profil>
+            <description>Filière GI ADEL</description>
             <nom>PSF_GI_ADEL</nom>
         </profil>
         <profil>
+            <description>Filière GI FDD</description>
             <nom>PSF_GI_FDD</nom>
         </profil>
     </ProfileSection>
