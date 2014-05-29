@@ -18,6 +18,8 @@ public:
     virtual bool chargerParametres(QStringList& param) = 0;
 
     virtual const QString recommanderUv() { return QString(); }
+
+    virtual bool peutAmeliorerLeCursus(const QString& uv) = 0;
 };
 
 Predicat* PredicatFactory(int type);

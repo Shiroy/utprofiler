@@ -45,6 +45,10 @@ const QString PredicatUVObligatoire::recommanderUv() //Pour valider cette condit
 {
     return uv;
 }
+bool PredicatUVObligatoire::peutAmeliorerLeCursus(const QString &candidat)
+{
+    return candidat == uv;
+}
 
 PredicatXUVParmis::PredicatXUVParmis() : Predicat() {}
 bool PredicatXUVParmis::predicatSatifait(QVector<const UV *> uvValidee)
@@ -85,6 +89,10 @@ const QString PredicatXUVParmis::recommanderUv() //On recommande l'UV qui rappor
 
     return uvARecommander;
 }
+bool PredicatXUVParmis::peutAmeliorerLeCursus(const QString &uv)
+{
+    return candidats.contains(uv);
+}
 
 PredicatMinimumCreditInCategory::PredicatMinimumCreditInCategory() : Predicat() {}
 bool PredicatMinimumCreditInCategory::predicatSatifait(QVector<const UV *> uvValidee)
@@ -112,6 +120,16 @@ bool PredicatMinimumCreditInCategory::chargerParametres(QStringList &list)
         return false;
 
     return true;
+}
+
+bool PredicatMinimumCreditInCategory::peutAmeliorerLeCursus(const QString &uv)
+{
+    UV *candidat = sUTManager->getUV(uv);
+
+    if(!candidat)
+        UTPROFILER_EXCEPTION(QString("UV inconnue : %1").arg(uv).toStdString().c_str());
+
+    return cat == candidat->getCategorie();
 }
 
 PredicatMinimumCredit::PredicatMinimumCredit() : Predicat() {}
