@@ -50,7 +50,12 @@ public:
      * @brief Permet de spÃ©cifier une mÃ©thode de chargement des donnÃ©es. Tous les chargeurs sont des classe UVStream spÃ©cialisÃ©e.
      * @param stream Le chargeur
      */
-    void setUTStream(UTStream* stream) { loader = stream; }
+    void setUTStream(UTStream* stream)
+    {
+        if(loader)
+            delete loader;
+        loader = stream;
+    }
 
     UV* nouvelleUV(const QString& code);
     Branche* nouvelleBranche(const QString& sigle);
@@ -66,6 +71,7 @@ private:
     void clearAll();
 
     static UTManager* instance;
+    UTManager() : loader(0) {}
     ~UTManager();
 
     UTStream* loader;

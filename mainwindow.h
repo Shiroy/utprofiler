@@ -20,6 +20,8 @@ public:
 public slots:
     void on_quickSearch_textChanged(const QString& txt);
 
+    void on_ac_data_loadFromXML_triggered();
+
 private:
     Ui::MainWindow *ui;
     StrategieAutocompletion* Completion;

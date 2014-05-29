@@ -518,13 +518,13 @@ p, li { white-space: pre-wrap; }
      <property name="title">
       <string>Charger des données</string>
      </property>
-     <addaction name="actionDepuis_un_fichier_XML"/>
+     <addaction name="ac_data_loadFromXML"/>
     </widget>
     <widget class="QMenu" name="menuCharger_un_profil">
      <property name="title">
       <string>Charger un profil</string>
      </property>
-     <addaction name="actionDepuis_un_fichier_XML_2"/>
+     <addaction name="ac_loadFromXML"/>
     </widget>
     <addaction name="menuCharger_un_profil"/>
     <addaction name="menuCharger_des_donn_es"/>
@@ -542,12 +542,12 @@ p, li { white-space: pre-wrap; }
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionDepuis_un_fichier_XML">
+  <action name="ac_data_loadFromXML">
    <property name="text">
     <string>Depuis un fichier XML</string>
    </property>
   </action>
-  <action name="actionDepuis_un_fichier_XML_2">
+  <action name="ac_loadFromXML">
    <property name="text">
     <string>Depuis un fichier XML</string>
    </property>
