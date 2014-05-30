@@ -22,7 +22,7 @@ struct Semestre
 class SemestreCours
 {
     Semestre date;
-    QVector<Inscription> inscription;
+    QVector<Inscription*> inscription;
 
 public:
     /**
@@ -40,7 +40,10 @@ public:
      * @brief Renvoie une référence vers toutes les inscriptions du semestre
      * @return
      */
-    const QVector<Inscription> &getInscriptions() { return inscription; }
+    const QVector<Inscription*> &getInscriptions() { return inscription; }
+
+    bool uvEnCours(const UV* uv);
+    QVector<const UV *> getUVs();
 };
 
 #endif // SEMESTRECOURS_H

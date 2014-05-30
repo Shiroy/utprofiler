@@ -15,11 +15,11 @@ enum Resultat
  */
 class Inscription
 {
-    const UV& m_uv;
+    const UV* m_uv;
     const SemestreCours& semestre;
     Resultat m_resultat;
 
-    Inscription(const Inscription& o);
+    //Inscription(const Inscription& o);
 public:
     /**
      * @brief Unique constructeur
@@ -38,7 +38,7 @@ public:
      * @brief Renvoie l'UV
      * @return
      */
-    const UV& getUV() const { return m_uv; }
+    const UV* getUV() const { return m_uv; }
     /**
      * @brief Renvoie le résultat
      * @return

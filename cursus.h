@@ -7,8 +7,9 @@
 
 class Cursus
 {
-    QVector<SemestreCours> semestreAValider;
-    QVector<Branche> brancheAValider;
+    QVector<SemestreCours*> tousLesSemestres;
+    QString brancheAValider;
+    QStringList filieres;
 
 public:
     Cursus();
@@ -16,7 +17,7 @@ public:
     /**
       *@brief Renvoie tous les smestres que l'étudiant doit valider
       */
-    QVector<SemestreCours>& getTousLesSemestres() { return semestreAValider; }
+    QVector<SemestreCours*>& getTousLesSemestres() { return tousLesSemestres; }
     /**
       *@brief Ajoute un semestre d'étude au cursus
       */
@@ -25,11 +26,11 @@ public:
     /**
       *@brief Renvoie toutes les branches auxquelles l'étudiant est inscrit
       */
-    QVector<Branche> &getAllBranche() { return brancheAValider; }
-    /**
-      *@brief Ajoute une branche au cursus de l'étudiant
-      */
-    void ajouterBranche(const Branche& brch);
+    const QString& getBrancheAValider() { return brancheAValider; }
+    void setBrancheAValider(const QString& branche) { brancheAValider = branche; }
+
+    bool uvDejaValidee(const UV* uv);
+    QVector<const UV *> &getAllUV();
 };
 
 #endif // CURSUS_H

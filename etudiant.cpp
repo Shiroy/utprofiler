@@ -2,4 +2,5 @@
 
 Etudiant::Etudiant()
 {
+    cursus.setBrancheAValider("GI"); //Pour tester
 }

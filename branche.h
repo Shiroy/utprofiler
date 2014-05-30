@@ -30,6 +30,8 @@ public:
     const QString& getNom() const { return nom; }
     ///Renvoie le sigle de la branche (ex: TC)
     const QString& getSigle() const { return sigle; }
+    const Profil* getPCB() const { return PCB; }
+    Profil* getPCB() { return PCB; }
 
     void setNom(const QString& nNom) { nom = nNom; }
     void setSigle(const QString& nSigle) { sigle = nSigle; }

@@ -2,8 +2,9 @@
 #define PROFIL_H
 
 #include <QVector>
-#include "uv.h"
 #include <QString>
+
+class UV;
 
 /**
  * @brief Classe représentant une condition de validation pour un profil (strategie)
@@ -41,9 +42,12 @@ public:
 
     void addPredicat(Predicat* prdct) { conditions.push_back(prdct); }
 
+    const QVector<Predicat*>& getAllPredicat() const { return conditions; }
+    QVector<Predicat*> getAllPredicat() { return conditions; }
+
     ///Vérifie si toutes les conditions du profil sont satisfaites ou non
     /// @return Renvoie false si une des conditions n'est pas satisfaite.
-    bool profileValide(QVector<UV> uvValidee);
+    bool profileValide(QVector<UV*> uvValidee);
 };
 
 #endif // PROFIL_H
