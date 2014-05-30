@@ -34,7 +34,7 @@ class Profil
     QVector<Predicat*> conditions;
 public:
     Profil();
-    ~Profil(); //TODO : Détruire les prédicats
+    ~Profil();
 
     ///Renvoie le nom du profil
     const QString& getNomProfile() const { return nomProfile; }
