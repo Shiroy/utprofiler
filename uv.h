@@ -13,6 +13,8 @@ enum CategorieUV
     SP=4 /*!< Stage et projet*/
 };
 
+class Branche;
+
 /**
  * @brief RÃ©prÃ©sente une UV
  */
@@ -22,6 +24,8 @@ class UV
     QString code, titre;
     unsigned int nombreCredit;
     CategorieUV categorie;
+    Branche* branche;
+    QString brancheStr;
 
 public:
     /**
@@ -71,6 +75,11 @@ public:
      * @param cat
      */
     void setCategorie(CategorieUV cat) { categorie = cat; }
+
+    void setBrancheStr(const QString& str) { brancheStr = str; }
+    void linkInformation();
+    const Branche* getBranche() const { return branche; }
+    Branche* getBranche() { return branche; }
 };
 
 #endif // UV_H
