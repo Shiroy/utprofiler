@@ -129,3 +129,33 @@ Du coup, je pense qu'il faut généraliser la clase UVManager et la transformer 
 ===========
 
 Slot dans l'autocomplétion avec en paramètre ce qui a été écrit dans la barre de recherche, la classe doit pouvoir retrouver une liste d'UV favorables (en prenant en compte l'objet étudiant qu'elle agrège).
+
+=================
+
+Génération de la fin du Cursus
+
+Classer les UV à l'aide des prédicats
+	Eliminer toute les UVs qui ne sont pas enseigné pour la branche actuelle
+	Mettre en premier les UV de la listes qui absolument voulue.
+	Puis les UV obligatoire (prédicat)
+	Puis les UV de preférence +1
+	Les UV neutre
+	Les UV -1
+	Le reste (-2)
+	
+Pour chaque uv_i dans UV_candidate
+	Si uv_i a déjé été selectionnée
+		continuer
+		
+	Pour chaque prédicat de chaque Profil
+		Si le prédicat n'est pas valider avec la liste actuelle de candidat alors
+			Si l'UV améliore le cursus alors
+				Ajouter l'uv à la liste des candidat et continuer
+			Sinon
+				continuer
+			Fin si
+		Sinon
+			continuer
+		Fin si
+	Fin pour
+Fin Pour

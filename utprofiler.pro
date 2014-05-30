@@ -33,7 +33,8 @@ SOURCES += main.cpp\
     utmanager.cpp \
     utstreamxml.cpp \
     utstream.cpp \
-    uvsearchmodel.cpp
+    uvsearchmodel.cpp \
+    etudiantstream.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
@@ -49,7 +50,8 @@ HEADERS  += mainwindow.h \
     utmanager.h \
     utstreamxml.h \
     utstream.h \
-    uvsearchmodel.h
+    uvsearchmodel.h \
+    etudiantstream.h
 
 FORMS    += mainwindow.ui
 

@@ -27,6 +27,7 @@ class StrategieAutocompletion
 protected :
     Etudiant& refEtu; //Et on respecte bien la relation d'agrégation entre StrategieAutocompletion et Etudiant
     StrategieAutocompletion(Etudiant& e) : refEtu(e){}
+    virtual ~StrategieAutocompletion(){}
     /**
       *@brief
       *@param
