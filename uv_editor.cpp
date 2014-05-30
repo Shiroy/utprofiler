@@ -8,7 +8,19 @@ UV_Editor::UV_Editor(QWidget *parent) :
     ui->setupUi(this);
 }
 
+UV_Editor::UV_Editor(UV *ptUV)
+{
+   //this->setTitle(ptUV->getCode());
+
+}
+
+
 UV_Editor::~UV_Editor()
 {
     delete ui;
+}
+
+void UV_Editor::on_buttonBox_accepted()
+{
+
 }
