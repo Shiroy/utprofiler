@@ -16,6 +16,10 @@ public:
     ///À partir de la liste des UV valiéee, détermine si la condition géré par ce prédicat est satisfaite ou non
     virtual bool predicatSatifait(QVector<const UV*> uvValidee) = 0;    
     virtual bool chargerParametres(QStringList& param) = 0;
+
+    virtual const QString recommanderUv() { return QString(); }
+
+    virtual bool peutAmeliorerLeCursus(const QString& uv) = 0;
 };
 
 Predicat* PredicatFactory(int type);

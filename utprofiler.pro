@@ -34,7 +34,9 @@ SOURCES += main.cpp\
     utstreamxml.cpp \
     utstream.cpp \
     uvsearchmodel.cpp \
-    uv_editor.cpp
+    uv_editor.cpp \
+    etudiantstream.cpp
+
 
 HEADERS  += mainwindow.h \
     uv.h \
@@ -51,10 +53,15 @@ HEADERS  += mainwindow.h \
     utstreamxml.h \
     utstream.h \
     uvsearchmodel.h \
-    uv_editor.h
+    uv_editor.h \
+    etudiantstream.h
 
 FORMS    += mainwindow.ui \
     uv_editor.ui
 
+
+
 OTHER_FILES += \
-    donne_test.xml
+    donne_test.xml \
+    donne2_test.xml \
+    antoine_wacheux.xml

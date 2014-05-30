@@ -1,6 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "utmanager.h"
+#include <QFileDialog>
+#include <QMessageBox>
+#include "utstreamxml.h"
+#include "utprofilerexception.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -10,8 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_searchModel = new UVSearchModel(this);
     ui->uvPanel->setModel(m_searchModel);
-
-    on_uvEditable_toggled(ui->uvEditable->isChecked());
 }
 
 MainWindow::~MainWindow()
@@ -35,10 +37,21 @@ void MainWindow::on_quickSearch_textChanged(const QString &txt)
     }
 }
 
-void MainWindow::on_uvEditable_toggled(bool state)
+void MainWindow::on_ac_data_loadFromXML_triggered()
 {
-    if(!state)
-        ui->uvPanel->setEditTriggers(QTableView::NoEditTriggers);
-    else
-        ui->uvPanel->setEditTriggers(QTableView::DoubleClicked);
+    QString filename = QFileDialog::getOpenFileName(this, "Fichier de donnée", QString(), "Fixhier XML *.xml");
+
+    if(filename.isEmpty())
+        return;
+
+    UTStreamXML *xmlStream = new UTStreamXML(filename);
+    sUTManager->setUTStream(xmlStream);
+    try
+    {
+        sUTManager->charger();
+    }
+    catch(const UTProfilerException &e)
+    {
+        QMessageBox::critical(this, "Erreur au chargement des données", e.what());
+    }
 }

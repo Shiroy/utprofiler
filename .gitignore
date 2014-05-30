@@ -29,3 +29,8 @@ Makefile*
 
 code_genere/
 doc/html/
+
+*.html
+*.log
+
+.*

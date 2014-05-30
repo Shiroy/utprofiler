@@ -23,7 +23,11 @@ public:
     explicit PredicatUVObligatoire(const UV& uv);
 
     bool predicatSatifait(QVector<const UV*> uvValidee) override;
-    bool chargerParametres(QStringList &list);
+    bool chargerParametres(QStringList &list) override;
+
+    const QString recommanderUv() override;
+
+    bool peutAmeliorerLeCursus(const QString &uv) override;
 };
 
 class PredicatXUVParmis : public Predicat
@@ -35,7 +39,11 @@ public:
     explicit PredicatXUVParmis();
 
     bool predicatSatifait(QVector<const UV *> uvValidee) override;
-    bool chargerParametres(QStringList &list);
+    bool chargerParametres(QStringList &list) override;
+
+    const QString recommanderUv() override;
+
+    bool peutAmeliorerLeCursus(const QString &uv) override;
 };
 
 class PredicatMinimumCreditInCategory : public Predicat
@@ -46,7 +54,9 @@ class PredicatMinimumCreditInCategory : public Predicat
 public:
     PredicatMinimumCreditInCategory();
     bool predicatSatifait(QVector<const UV *> uvValidee) override;
-    bool chargerParametres(QStringList &list);
+    bool chargerParametres(QStringList &list) override;
+
+    bool peutAmeliorerLeCursus(const QString &uv) override;
 };
 
 class PredicatMinimumCredit : public Predicat
@@ -55,8 +65,10 @@ class PredicatMinimumCredit : public Predicat
 
 public:
     PredicatMinimumCredit();
-    bool predicatSatifait(QVector<const UV *> uvValidee);
-    bool chargerParametres(QStringList &list);
+    bool predicatSatifait(QVector<const UV *> uvValidee) override;
+    bool chargerParametres(QStringList &list) override;
+
+    bool peutAmeliorerLeCursus(const QString &uv) override { return true; } //Toute UV raporte des crédit
 };
 
 #endif // PREDICATS_H

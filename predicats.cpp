@@ -1,4 +1,6 @@
 #include "predicats.h"
+#include "utmanager.h"
+#include "utprofilerexception.h"
 
 Predicat* PredicatFactory(int type)
 {
@@ -39,10 +41,19 @@ bool PredicatUVObligatoire::chargerParametres(QStringList &list)
     return true;
 }
 
+const QString PredicatUVObligatoire::recommanderUv() //Pour valider cette condition, il faut impérativement obtenir "uv", il est donc tout naturel de la recommander
+{
+    return uv;
+}
+bool PredicatUVObligatoire::peutAmeliorerLeCursus(const QString &candidat)
+{
+    return candidat == uv;
+}
+
 PredicatXUVParmis::PredicatXUVParmis() : Predicat() {}
 bool PredicatXUVParmis::predicatSatifait(QVector<const UV *> uvValidee)
 {
-    int nbUvValider = 0;
+    unsigned int nbUvValider = 0;
     for(auto it = uvValidee.begin() ; it != uvValidee.end() ; it++)
     {
         if(candidats.contains((*it)->getCode()))
@@ -55,6 +66,32 @@ bool PredicatXUVParmis::chargerParametres(QStringList &list)
 {
     candidats = list;
     return true;
+}
+
+const QString PredicatXUVParmis::recommanderUv() //On recommande l'UV qui rapporte le plus de crédit dans la liste
+{
+    QString uvARecommander;
+
+    unsigned int maxCredit = 0;
+
+    for(auto it = candidats.begin() ; it != candidats.end() ; it++)
+    {
+        UV* uv = sUTManager->getUV(*it);
+        if(!uv)
+            UTPROFILER_EXCEPTION(QString("Ce prédicat contient une UV inconnue (%1)").arg(*it).toStdString().c_str());
+
+        if(uv->getNombreCredit() > maxCredit)
+        {
+            maxCredit = uv->getNombreCredit();
+            uvARecommander = uv->getCode();
+        }
+    }
+
+    return uvARecommander;
+}
+bool PredicatXUVParmis::peutAmeliorerLeCursus(const QString &uv)
+{
+    return candidats.contains(uv);
 }
 
 PredicatMinimumCreditInCategory::PredicatMinimumCreditInCategory() : Predicat() {}
@@ -83,6 +120,16 @@ bool PredicatMinimumCreditInCategory::chargerParametres(QStringList &list)
         return false;
 
     return true;
+}
+
+bool PredicatMinimumCreditInCategory::peutAmeliorerLeCursus(const QString &uv)
+{
+    UV *candidat = sUTManager->getUV(uv);
+
+    if(!candidat)
+        UTPROFILER_EXCEPTION(QString("UV inconnue : %1").arg(uv).toStdString().c_str());
+
+    return cat == candidat->getCategorie();
 }
 
 PredicatMinimumCredit::PredicatMinimumCredit() : Predicat() {}

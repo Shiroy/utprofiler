@@ -112,101 +112,260 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item>
-         <widget class="QListWidget" name="listWidget">
+         <widget class="QTreeWidget" name="treeWidget">
+          <column>
+           <property name="text">
+            <string>UV</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Résultat</string>
+           </property>
+          </column>
           <item>
            <property name="text">
-            <string>MT90</string>
+            <string>A12</string>
            </property>
+           <item>
+            <property name="text">
+             <string>MT90</string>
+            </property>
+            <property name="text">
+             <string>F</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MT91</string>
+            </property>
+            <property name="text">
+             <string>F</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PS93</string>
+            </property>
+            <property name="text">
+             <string>E</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PS94</string>
+            </property>
+            <property name="text">
+             <string>B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PS90</string>
+            </property>
+            <property name="text">
+             <string>F</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NF01</string>
+            </property>
+            <property name="text">
+             <string>A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SO04</string>
+            </property>
+            <property name="text">
+             <string>B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LA23</string>
+            </property>
+            <property name="text">
+             <string>D</string>
+            </property>
+           </item>
           </item>
           <item>
            <property name="text">
-            <string>MT91</string>
+            <string>P13</string>
            </property>
+           <item>
+            <property name="text">
+             <string>MT90</string>
+            </property>
+            <property name="text">
+             <string>B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MT91</string>
+            </property>
+            <property name="text">
+             <string>E</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PS90</string>
+            </property>
+            <property name="text">
+             <string>B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PS91</string>
+            </property>
+            <property name="text">
+             <string>E</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NF92</string>
+            </property>
+            <property name="text">
+             <string>A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NP90</string>
+            </property>
+            <property name="text">
+             <string>B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LA13</string>
+            </property>
+            <property name="text">
+             <string>E</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>HE01</string>
+            </property>
+            <property name="text">
+             <string>C</string>
+            </property>
+           </item>
           </item>
           <item>
            <property name="text">
-            <string>MT22</string>
+            <string>A13</string>
            </property>
+           <item>
+            <property name="text">
+             <string>MT22</string>
+            </property>
+            <property name="text">
+             <string>C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PS95</string>
+            </property>
+            <property name="text">
+             <string>C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PS96</string>
+            </property>
+            <property name="text">
+             <string>E</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NF93</string>
+            </property>
+            <property name="text">
+             <string>E</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TN04</string>
+            </property>
+            <property name="text">
+             <string>B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SI11</string>
+            </property>
+            <property name="text">
+             <string>C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SI20</string>
+            </property>
+            <property name="text">
+             <string>C</string>
+            </property>
+           </item>
           </item>
           <item>
            <property name="text">
-            <string>PS90</string>
+            <string>P14</string>
            </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>PS91</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>PS93</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>PS94</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>PS95</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>PS96</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>NF01</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>NF92</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>NF93</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>SO04</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>LA13</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>LA23</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>HE01</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>SI11</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>SI20</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>NP90</string>
-           </property>
+           <item>
+            <property name="text">
+             <string>MT23</string>
+            </property>
+            <property name="text">
+             <string>EC</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SY01</string>
+            </property>
+            <property name="text">
+             <string>EC</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LO21</string>
+            </property>
+            <property name="text">
+             <string>EC</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>C2I1</string>
+            </property>
+            <property name="text">
+             <string>EC</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PH01</string>
+            </property>
+            <property name="text">
+             <string>EC</string>
+            </property>
+           </item>
           </item>
          </widget>
         </item>
@@ -226,16 +385,9 @@ p, li { white-space: pre-wrap; }
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton">
+           <widget class="QPushButton" name="pushButton_2">
             <property name="text">
-             <string>+</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="toolButton_2">
-            <property name="text">
-             <string>-</string>
+             <string>Editer le parcours</string>
             </property>
            </widget>
           </item>
@@ -261,7 +413,11 @@ p, li { white-space: pre-wrap; }
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QTableView" name="uvPanel"/>
+       <widget class="QTableView" name="uvPanel">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+       </widget>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -362,13 +518,13 @@ p, li { white-space: pre-wrap; }
      <property name="title">
       <string>Charger des données</string>
      </property>
-     <addaction name="actionDepuis_un_fichier_XML"/>
+     <addaction name="ac_data_loadFromXML"/>
     </widget>
     <widget class="QMenu" name="menuCharger_un_profil">
      <property name="title">
       <string>Charger un profil</string>
      </property>
-     <addaction name="actionDepuis_un_fichier_XML_2"/>
+     <addaction name="ac_loadFromXML"/>
     </widget>
     <addaction name="menuCharger_un_profil"/>
     <addaction name="menuCharger_des_donn_es"/>
@@ -386,12 +542,12 @@ p, li { white-space: pre-wrap; }
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionDepuis_un_fichier_XML">
+  <action name="ac_data_loadFromXML">
    <property name="text">
     <string>Depuis un fichier XML</string>
    </property>
   </action>
-  <action name="actionDepuis_un_fichier_XML_2">
+  <action name="ac_loadFromXML">
    <property name="text">
     <string>Depuis un fichier XML</string>
    </property>

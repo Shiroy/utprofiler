@@ -8,6 +8,8 @@ class UTStream
 public:
     UTStream() {}
 
+    virtual ~UTStream() {}
+
     /**
      * @brief Hook appelé avant le chargement, permettant de faire des préparations (ex : connexion à une base de donnée).
      * @return Si le retour est false, le chargement est avorté

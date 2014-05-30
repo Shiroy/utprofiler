@@ -64,7 +64,7 @@ void UTStreamXML::uvSection(QDomNode &e)
         code = uv.firstChildElement("code");
         branche = uv.firstChildElement("branche");
 
-        if(!name.isNull() && !code.isNull() && !credit.isNull() && !branche.isNull() && credit.hasAttribute("type"))
+        if(!name.isNull() && !code.isNull() && !credit.isNull() && credit.hasAttribute("type") && (!branche.isNull() || credit.attribute("type") == "TSH"))
         {
             UV* nouvelleUv = sUTManager->nouvelleUV(code.text());
             nouvelleUv->setCode(code.text());

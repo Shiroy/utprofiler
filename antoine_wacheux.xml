@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<etudiant>
+    <nom>Wacheux</nom>
+    <prenom>Antoine</prenom>
+    <branche>GI</branche>
+    <branche>TSH</branche>
+    <filiere>PSF_GI_FDD</filiere>
+    <parcours>
+        <semestre date="A12">
+            <resultat uv="MT90" note="F"/>
+        </semestre>
+    </parcours>
+    <preference>
+        <uv code="MT90" pref="-2"/>
+        <uv code="NF11" pref="2"/>
+    </preference>
+</etudiant>

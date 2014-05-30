@@ -18,7 +18,7 @@ public:
     void uvSection(QDomNode& e);
     void profilSection(QDomNode& e);
 
-    bool save() {}
+    bool save() { return true; }
 };
 
 #endif // UTSTREAMXML_H
