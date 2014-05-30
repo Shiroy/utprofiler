@@ -119,6 +119,12 @@ UVMap& UTManager::getAllUVs()
     return m_uvs;
 }
 
+BrancheMap& UTManager::getAllBranches()
+{
+    return m_branches;
+
+}
+
 CategorieUV UTManager::categorieUVTextToEnum(const QString &txt)
 {
     if(txt == "CS")

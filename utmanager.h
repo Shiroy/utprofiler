@@ -63,6 +63,8 @@ public:
 
     UVMap& getAllUVs();
 
+    BrancheMap& getAllBranches();
+
     static CategorieUV categorieUVTextToEnum(const QString& txt);
     static QString categorieUVEnumToText(CategorieUV cat);
 

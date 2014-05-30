@@ -7,6 +7,7 @@
 #include "autocompletion.h"
 #include "uvsearchmodel.h"
 
+
 namespace Ui {
 class MainWindow;
 }
