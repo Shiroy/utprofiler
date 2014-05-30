@@ -14,6 +14,12 @@ public:
 
     const Cursus& getCursus() const { return cursus; }
     Cursus& getCursus() { return cursus; }
+
+    void setNom(const QString& n_nom) { nom = n_nom; }
+    void setPrenom(const QString& n_prenom) { prenom = n_prenom; }
+
+    const QString& getNom() const { return nom; }
+    const QString& getPrenom() const { return prenom; }
 };
 
 #endif // ETUDIANT_H

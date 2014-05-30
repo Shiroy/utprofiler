@@ -35,7 +35,8 @@ SOURCES += main.cpp\
     utstream.cpp \
     uvsearchmodel.cpp \
     uv_editor.cpp \
-    etudiantstream.cpp
+    etudiantstream.cpp \
+    etudiantstreamxml.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -54,7 +55,8 @@ HEADERS  += mainwindow.h \
     utstream.h \
     uvsearchmodel.h \
     uv_editor.h \
-    etudiantstream.h
+    etudiantstream.h \
+    etudiantstreamxml.h
 
 FORMS    += mainwindow.ui \
     uv_editor.ui

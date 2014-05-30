@@ -524,7 +524,7 @@ p, li { white-space: pre-wrap; }
      <property name="title">
       <string>Charger un profil</string>
      </property>
-     <addaction name="ac_loadFromXML"/>
+     <addaction name="ac_etu_loadFromXML"/>
     </widget>
     <addaction name="menuCharger_un_profil"/>
     <addaction name="menuCharger_des_donn_es"/>
@@ -547,7 +547,7 @@ p, li { white-space: pre-wrap; }
     <string>Depuis un fichier XML</string>
    </property>
   </action>
-  <action name="ac_loadFromXML">
+  <action name="ac_etu_loadFromXML">
    <property name="text">
     <string>Depuis un fichier XML</string>
    </property>

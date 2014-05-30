@@ -27,7 +27,7 @@ public:
      * @param smstr Semestre de l'inscription
      * @param res Résultat eventuel de l'inscription. Par défaut l'inscription est considérée comme EN_COURS.
      */
-    Inscription(const UV& uv, const SemestreCours &smstr, Resultat res = EN_COURS);
+    Inscription(const UV* uv, const SemestreCours *smstr, Resultat res = EN_COURS) : m_uv(uv), semestre(*smstr), m_resultat(res) {}
 
     /**
      * @brief Renvoie les semestre
@@ -50,6 +50,9 @@ public:
      * @param res
      */
     void SetResultat(Resultat res) {m_resultat = res;}
+
+    static Resultat noteTextToEnum(const QString& note);
+    static QString noteEnumToText(Resultat res);
 };
 
 #endif // INSCRIPTION_H

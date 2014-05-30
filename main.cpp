@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "utmanager.h"
 #include "utstreamxml.h"
+#include "utprofilerexception.h"
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QApplication>
@@ -11,7 +12,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     try
-    {        
+    {
         MainWindow w;
         w.show();
         return a.exec();

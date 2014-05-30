@@ -1,4 +1,6 @@
 #include "cursus.h"
+#include "utmanager.h"
+#include "utprofilerexception.h"
 
 Cursus::Cursus()
 {
@@ -26,4 +28,12 @@ QVector<const UV*>& Cursus::getAllUV()
     }
 
     return touteLesUv;
+}
+
+void Cursus::ajouterFiliere(const QString &filiere)
+{
+    if(!sUTManager->getProfile(filiere))
+        UTPROFILER_EXCEPTION(QString("La filiere %1 n'existe pas").arg(filiere).toStdString().c_str());
+
+    filieres << filiere;
 }

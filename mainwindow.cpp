@@ -4,6 +4,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include "utstreamxml.h"
+#include "etudiantstreamxml.h"
 #include "utprofilerexception.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -56,6 +57,27 @@ void MainWindow::on_ac_data_loadFromXML_triggered()
     }
 }
 
+void MainWindow::on_ac_etu_loadFromXML_triggered()
+{
+    //TODO Reinitialiser la classe Etudiant
+    QString filename = QFileDialog::getOpenFileName(this, "Fichier de donnée", QString(), "Fixhier XML *.xml");
+    if(filename.isEmpty())
+        return;
+
+    EtudiantStreamXML stream(filename, m_etu);
+
+    try
+    {
+        stream.load();
+    }
+    catch(const UTProfilerException &e)
+    {
+        QMessageBox::critical(this, "Erreur au chargement des données", e.what());
+    }
+
+
+}
+
 void MainWindow::on_createUv_clicked()
 {
     bool ok = false;
@@ -64,7 +86,7 @@ void MainWindow::on_createUv_clicked()
     if (ok && !code.isEmpty())
     {
         UV* ptUV = UTManager::getInstance()->nouvelleUV(code);
-        UV
+        //UV
 
 
 

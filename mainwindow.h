@@ -23,9 +23,11 @@ public slots:
     void on_quickSearch_textChanged(const QString& txt);
 
     void on_ac_data_loadFromXML_triggered();
+    void on_ac_etu_loadFromXML_triggered();
     void on_createUv_clicked();
 
 private:
+    Etudiant m_etu;
     Ui::MainWindow *ui;
     StrategieAutocompletion* Completion;
 

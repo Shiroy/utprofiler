@@ -21,7 +21,11 @@ public:
     /**
       *@brief Ajoute un semestre d'étude au cursus
       */
-    void ajouterSemestre(const SemestreCours& sme);
+    void ajouterSemestre(SemestreCours* sme) { tousLesSemestres.push_back(sme); }
+
+    void ajouterFiliere(const QString& filiere);
+    QStringList& getFiliere() { return filieres; }
+    const QStringList& getFiliere() const { return filieres; }
 
     /**
       *@brief Renvoie toutes les branches auxquelles l'étudiant est inscrit

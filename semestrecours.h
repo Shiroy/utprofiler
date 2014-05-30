@@ -12,6 +12,9 @@ enum Saison
 
 struct Semestre
 {
+    Semestre(const QString& date);
+    QString toString() const;
+
     Saison s;
     unsigned short annee;
 };
@@ -29,13 +32,14 @@ public:
      * @brief Unique constructeur
      * @param date
      */
-    SemestreCours(Semestre date);
+    SemestreCours(Semestre d) : date(d) {}
+    ~SemestreCours();
 
     /**
      * @brief Ajoute une inscription au semestre
      * @param i
      */
-    void ajouterInscription(const Inscription& i);
+    void ajouterInscription(Inscription* i) { inscription.append(i); }
     /**
      * @brief Renvoie une référence vers toutes les inscriptions du semestre
      * @return
