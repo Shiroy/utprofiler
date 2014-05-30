@@ -31,7 +31,7 @@ void StrategieAutocompletionConcreteSujet::Completer()
         if(!brancheUvCandidate) //TODO lancer une exception quand toutes les branches auront été crées
             continue;
 
-        if(brancheUvCandidate->getSigle() != ptBranche->getSigle())
+        if(brancheUvCandidate->getSigle() != ptBranche->getSigle()) //Cette UV n'est pas disponible pour la branche de l'étudiant
             continue;
 
         //TODO gérer les priorité
