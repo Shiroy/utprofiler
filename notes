@@ -130,6 +130,20 @@ Du coup, je pense qu'il faut généraliser la clase UVManager et la transformer 
 
 Slot dans l'autocomplétion avec en paramètre ce qui a été écrit dans la barre de recherche, la classe doit pouvoir retrouver une liste d'UV favorables (en prenant en compte l'objet étudiant qu'elle agrège).
 
+===========
+
+
+
+-> Boites de dialogue
+
+Lire doc sur :
+	QStandardItem
+	QStandardItemModel
+	QSearchModel
+	Boîtes de dialogue
+	Qt Designer
+	Tuto QT OpenClassroom
+
 =================
 
 Génération de la fin du Cursus
