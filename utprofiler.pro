@@ -33,7 +33,8 @@ SOURCES += main.cpp\
     utmanager.cpp \
     utstreamxml.cpp \
     utstream.cpp \
-    uvsearchmodel.cpp
+    uvsearchmodel.cpp \
+    uv_editor.cpp
 
 HEADERS  += mainwindow.h \
     uv.h \
@@ -49,9 +50,11 @@ HEADERS  += mainwindow.h \
     utmanager.h \
     utstreamxml.h \
     utstream.h \
-    uvsearchmodel.h
+    uvsearchmodel.h \
+    uv_editor.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    uv_editor.ui
 
 OTHER_FILES += \
     donne_test.xml
