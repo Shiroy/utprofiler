@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include "utstreamxml.h"
 #include "utprofilerexception.h"
+#include "uv_editor.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -63,11 +64,14 @@ void MainWindow::on_createUv_clicked()
 
     if (ok && !code.isEmpty())
     {
-        UV* ptUV = UTManager::getInstance()->nouvelleUV(code);
-        UV
+        // Recuperation d'un pointeur d'UV donne par le singleton UTManager :
+        UV* ptUV = sUTManager->nouvelleUV(code);
+        ptUV->setCode(code);
 
+        // On peut alors envoyer ce pointeur au constructeur de UV_Editor :
 
-
+        UV_Editor* fenetre = new UV_Editor(ptUV, this);
+        fenetre->show();
 
     }
     else

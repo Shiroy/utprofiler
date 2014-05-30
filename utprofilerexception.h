@@ -18,7 +18,7 @@ public:
     const char* what() const noexcept
     {
         std::stringstream ss;
-        ss << "[Exception fichier " << file << " ligne n°" << lineno << " : " << msg << "\n";
+        ss << "[Exception fichier " << file << " ligne nÂ°" << lineno << " : " << msg << "\n";
         return ss.str().c_str();
     }
 };
