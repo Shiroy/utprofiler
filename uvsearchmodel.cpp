@@ -1,5 +1,6 @@
 #include "uvsearchmodel.h"
 #include "utmanager.h"
+#include "utprofilerexception.h"
 
 UVSearchModel::UVSearchModel(QObject *parent) : QStandardItemModel(parent)
 {
@@ -30,4 +31,14 @@ void UVSearchModel::addUv(const UV &uv)
 void UVSearchModel::clearAllUV()
 {
     removeRows(0, rowCount());
+}
+
+UV* UVSearchModel::getUVAtRow(int row)
+{
+    QStandardItem* code = item(row);
+
+    if(!code)
+        UTPROFILER_EXCEPTION("Pas d'uv sur la ligne !");
+
+    return sUTManager->getUV(code->text());
 }

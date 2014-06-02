@@ -14,11 +14,13 @@ UV_Editor::UV_Editor(UV* ptUV, QWidget *parent) :
 
     this->setWindowTitle(ptUV->getCode());
     ui->uvCode->setText(ptUVEditee->getCode());
-
+    ui->lineTitre->setText(ptUVEditee->getTitre());
+    ui->spinCredits->setValue(ptUVEditee->getNombreCredit());
     for (unsigned int i=1; i<NB_CATEGORIE; i++)
     {
         ui->comboCategorie->addItem(UTManager::categorieUVEnumToText(static_cast<CategorieUV>(i)), QVariant(i));
     }
+    ui->comboCategorie->setCurrentText(UTManager::categorieUVEnumToText(ptUV->getCategorie()));
 
     BrancheMap& toutesLesBranches=sUTManager->getAllBranches();
     for(auto i=toutesLesBranches.begin(); i!=toutesLesBranches.end(); i++)
@@ -62,7 +64,7 @@ void UV_Editor::on_buttonBox_accepted()
         /* Necessite que l'indexation du type enumere Categorie corresponde exactement
           a celui du comboBox comboCategorie :
           */
-        ptUVEditee->setCategorie(static_cast<CategorieUV>(ui->comboCategorie->currentIndex()));
+        ptUVEditee->setCategorie(static_cast<CategorieUV>(ui->comboCategorie->currentData().toInt()));
 
         // Meme remarque ici :
         //ptUVEditee->setBrancheStr(ui->comboBranche->currentText());
