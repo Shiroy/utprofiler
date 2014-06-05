@@ -28,6 +28,8 @@ public slots:
     void on_createUv_clicked();
     void on_uvPanel_doubleClicked(const QModelIndex& i);
 
+    void on_ac_editBranches_triggered();
+
 private:
     Etudiant m_etu;
     Ui::MainWindow *ui;

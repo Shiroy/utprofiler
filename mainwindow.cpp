@@ -7,6 +7,7 @@
 #include "etudiantstreamxml.h"
 #include "utprofilerexception.h"
 #include "uv_editor.h"
+#include "branch_editor.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -121,4 +122,10 @@ void MainWindow::on_uvPanel_doubleClicked(const QModelIndex &i)
     {
         QMessageBox::information(this, "Erreur d'édition", "L'UV selectionnée n'existe pas");
     }
+}
+
+void MainWindow::on_ac_editBranches_triggered()
+{
+    branch_editor editor(this);
+    editor.exec();
 }
