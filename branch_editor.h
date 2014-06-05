@@ -2,6 +2,7 @@
 #define BRANCH_EDITOR_H
 
 #include <QDialog>
+class QListWidgetItem;
 
 namespace Ui {
 class branch_editor;
@@ -14,6 +15,9 @@ class branch_editor : public QDialog
 public:
     explicit branch_editor(QWidget *parent = 0);
     ~branch_editor();
+
+public slots:
+    void on_brancheList_itemDoubleClicked(QListWidgetItem* it);
 
 private:
     Ui::branch_editor *ui;

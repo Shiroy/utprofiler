@@ -37,7 +37,8 @@ SOURCES += main.cpp\
     uv_editor.cpp \
     etudiantstream.cpp \
     etudiantstreamxml.cpp \
-    branch_editor.cpp
+    branch_editor.cpp \
+    brancheeditor_dialog.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -58,11 +59,13 @@ HEADERS  += mainwindow.h \
     uv_editor.h \
     etudiantstream.h \
     etudiantstreamxml.h \
-    branch_editor.h
+    branch_editor.h \
+    brancheeditor_dialog.h
 
 FORMS    += mainwindow.ui \
     uv_editor.ui \
-    branch_editor.ui
+    branch_editor.ui \
+    brancheeditor_dialog.ui
 
 
 

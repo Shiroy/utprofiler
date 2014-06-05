@@ -18,7 +18,7 @@ class Branche
     QString nom;
     QString sigle;
     Profil *PCB;
-    QVector<Profil*> PSF;
+    QMap<QString, Profil*> PSF;
 
     QStringList psfString;
     QString PCBString;
@@ -32,6 +32,7 @@ public:
     const QString& getSigle() const { return sigle; }
     const Profil* getPCB() const { return PCB; }
     Profil* getPCB() { return PCB; }
+    QMap<QString, Profil*>& getPSF() { return PSF; }
 
     void setNom(const QString& nNom) { nom = nNom; }
     void setSigle(const QString& nSigle) { sigle = nSigle; }

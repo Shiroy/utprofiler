@@ -3,14 +3,16 @@
 
 #include <QVector>
 #include <QString>
+#include <QObject>
 
 class UV;
 
 /**
  * @brief Classe représentant une condition de validation pour un profil (strategie)
  */
-class Predicat
+class Predicat : public QObject
 {
+    Q_OBJECT
 public:
     Predicat() {}
     virtual ~Predicat() {}
