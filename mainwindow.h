@@ -26,6 +26,9 @@ public slots:
     void on_ac_data_loadFromXML_triggered();
     void on_ac_etu_loadFromXML_triggered();
     void on_createUv_clicked();
+    void on_uvPanel_doubleClicked(const QModelIndex& i);
+
+    void on_ac_editBranches_triggered();
 
 private:
     Etudiant m_etu;

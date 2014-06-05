@@ -18,6 +18,6 @@ void Branche::link()
         Profil *psf = sUTManager->getProfile(*it);
         if(!psf)
             UTPROFILER_EXCEPTION(QString("Le PSF %1 de la branche %2 n'existe pas").arg(*it).arg(getNom()).toStdString().c_str());
-        PSF.push_back(psf);
+        PSF[*it] = psf;
     }
 }

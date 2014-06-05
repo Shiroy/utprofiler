@@ -11,6 +11,7 @@ public:
 
     void addUv(const UV& uv);
     void clearAllUV();
+    UV *getUVAtRow(int row);
 };
 
 #endif // UVSEARCHMODEL_H

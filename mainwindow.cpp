@@ -7,6 +7,7 @@
 #include "etudiantstreamxml.h"
 #include "utprofilerexception.h"
 #include "uv_editor.h"
+#include "branch_editor.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -93,11 +94,38 @@ void MainWindow::on_createUv_clicked()
         // On peut alors envoyer ce pointeur au constructeur de UV_Editor :
 
         UV_Editor* fenetre = new UV_Editor(ptUV, this);
-        fenetre->show();
+        fenetre->exec();
+
+        on_quickSearch_textChanged(ui->quickSearch->text());
 
     }
     else
     {
         QMessageBox::critical (this,"Saisie du Code", "Veuillez saisir une chaine de caracteres correspondant au code de l'UV.");
     }
+}
+
+void MainWindow::on_uvPanel_doubleClicked(const QModelIndex &i)
+{
+    UV* uvToEdit = m_searchModel->getUVAtRow(i.row());
+    if(uvToEdit)
+    {
+        if(ui->uvEditable->isChecked())
+        {
+            UV_Editor *diaEdition = new UV_Editor(uvToEdit, this);
+            diaEdition->exec();
+        }
+
+        on_quickSearch_textChanged(ui->quickSearch->text());
+    }
+    else
+    {
+        QMessageBox::information(this, "Erreur d'édition", "L'UV selectionnée n'existe pas");
+    }
+}
+
+void MainWindow::on_ac_editBranches_triggered()
+{
+    branch_editor editor(this);
+    editor.exec();
 }

@@ -531,7 +531,14 @@ p, li { white-space: pre-wrap; }
     <addaction name="separator"/>
     <addaction name="actionQuitter"/>
    </widget>
+   <widget class="QMenu" name="menuBranche">
+    <property name="title">
+     <string>Branche</string>
+    </property>
+    <addaction name="ac_editBranches"/>
+   </widget>
    <addaction name="menuUTProfiler"/>
+   <addaction name="menuBranche"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -555,6 +562,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionQuitter">
    <property name="text">
     <string>Quitter</string>
+   </property>
+  </action>
+  <action name="ac_editBranches">
+   <property name="text">
+    <string>Editer les branches</string>
    </property>
   </action>
  </widget>
