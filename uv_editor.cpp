@@ -17,6 +17,11 @@ UV_Editor::UV_Editor(UV* ptUV, QWidget *parent) :
 
     for (unsigned int i=1; i<NB_CATEGORIE; i++)
     {
+        /*
+          Cast d'un entier vers le type enumere CategorieUV
+         QVariant(i) est necessaire pour l'ecriture de la CategorieUV dans un objet UV gere par UTManager
+
+          */
         ui->comboCategorie->addItem(UTManager::categorieUVEnumToText(static_cast<CategorieUV>(i)), QVariant(i));
     }
 
