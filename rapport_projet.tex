@@ -25,8 +25,22 @@
 
 
 
-\section{}\label{sec:I}
-	\subsection{}\label{subsec:IA}
+\section{Description de l'architecture}\label{sec:I}
+
+
+
+	\subsection{UTManager}\label{subsec:IA}
+	
+	La classe UTManager repose sur le design pattern Singleton, comme son nom l'indique, son rôle n'est pas seulement la gestion des UV. \\
+	Ce singleton met à disposition de l'utilisateur fonctionnalités nécessaires à la gestion :
+	\begin{itemize}
+	\item Des UV
+	\item Des Branches
+	\item Des Profils
+	\item Du chargement des fichiers de données XML	
+	\end{itemize}
+	Ainsi, se placer à un niveau de gestion au dessus de ce qu'un manager d'UV pourrait offrir en terme de fonctionnalités permet de ne pas avoir multiplier les classes de manager d'entités (UVManager, BrancheManager, ProfilManager ...)
+	
 		\subsubsection{}
 			\paragraph{}
 			\paragraph{}
@@ -39,7 +53,58 @@
 			\paragraph{}
 			\paragraph{}
 			\paragraph{}	
-	\subsection{}\label{subsec:IB}
+	\subsection{UTStream}\label{subsec:IB}
+	
+		Il s'agit de la classe abstraite qui présente l'interface de chargement et de sauvegarde des données.
+		En pratique, la classe concrête réalisant ces deux tâches est UVStreamXML. Le modèle de données XML associé est le suivant :
+		\begin{verbatim}
+<SectionUV>
+	<uv>
+		<code></code>
+		<nom></nom>
+		<credit type=""></credit>
+		<branche></branche>
+	</uv>
+</SectionUV>
+<SectionBranche>
+	<branche>
+		<sigle></sigle>
+		<nom></nom>
+		<PCB></PCB>
+		<PSF></PSF>
+	</branche>
+</SectionBranche>
+<SectionProfil>
+	<profil>
+		<nom></nom>		
+		<predicat type=" "> 
+			<donnee></donnee>
+			<donnee></donnee>
+		</predicat>
+	</profil>
+</SectionProfil>
+<Etudiant>
+	<prenom></prenom>
+	<nom></nom>
+</Etudiant>
+		\end{verbatim}
+		
+	L'attribut \emph{type} de la balise \emph{credit} d'une UV permet de stocker la catégorie d'une UV.
+	Les profils communs de branches et les profils spécifiques de filières sont stockés et gérés sous un même type de balise, en accord avec l'implémentation d'une classe Profil commune aux PCB et aux PSF.
+	
+	% Peut être une explication plus détaillée des prédicats ?
+	Les prédicats sont l'implémentation de chaque condition nécessaires à la validation d'un profil.
+	
+	
+	Pour cette balise \emph{profil}, l'attribut \emph{type} de la balise \emph{emph} permet de stocker la valeur entière d'un type énuméré de Predicat, à savoir un Prédicat correspondant à :
+	\begin{enumerate}
+	\item une UV obligatoire
+	\item une combinaison d'UV à valider parmi une liste donnée
+	\item un minimum de crédits ECTS à obtenir dans une catégorie d'UV
+	\item un minimum de crédits ECTS à valider indépendamment d'une catégorie donnée
+	\end{enumerate}
+	
+	
 		\subsubsection{}
 			\paragraph{}
 			\paragraph{}
@@ -65,7 +130,7 @@
 			\paragraph{}
 			\paragraph{}
 			\paragraph{}	
-\section{}\label{sec:II}
+\section{Capacité de l'architecture à évoluer}\label{sec:II}
 	\subsection{}\label{subsec:IIA}
 		\subsubsection{}
 			\paragraph{}
@@ -80,6 +145,11 @@
 			\paragraph{}
 			\paragraph{}	
 	\subsection{}\label{subsec:IIB}
+	
+	Le design pattern Strategy, employé dans les fonctionnalités de chargement et de sauvegarde des données, laisse le choix de l'utilisation d'un type de modèle de données par l'implémentation d'une classe fille correspondante.
+	Ainsi, la classe UVStreamXML a été implémentée (comme classe dérivée de UVStream), mais il aurait été aussi possible implémenter un second modèle de stockage des données (une classe UVStreamJSON, par exemple).\\\\
+	Par ailleurs, les méthodes virtuelles pures \emph{prepareLoading()} et \emph{prepareSaving()} permettent l'implémentation de modèles de stockages des données qui nécessitent des phases de préparation avant la lecture ou l'écriture de données (par exemple pour la connection à une base de données).
+	
 		\subsubsection{}
 			\paragraph{}
 			\paragraph{}
