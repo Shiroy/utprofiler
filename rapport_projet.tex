@@ -29,7 +29,7 @@
 
 
 
-	\subsection{UTManager}\label{subsec:IA}
+	\subsection{UTManager}\label{subsec:UTManager}
 	
 	La classe UTManager repose sur le design pattern Singleton, comme son nom l'indique, son rôle n'est pas seulement la gestion des UV. \\
 	Ce singleton met à disposition de l'utilisateur fonctionnalités nécessaires à la gestion :
@@ -52,8 +52,9 @@
 		\subsubsection{}
 			\paragraph{}
 			\paragraph{}
-			\paragraph{}	
-	\subsection{UTStream}\label{subsec:IB}
+			\paragraph{}
+				
+	\subsection{UTStream}\label{subsec:UTStream}
 	
 		Il s'agit de la classe abstraite qui présente l'interface de chargement et de sauvegarde des données.
 		En pratique, la classe concrête réalisant ces deux tâches est UVStreamXML. Le modèle de données XML associé est le suivant :
@@ -94,8 +95,7 @@
 	
 	% Peut être une explication plus détaillée des prédicats ?
 	Les prédicats sont l'implémentation de chaque condition nécessaires à la validation d'un profil.
-	
-	
+	Ils sont bien sur pris en compte dans la fonctionnalité d'élaboration de fin de parcours d'un étudiant.	
 	Pour cette balise \emph{profil}, l'attribut \emph{type} de la balise \emph{emph} permet de stocker la valeur entière d'un type énuméré de Predicat, à savoir un Prédicat correspondant à :
 	\begin{enumerate}
 	\item une UV obligatoire
@@ -103,6 +103,16 @@
 	\item un minimum de crédits ECTS à obtenir dans une catégorie d'UV
 	\item un minimum de crédits ECTS à valider indépendamment d'une catégorie donnée
 	\end{enumerate}
+	Aussi, les balises de type \emph{donnee} d'un prédicat recueillent les informations nécessaires à l'interprétation d'un prédicat par UTManager.\\
+	Par exemple, pour un prédicat de type 3 concernant la catégorie d'UV Techniques et Méthodes, le code XML correspondant est par exemple :
+	\begin{verbatim}
+<predicat type="3">
+		<donnee>TM</donnee>
+		<donnee>24</donnee>
+	\end{verbatim}
+	
+	
+	
 	
 	
 		\subsubsection{}
@@ -162,7 +172,21 @@
 			\paragraph{}
 			\paragraph{}
 			\paragraph{}	
-	\subsection{}\label{subsec:IIC}
+	\subsection{Autocompletion}\label{subsec:UV}
+	
+	C'est cette classe qui implémente la fonctionnalité d'élaboration de fin  de parcours.
+	L'étudiant devant avoir la possibilité d'exprimer son avis concernant une éventuelle inscription à une UV, le type énuméré \emph{ExigenceUV}, dont la valeur entière s'étend de $-2$ à $2$, représente ce choix : 
+	\begin{description}
+	\item[-2] L'étudiant choisit de ne pas être inscrit à l'UV ;
+	\item[-1] L'étudiant voudrait si possible ne pas être inscrit à l'UV ;	
+	\item[0] L'étudiant exprime un avis neutre concernant l'UV ;
+	\item[1] L'étudiant voudrait si possible s'inscrire à l'UV ;
+	\item[2] L'étudiant veut absolument faire cette UV.
+	\end{description}
+	
+	% Expliquer dans la partie II la pertinence du DP Strategy
+	
+	
 		\subsubsection{}
 			\paragraph{}
 			\paragraph{}
