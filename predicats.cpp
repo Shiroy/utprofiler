@@ -1,6 +1,11 @@
 #include "predicats.h"
 #include "utmanager.h"
 #include "utprofilerexception.h"
+#include "ui_predicatXUVParmis.h"
+#include "ui_predicatMinimumCreditInCategory.h"
+
+#include <QLineEdit>
+#include <QSpinBox>
 
 Predicat* PredicatFactory(int type)
 {
@@ -49,6 +54,17 @@ bool PredicatUVObligatoire::peutAmeliorerLeCursus(const QString &candidat)
 {
     return candidat == uv;
 }
+QWidget* PredicatUVObligatoire::getEditorWidget(QWidget *parent)
+{
+    QHBoxLayout *lay = new QHBoxLayout(parent);
+    QLineEdit *line = new QLineEdit(parent);
+    QWidget* container = new QWidget(parent);
+
+    lay->addWidget(new QLabel("UV obligatoire", parent));
+    lay->addWidget(line);
+    container->setLayout(lay);
+    return container;
+}
 
 PredicatXUVParmis::PredicatXUVParmis() : Predicat() {}
 bool PredicatXUVParmis::predicatSatifait(QVector<const UV *> uvValidee)
@@ -94,6 +110,15 @@ bool PredicatXUVParmis::peutAmeliorerLeCursus(const QString &uv)
     return candidats.contains(uv);
 }
 
+QWidget* PredicatXUVParmis::getEditorWidget(QWidget *parent)
+{
+    Ui_xUVParmis_editor ui;
+    QWidget *editor = new QWidget(parent);
+    ui.setupUi(editor);
+    //SIgnal slot connection
+    return editor;
+}
+
 PredicatMinimumCreditInCategory::PredicatMinimumCreditInCategory() : Predicat() {}
 bool PredicatMinimumCreditInCategory::predicatSatifait(QVector<const UV *> uvValidee)
 {
@@ -131,6 +156,13 @@ bool PredicatMinimumCreditInCategory::peutAmeliorerLeCursus(const QString &uv)
 
     return cat == candidat->getCategorie();
 }
+QWidget* PredicatMinimumCreditInCategory::getEditorWidget(QWidget *parent)
+{
+    QWidget* container = new QWidget(parent);
+    Ui_minimumCrediInCategory ui;
+    ui.setupUi(container);
+    return container;
+}
 
 PredicatMinimumCredit::PredicatMinimumCredit() : Predicat() {}
 bool PredicatMinimumCredit::predicatSatifait(QVector<const UV *> uvValidee)
@@ -153,4 +185,15 @@ bool PredicatMinimumCredit::chargerParametres(QStringList &list)
         return false;
 
     return true;
+}
+QWidget* PredicatMinimumCredit::getEditorWidget(QWidget *parent)
+{
+    QHBoxLayout *lay = new QHBoxLayout(parent);
+    QSpinBox *spin = new QSpinBox(parent);
+    QWidget* container = new QWidget(parent);
+
+    lay->addWidget(new QLabel("Crédit minimum : ", parent));
+    lay->addWidget(spin);
+    container->setLayout(lay);
+    return container;
 }

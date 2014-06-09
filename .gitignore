@@ -34,3 +34,7 @@ doc/html/
 *.log
 
 .*
+*.aux
+*.out
+*.pdf
+*.toc

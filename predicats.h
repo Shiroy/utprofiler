@@ -24,6 +24,7 @@ public:
 
     bool predicatSatifait(QVector<const UV*> uvValidee) override;
     bool chargerParametres(QStringList &list) override;
+    QWidget* getEditorWidget(QWidget *parent) override;
 
     const QString recommanderUv() override;
 
@@ -40,6 +41,7 @@ public:
 
     bool predicatSatifait(QVector<const UV *> uvValidee) override;
     bool chargerParametres(QStringList &list) override;
+    QWidget* getEditorWidget(QWidget *parent) override;
 
     const QString recommanderUv() override;
 
@@ -55,6 +57,7 @@ public:
     PredicatMinimumCreditInCategory();
     bool predicatSatifait(QVector<const UV *> uvValidee) override;
     bool chargerParametres(QStringList &list) override;
+    QWidget* getEditorWidget(QWidget *parent) override;
 
     bool peutAmeliorerLeCursus(const QString &uv) override;
 };
@@ -67,6 +70,7 @@ public:
     PredicatMinimumCredit();
     bool predicatSatifait(QVector<const UV *> uvValidee) override;
     bool chargerParametres(QStringList &list) override;
+    QWidget* getEditorWidget(QWidget *parent) override;
 
     bool peutAmeliorerLeCursus(const QString &uv) override { return true; } //Toute UV raporte des crédit
 };

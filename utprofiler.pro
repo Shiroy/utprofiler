@@ -66,18 +66,19 @@ HEADERS  += mainwindow.h \
     brancheeditor_dialog.h \
     branch_editor.h
 
-FORMS    += mainwindow.ui \
+FORMS += mainwindow.ui \
     uv_editor.ui \
     branche_viewer.ui \
-    branche_editor.ui
+    branche_editor.ui \
     branch_editor.ui \
-    brancheeditor_dialog.ui
-
-
-
-
+    brancheeditor_dialog.ui \
+    predicatXUVParmis.ui \
+    predicatMinimumCreditInCategory.ui
 
 OTHER_FILES += \
     donne_test.xml \
     donne2_test.xml \
     antoine_wacheux.xml
+
+RESOURCES += \
+    utprofiler_ressources.qrc
