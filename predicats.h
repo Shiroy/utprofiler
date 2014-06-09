@@ -5,6 +5,7 @@
 
 #include "profil.h"
 #include "uv.h"
+#include "utmanager.h"
 
 enum
 {
@@ -16,6 +17,7 @@ enum
 
 class PredicatUVObligatoire : public Predicat
 {
+    Q_OBJECT
     QString uv;
 
 public:
@@ -29,10 +31,15 @@ public:
     const QString recommanderUv() override;
 
     bool peutAmeliorerLeCursus(const QString &uv) override;
+
+private slots:
+    void updateUv(const QString& str) { uv = str; }
 };
 
 class PredicatXUVParmis : public Predicat
 {
+    Q_OBJECT
+
     QStringList candidats;
     unsigned int minimumUV;
 
@@ -46,10 +53,17 @@ public:
     const QString recommanderUv() override;
 
     bool peutAmeliorerLeCursus(const QString &uv) override;
+
+private slots:
+    void addUv();
+    void delUv();
+    void updateMinimumUv(const int& newVal) { minimumUV = newVal; }
 };
 
 class PredicatMinimumCreditInCategory : public Predicat
 {
+    Q_OBJECT
+
     unsigned int minimum;
     CategorieUV cat;
 
@@ -60,10 +74,16 @@ public:
     QWidget* getEditorWidget(QWidget *parent) override;
 
     bool peutAmeliorerLeCursus(const QString &uv) override;
+
+private slots:
+    void updateMinimum(int newMin) { minimum = newMin; }
+    void updateCat(const QString& text) { cat = UTManager::categorieUVTextToEnum(text); }
 };
 
 class PredicatMinimumCredit : public Predicat
 {
+    Q_OBJECT
+
     unsigned int minimum;
 
 public:
@@ -73,6 +93,9 @@ public:
     QWidget* getEditorWidget(QWidget *parent) override;
 
     bool peutAmeliorerLeCursus(const QString &uv) override { return true; } //Toute UV raporte des crédit
+
+private slots:
+    void updateMinimum(const int newMin) { minimum = newMin; }
 };
 
 #endif // PREDICATS_H

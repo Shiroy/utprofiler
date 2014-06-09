@@ -12,7 +12,7 @@ enum CategorieUV
     TSH=3, /*!< Technologie et science de l'homme*/
     SP=4 /*!< Stage et projet*/
 };
-#define NB_CATEGORIE 5
+#define NB_CATEGORIE 4
 
 
 class Branche;

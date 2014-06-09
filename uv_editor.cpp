@@ -16,7 +16,7 @@ UV_Editor::UV_Editor(UV* ptUV, QWidget *parent) :
     ui->uvCode->setText(ptUVEditee->getCode());
     ui->lineTitre->setText(ptUVEditee->getTitre());
     ui->spinCredits->setValue(ptUVEditee->getNombreCredit());
-    for (unsigned int i=1; i<NB_CATEGORIE; i++)
+    for (unsigned int i=1; i<=NB_CATEGORIE; i++)
     {
         /*
           Cast d'un entier vers le type enumere CategorieUV

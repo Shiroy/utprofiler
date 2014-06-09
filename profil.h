@@ -46,7 +46,7 @@ public:
     void addPredicat(Predicat* prdct) { conditions.push_back(prdct); }
 
     const QVector<Predicat*>& getAllPredicat() const { return conditions; }
-    QVector<Predicat*> getAllPredicat() { return conditions; }
+    QVector<Predicat*> &getAllPredicat() { return conditions; }
 
     ///Vérifie si toutes les conditions du profil sont satisfaites ou non
     /// @return Renvoie false si une des conditions n'est pas satisfaite.

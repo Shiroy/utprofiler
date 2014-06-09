@@ -6,6 +6,7 @@
 
 #include <QLineEdit>
 #include <QSpinBox>
+#include <QInputDialog>
 
 Predicat* PredicatFactory(int type)
 {
@@ -59,6 +60,8 @@ QWidget* PredicatUVObligatoire::getEditorWidget(QWidget *parent)
     QHBoxLayout *lay = new QHBoxLayout(parent);
     QLineEdit *line = new QLineEdit(parent);
     QWidget* container = new QWidget(parent);
+
+    connect(line, SIGNAL(textEdited(QString)), this, SLOT(updateUv(QString)));
 
     lay->addWidget(new QLabel("UV obligatoire", parent));
     lay->addWidget(line);
@@ -115,8 +118,50 @@ QWidget* PredicatXUVParmis::getEditorWidget(QWidget *parent)
     Ui_xUVParmis_editor ui;
     QWidget *editor = new QWidget(parent);
     ui.setupUi(editor);
-    //SIgnal slot connection
+
+    connect(ui.addUv, SIGNAL(clicked()), this, SLOT(addUv()));
+    connect(ui.delUv, SIGNAL(clicked()), this, SLOT(delUv()));
+    connect(ui.count, SIGNAL(valueChanged(int)), this, SLOT(updateMinimumUv(int)));
+
     return editor;
+}
+void PredicatXUVParmis::addUv()
+{
+    QString uvCode = QInputDialog::getText(0, "Ajouter une UV", "Entrer l'UV à ajouter");
+    if(uvCode.isEmpty())
+        return;
+
+    QListWidget *candidat = sender()->parent()->findChild<QListWidget*>("candidat");
+    if(!candidat)
+        UTPROFILER_EXCEPTION("L'editeur de prédicat est corrompu");
+
+    if(candidats.contains(uvCode)) //Ici on parle du QStringList en attriburt
+        return;
+
+    candidat->addItem(uvCode);
+    candidats.append(uvCode);
+}
+
+void PredicatXUVParmis::delUv()
+{
+    QListWidget *candidat = sender()->parent()->findChild<QListWidget*>("candidat");
+    if(!candidat)
+        UTPROFILER_EXCEPTION("L'editeur de prédicat est corrompu");
+
+    QList<QListWidgetItem*> selection = candidat->selectedItems();
+
+    if(selection.isEmpty())
+        return;
+
+    for(auto it = selection.begin() ; it != selection.end() ; it++)
+    {
+        QListWidgetItem *item = *it;
+        if(candidats.contains(item->text()))
+        {
+            candidat->removeItemWidget(item);
+            candidats.removeOne(item->text()); //TODO changer le nom de tout ça
+        }
+    }
 }
 
 PredicatMinimumCreditInCategory::PredicatMinimumCreditInCategory() : Predicat() {}
@@ -161,6 +206,17 @@ QWidget* PredicatMinimumCreditInCategory::getEditorWidget(QWidget *parent)
     QWidget* container = new QWidget(parent);
     Ui_minimumCrediInCategory ui;
     ui.setupUi(container);
+
+    for (unsigned int i=1; i<=NB_CATEGORIE; i++)
+    {
+        ui.cat->addItem(UTManager::categorieUVEnumToText(static_cast<CategorieUV>(i)), QVariant(i));
+    }
+    ui.cat->setCurrentText(UTManager::categorieUVEnumToText(cat));
+    ui.credit->setValue(minimum);
+
+    connect(ui.cat, SIGNAL(currentTextChanged(QString)), this, SLOT(updateCat(QString)));
+    connect(ui.credit, SIGNAL(valueChanged(int)), this, SLOT(updateMinimum(int)));
+
     return container;
 }
 
@@ -191,6 +247,8 @@ QWidget* PredicatMinimumCredit::getEditorWidget(QWidget *parent)
     QHBoxLayout *lay = new QHBoxLayout(parent);
     QSpinBox *spin = new QSpinBox(parent);
     QWidget* container = new QWidget(parent);
+
+    connect(spin, SIGNAL(valueChanged(int)), this, SLOT(updateMinimum(int)));
 
     lay->addWidget(new QLabel("Crédit minimum : ", parent));
     lay->addWidget(spin);

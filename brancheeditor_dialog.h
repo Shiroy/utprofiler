@@ -4,6 +4,7 @@
 #include <QDialog>
 
 class Branche;
+class QListWidgetItem;
 
 namespace Ui {
 class BrancheEditor_dialog;
@@ -16,6 +17,10 @@ class BrancheEditor_dialog : public QDialog
 public:
     explicit BrancheEditor_dialog(Branche *br, QWidget *parent = 0);
     ~BrancheEditor_dialog();
+
+public slots:
+    void on_psfList_itemDoubleClicked(QListWidgetItem * item);
+    void on_editPcb_clicked();
 
 private:
     void update_psf();

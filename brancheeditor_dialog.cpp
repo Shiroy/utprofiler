@@ -1,6 +1,10 @@
 #include "brancheeditor_dialog.h"
 #include "ui_brancheeditor_dialog.h"
 #include "branche.h"
+#include "utmanager.h"
+#include "utprofilerexception.h"
+#include "profile_editor.h"
+#include <QListWidgetItem>
 
 BrancheEditor_dialog::BrancheEditor_dialog(Branche* br, QWidget *parent) :
     QDialog(parent),
@@ -22,6 +26,26 @@ void BrancheEditor_dialog::update_psf()
     {
         ui->psfList->addItem(it.key());
     }
+}
+
+void BrancheEditor_dialog::on_psfList_itemDoubleClicked(QListWidgetItem *item)
+{
+    QString filiere = item->text();
+    Profil* prfl = sUTManager->getProfile(filiere);
+    if(!prfl)
+        UTPROFILER_EXCEPTION("Filière introuvable");
+
+    Profile_Editor *prflEditor = new Profile_Editor(prfl, this);
+    prflEditor->exec();
+    prflEditor->deleteLater();
+}
+
+void BrancheEditor_dialog::on_editPcb_clicked()
+{
+    Profil* prfl = m_br->getPCB();
+    Profile_Editor *prflEditor = new Profile_Editor(prfl, this);
+    prflEditor->exec();
+    prflEditor->deleteLater();
 }
 
 BrancheEditor_dialog::~BrancheEditor_dialog()

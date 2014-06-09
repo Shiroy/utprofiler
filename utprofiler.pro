@@ -40,7 +40,8 @@ SOURCES += main.cpp\
     branche_viewer.cpp \
     branche_editor.cpp \
     branch_editor.cpp \
-    brancheeditor_dialog.cpp
+    brancheeditor_dialog.cpp \
+    profile_editor.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -64,7 +65,8 @@ HEADERS  += mainwindow.h \
     branche_viewer.h \
     branche_editor.h \
     brancheeditor_dialog.h \
-    branch_editor.h
+    branch_editor.h \
+    profile_editor.h
 
 FORMS += mainwindow.ui \
     uv_editor.ui \
@@ -73,7 +75,8 @@ FORMS += mainwindow.ui \
     branch_editor.ui \
     brancheeditor_dialog.ui \
     predicatXUVParmis.ui \
-    predicatMinimumCreditInCategory.ui
+    predicatMinimumCreditInCategory.ui \
+    profile_editor.ui
 
 OTHER_FILES += \
     donne_test.xml \
