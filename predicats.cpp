@@ -7,6 +7,7 @@
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QInputDialog>
+#include <QtDebug>
 
 Predicat* PredicatFactory(int type)
 {
@@ -157,6 +158,8 @@ void PredicatXUVParmis::addUv()
     if(candidats.contains(uvCode)) //Ici on parle du QStringList en attriburt
         return;
 
+    uvCode = uvCode.toUpper();
+
     candidat->addItem(uvCode);
     candidats.append(uvCode);
 }
@@ -175,11 +178,9 @@ void PredicatXUVParmis::delUv()
     for(auto it = selection.begin() ; it != selection.end() ; it++)
     {
         QListWidgetItem *item = *it;
-        if(candidats.contains(item->text()))
-        {
-            candidat->removeItemWidget(item);
-            candidats.removeOne(item->text()); //TODO changer le nom de tout ça
-        }
+        qDebug() << item->text();
+        candidat->removeItemWidget(item);
+        candidats.removeOne(item->text()); //TODO changer le nom de tout ça
     }
 }
 
