@@ -17,8 +17,12 @@ Profile_Editor::Profile_Editor(Profil* profil, QWidget *parent) :
 
     ui->titreFiliere->setText(profilToEdit->getNomProfile());
 
-    QVBoxLayout *layout = new QVBoxLayout(ui->predicatList);
-    ui->predicatList->setLayout(layout);
+    QWidget *predicatEditorsContainer = new QWidget(this);
+    ui->predicatList->setWidget(predicatEditorsContainer);
+
+    QVBoxLayout *layout = new QVBoxLayout(predicatEditorsContainer);
+    predicatEditorsContainer->setLayout(layout);
+
     const QVector<Predicat*> &allPredicat = profilToEdit->getAllPredicat();
     for(auto it = allPredicat.begin() ; it != allPredicat.end() ; it++)
     {
@@ -26,6 +30,7 @@ Profile_Editor::Profile_Editor(Profil* profil, QWidget *parent) :
     }
 
     connect(mapper, SIGNAL(mapped(QObject*)), this, SLOT(deletePredicat(QObject*)));
+    predicatEditorsContainer->show();
 }
 
 void Profile_Editor::deletePredicat(QObject *predicat)
@@ -52,14 +57,14 @@ void Profile_Editor::on_addPredicat_clicked()
 
     Predicat* newPredicat = PredicatFactory(PredicatDescriptionToInt(cond));
     profilToEdit->addPredicat(newPredicat);
-    qobject_cast<QBoxLayout*>(ui->predicatList->layout())->addLayout(addPredicatEditor(newPredicat));
+    qobject_cast<QBoxLayout*>(ui->predicatList->widget()->layout())->addLayout(addPredicatEditor(newPredicat));
 }
 
 QLayout* Profile_Editor::addPredicatEditor(Predicat *predicat)
 {
-    QWidget *predicatEditor = predicat->getEditorWidget(ui->predicatList);
-    QHBoxLayout *lay = new QHBoxLayout(ui->predicatList);
-    QToolButton *delButton = new QToolButton(ui->predicatList);
+    QWidget *predicatEditor = predicat->getEditorWidget(ui->predicatList->widget());
+    QHBoxLayout *lay = new QHBoxLayout(ui->predicatList->widget());
+    QToolButton *delButton = new QToolButton(ui->predicatList->widget());
     delButton->setText("X");
 
     mapper->setMapping(delButton, predicat);
