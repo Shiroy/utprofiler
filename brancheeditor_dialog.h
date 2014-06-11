@@ -21,6 +21,7 @@ public:
 public slots:
     void on_psfList_itemDoubleClicked(QListWidgetItem * item);
     void on_editPcb_clicked();
+    void on_addPsf_clicked();
 
 private:
     void update_psf();

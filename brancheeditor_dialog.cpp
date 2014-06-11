@@ -5,6 +5,7 @@
 #include "utprofilerexception.h"
 #include "profile_editor.h"
 #include <QListWidgetItem>
+#include <QInputDialog>
 
 BrancheEditor_dialog::BrancheEditor_dialog(Branche* br, QWidget *parent) :
     QDialog(parent),
@@ -51,4 +52,15 @@ void BrancheEditor_dialog::on_editPcb_clicked()
 BrancheEditor_dialog::~BrancheEditor_dialog()
 {
     delete ui;
+}
+
+void BrancheEditor_dialog::on_addPsf_clicked()
+{
+    QString psfString = QInputDialog::getText(this, "Ajouter une filière/un mineur", "Entrer le sigle (ex : ADEL, FDD, ...)");
+    if(psfString.isEmpty())
+        return;
+
+    Profil * psf = sUTManager->nouveauProfil(psfString);
+    ui->psfList->addItem(psfString);
+    m_br->addPsf(psfString, psf);
 }

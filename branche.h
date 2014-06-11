@@ -38,10 +38,15 @@ public:
     void setNom(const QString& nNom) { nom = nNom; }
     void setSigle(const QString& nSigle) { sigle = nSigle; }
     void setPCB(const QString& pcbStr) { PCBString = pcbStr; }
-    void addPsf(const QString& newPsf)
+    void addPsf(const QString& newPsf, Profil* psf = 0)
     {
         if(!psfString.contains(newPsf))
             psfString << newPsf;
+
+        if(psf)
+        {
+            PSF[newPsf] = psf;
+        }
     }
 
     void link();
