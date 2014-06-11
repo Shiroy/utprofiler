@@ -72,7 +72,7 @@ bool PredicatUVObligatoire::peutAmeliorerLeCursus(const QString &candidat)
 QWidget* PredicatUVObligatoire::getEditorWidget(QWidget *parent)
 {
     QHBoxLayout *lay = new QHBoxLayout(parent);
-    QLineEdit *line = new QLineEdit(parent);
+    QLineEdit *line = new QLineEdit(uv, parent);
     QWidget* container = new QWidget(parent);
 
     connect(line, SIGNAL(textEdited(QString)), this, SLOT(updateUv(QString)));
@@ -133,6 +133,10 @@ QWidget* PredicatXUVParmis::getEditorWidget(QWidget *parent)
     Ui_xUVParmis_editor ui;
     QWidget *editor = new QWidget(parent);
     ui.setupUi(editor);
+
+    ui.candidat->addItems(candidats);
+    ui.count->setValue(minimumUV);
+    ui.count->setMinimum(0);
 
     connect(ui.addUv, SIGNAL(clicked()), this, SLOT(addUv()));
     connect(ui.delUv, SIGNAL(clicked()), this, SLOT(delUv()));
@@ -264,6 +268,8 @@ QWidget* PredicatMinimumCredit::getEditorWidget(QWidget *parent)
     QWidget* container = new QWidget(parent);
 
     connect(spin, SIGNAL(valueChanged(int)), this, SLOT(updateMinimum(int)));
+    spin->setValue(minimum);
+    spin->setMinimum(0);
 
     lay->addWidget(new QLabel("Crédit minimum : ", parent));
     lay->addWidget(spin);
