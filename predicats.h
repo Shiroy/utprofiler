@@ -92,7 +92,7 @@ public:
     bool chargerParametres(QStringList &list) override;
     QWidget* getEditorWidget(QWidget *parent) override;
 
-    bool peutAmeliorerLeCursus(const QString &uv) override { return true; } //Toute UV raporte des crédit
+    bool peutAmeliorerLeCursus(const QString &/*uv*/) override { return true; } //Toute UV raporte des crédit
 
 private slots:
     void updateMinimum(const int newMin) { minimum = newMin; }

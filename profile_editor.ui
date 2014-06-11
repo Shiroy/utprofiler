@@ -46,11 +46,22 @@
         <x>0</x>
         <y>0</y>
         <width>380</width>
-        <height>199</height>
+        <height>168</height>
        </rect>
       </property>
      </widget>
     </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="addPredicat">
+       <property name="text">
+        <string>Ajouter une condition</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">

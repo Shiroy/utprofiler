@@ -29,7 +29,21 @@ Predicat* PredicatFactory(int type)
     }
 }
 
-PredicatUVObligatoire::PredicatUVObligatoire() : Predicat() {}
+int PredicatDescriptionToInt(const QString &desc)
+{
+    if(desc == "UV obligatoire")
+        return PREDICAT_UV_OBLIGATOIRE;
+    else if(desc == "Obtenir X UV parmis")
+        return PREDICAT_X_UV_PARMIS;
+    else if(desc == "Obtenir un minimum de credit de type")
+        return PREDICAT_MINIMUM_CREDIT_IN_CATEGORY;
+    else if(desc == "Obtenir un minimum de credit")
+        return PREDICAT_MINIMUM_CREDIT;
+    else
+        UTPROFILER_EXCEPTION("Type de rpédicat inconnu");
+}
+
+PredicatUVObligatoire::PredicatUVObligatoire() : Predicat(), uv() {}
 bool PredicatUVObligatoire::predicatSatifait(QVector<const UV*> uvValidee)
 {
     //Merci auto :-)
@@ -66,10 +80,11 @@ QWidget* PredicatUVObligatoire::getEditorWidget(QWidget *parent)
     lay->addWidget(new QLabel("UV obligatoire", parent));
     lay->addWidget(line);
     container->setLayout(lay);
+    connect(this, SIGNAL(destroyed()), container, SLOT(deleteLater()));
     return container;
 }
 
-PredicatXUVParmis::PredicatXUVParmis() : Predicat() {}
+PredicatXUVParmis::PredicatXUVParmis() : Predicat(), minimumUV(0) {}
 bool PredicatXUVParmis::predicatSatifait(QVector<const UV *> uvValidee)
 {
     unsigned int nbUvValider = 0;
@@ -122,7 +137,7 @@ QWidget* PredicatXUVParmis::getEditorWidget(QWidget *parent)
     connect(ui.addUv, SIGNAL(clicked()), this, SLOT(addUv()));
     connect(ui.delUv, SIGNAL(clicked()), this, SLOT(delUv()));
     connect(ui.count, SIGNAL(valueChanged(int)), this, SLOT(updateMinimumUv(int)));
-
+    connect(this, SIGNAL(destroyed()), editor, SLOT(deleteLater()));
     return editor;
 }
 void PredicatXUVParmis::addUv()
@@ -164,7 +179,7 @@ void PredicatXUVParmis::delUv()
     }
 }
 
-PredicatMinimumCreditInCategory::PredicatMinimumCreditInCategory() : Predicat() {}
+PredicatMinimumCreditInCategory::PredicatMinimumCreditInCategory() : Predicat(), minimum(0), cat(CS) {}
 bool PredicatMinimumCreditInCategory::predicatSatifait(QVector<const UV *> uvValidee)
 {
     unsigned int total = 0;
@@ -216,11 +231,11 @@ QWidget* PredicatMinimumCreditInCategory::getEditorWidget(QWidget *parent)
 
     connect(ui.cat, SIGNAL(currentTextChanged(QString)), this, SLOT(updateCat(QString)));
     connect(ui.credit, SIGNAL(valueChanged(int)), this, SLOT(updateMinimum(int)));
-
+    connect(this, SIGNAL(destroyed()), container, SLOT(deleteLater()));
     return container;
 }
 
-PredicatMinimumCredit::PredicatMinimumCredit() : Predicat() {}
+PredicatMinimumCredit::PredicatMinimumCredit() : Predicat(), minimum(0) {}
 bool PredicatMinimumCredit::predicatSatifait(QVector<const UV *> uvValidee)
 {
     unsigned int total = 0;
@@ -253,5 +268,6 @@ QWidget* PredicatMinimumCredit::getEditorWidget(QWidget *parent)
     lay->addWidget(new QLabel("Crédit minimum : ", parent));
     lay->addWidget(spin);
     container->setLayout(lay);
+    connect(this, SIGNAL(destroyed()), container, SLOT(deleteLater()));
     return container;
 }

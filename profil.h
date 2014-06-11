@@ -27,6 +27,8 @@ public:
 };
 
 Predicat* PredicatFactory(int type);
+int PredicatDescriptionToInt(const QString& desc);
+
 
 /**
  * @brief Classe représentant un profil à valider pour le diplome
@@ -44,6 +46,7 @@ public:
     void setNom(const QString& new_name) { nomProfile = new_name; }
 
     void addPredicat(Predicat* prdct) { conditions.push_back(prdct); }
+    void delPredicat(Predicat* prcdt);
 
     const QVector<Predicat*>& getAllPredicat() const { return conditions; }
     QVector<Predicat*> &getAllPredicat() { return conditions; }
