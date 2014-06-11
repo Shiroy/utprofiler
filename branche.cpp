@@ -4,6 +4,7 @@
 
 Branche::Branche()
 {
+    PCB = 0;
 }
 
 void Branche::link()
@@ -20,4 +21,15 @@ void Branche::link()
             UTPROFILER_EXCEPTION(QString("Le PSF %1 de la branche %2 n'existe pas").arg(*it).arg(getNom()).toStdString().c_str());
         PSF[*it] = psf;
     }
+}
+
+void Branche::createPCB()
+{
+    if(PCB)
+        UTPROFILER_EXCEPTION("Le PCB existe déjà");
+
+    if(sigle.isEmpty())
+        UTPROFILER_EXCEPTION("La branche doit avoir un sigle. Avez-vous oublié de l'initialiser ?");
+
+    PCB = sUTManager->nouveauProfil("PCB_" + getSigle());
 }

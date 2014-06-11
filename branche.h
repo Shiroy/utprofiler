@@ -33,6 +33,7 @@ public:
     const Profil* getPCB() const { return PCB; }
     Profil* getPCB() { return PCB; }
     QMap<QString, Profil*>& getPSF() { return PSF; }
+    void createPCB();
 
     void setNom(const QString& nNom) { nom = nNom; }
     void setSigle(const QString& nSigle) { sigle = nSigle; }

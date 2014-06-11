@@ -3,6 +3,7 @@
 #include "utmanager.h"
 #include <QListWidgetItem>
 #include <QMessageBox>
+#include <QInputDialog>
 #include "brancheeditor_dialog.h"
 
 branch_editor::branch_editor(QWidget *parent) :
@@ -38,4 +39,17 @@ void branch_editor::on_brancheList_itemDoubleClicked(QListWidgetItem *it)
 
     BrancheEditor_dialog editor(br, this);
     editor.exec();
+}
+
+void branch_editor::on_addBranch_clicked()
+{
+    QString sigle = QInputDialog::getText(this, "Nouvelle branche", "Entrer le sigle de la branche");
+    if(sigle.isEmpty())
+        return;
+
+    Branche *branche = sUTManager->nouvelleBranche(sigle);
+    branche->setSigle(sigle);
+    branche->createPCB();
+
+    ui->brancheList->addItem(sigle);
 }

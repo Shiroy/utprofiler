@@ -18,6 +18,7 @@ public:
 
 public slots:
     void on_brancheList_itemDoubleClicked(QListWidgetItem* it);
+    void on_addBranch_clicked();
 
 private:
     Ui::branch_editor *ui;
