@@ -31,5 +31,7 @@ void Branche::createPCB()
     if(sigle.isEmpty())
         UTPROFILER_EXCEPTION("La branche doit avoir un sigle. Avez-vous oublié de l'initialiser ?");
 
-    PCB = sUTManager->nouveauProfil("PCB_" + getSigle());
+    PCBString = "PCB_" + getSigle();
+
+    PCB = sUTManager->nouveauProfil(PCBString);
 }
