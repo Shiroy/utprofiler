@@ -127,9 +127,16 @@
 			\paragraph{}
 			\paragraph{}
 			\paragraph{}	
-	\subsection{Editeur d'UV}\label{subsec:IC}
-		Une fois cochée la case "Mode Edition des UVs" de la mainwindow, il est possible d'accéder à l'éditeur d'UVs, afin de créer, de modifier ou de supprimer des UVs.
-		\subsubsection{}
+	\subsection{Edition des UV}\label{subsec:IC}
+		\subsubsection{UV\_Editor}
+		Une fois cochée la case "Mode Edition des UVs" de la mainwindow, il est possible d'accéder à l'éditeur d'UVs, afin de créer, de modifier ou de supprimer des UVs.\\
+		Dans la fenêtre d'édition des UV, le ComboBox de choix de la catégorie est créée de manière dynamique.
+		Il en est de même pour les boutons radio de choix d'une ou de plusieurs branches auxquelles l'UV appartient.
+		
+		
+		
+		
+		
 			\paragraph{}
 			\paragraph{}
 			\paragraph{}
@@ -163,7 +170,25 @@
 	
 	%Expliquer la méthode UTManager::lierLesElements():
 	La méthode UTManager::lierLesElements() a pour rôle d'éviter les incohérences lors du chargement des données.
-	Elle permet, en faisant appel à la méthode Branche::link(), de vérifier que les profils dont les sigles correspondent aux attributs Qstring PCBString (sigle du PCB) et QStringlist psfString (sigle des PSF), sont correctement chargés lors de l'initialisation de la branche, c'est à dire à l'appel de la méthode UTManager::charger().
+	Elle permet, en faisant appel à la méthode Branche::link(), de vérifier que les profils dont les sigles correspondent aux attributs Qstring PCBString (sigle du PCB) et QStringlist psfString (sigle des PSF), sont correctement chargés lors de l'initialisation de la branche, c'est à dire à l'appel de la méthode UTManager::charger().\\\\
+	
+	
+	Les fichiers sources et d'entête autocompletion contiennent les classes qui doivent implémenter la fonctionnalité d'élaboration de fin  de parcours.
+	L'étudiant devant avoir la possibilité d'exprimer son avis concernant une éventuelle inscription à une UV, le type énuméré \emph{ExigenceUV}, dont la valeur entière s'étend de $-2$ à $2$, représente ce choix : 
+	\begin{description}
+	\item[-2] L'étudiant choisit de ne pas être inscrit à l'UV ;
+	\item[-1] L'étudiant voudrait si possible ne pas être inscrit à l'UV ;	
+	\item[0] L'étudiant exprime un avis neutre concernant l'UV ;
+	\item[1] L'étudiant voudrait si possible s'inscrire à l'UV ;
+	\item[2] L'étudiant veut absolument faire cette UV.
+	\end{description}
+	
+	% Expliquer dans la partie II la pertinence du DP Strategy
+	La mise en place d'un mode d'autocomplétion relève du design pattern strategy, ce qui permet de répondre au besoin de mise en place eventuelle d'une nouvelle méthode d'autcomplétion.
+	Ainsi, il suffit de dériver la classe abstraite StrategieAutocompletion et d'implémenter un nouvel algorithme dans la méhode Completer() de la classe fille pour pouvoir mettre un place une nouvelle façon d'aider une étudiant dans ses choix d'UV.\\\\
+	
+	En qui ce qui concerne l'éditeur d'UV, on remarquera que le remplissage de la comboBox permettant le choix de la catégorie d'UV et les checkBoxes se font de manière dynamique. Ainsi il est possible de créer de nouvelles catégories, de nouvelles branches (ou bien d'en supprimer) sans créer d'incohérence dans l'édition des UV.
+	
 	
 	
 	
@@ -180,20 +205,9 @@
 			\paragraph{}
 			\paragraph{}
 			\paragraph{}	
-	\subsection{Autocompletion}\label{subsec:UV}
+	\subsection{}\label{}
 	
-	C'est cette classe qui implémente la fonctionnalité d'élaboration de fin  de parcours.
-	L'étudiant devant avoir la possibilité d'exprimer son avis concernant une éventuelle inscription à une UV, le type énuméré \emph{ExigenceUV}, dont la valeur entière s'étend de $-2$ à $2$, représente ce choix : 
-	\begin{description}
-	\item[-2] L'étudiant choisit de ne pas être inscrit à l'UV ;
-	\item[-1] L'étudiant voudrait si possible ne pas être inscrit à l'UV ;	
-	\item[0] L'étudiant exprime un avis neutre concernant l'UV ;
-	\item[1] L'étudiant voudrait si possible s'inscrire à l'UV ;
-	\item[2] L'étudiant veut absolument faire cette UV.
-	\end{description}
 	
-	% Expliquer dans la partie II la pertinence du DP Strategy
-	La mise en place d'un mode d'autocomplétion relève du design pattern strategy, ce qui permet de répondre au besoin de mise en placé eventuelle d'une nouvelle méthode d'autcomplétion.
 	
 	
 		\subsubsection{}
