@@ -127,7 +127,8 @@
 			\paragraph{}
 			\paragraph{}
 			\paragraph{}	
-	\subsection{}\label{subsec:IC}
+	\subsection{Editeur d'UV}\label{subsec:IC}
+		Une fois cochée la case "Mode Edition des UVs" de la mainwindow, il est possible d'accéder à l'éditeur d'UVs, afin de créer, de modifier ou de supprimer des UVs.
 		\subsubsection{}
 			\paragraph{}
 			\paragraph{}
@@ -160,6 +161,13 @@
 	Ainsi, la classe UVStreamXML a été implémentée (comme classe dérivée de UVStream), mais il aurait été aussi possible implémenter un second modèle de stockage des données (une classe UVStreamJSON, par exemple).\\\\
 	Par ailleurs, les méthodes virtuelles pures \emph{prepareLoading()} et \emph{prepareSaving()} permettent l'implémentation de modèles de stockages des données qui nécessitent des phases de préparation avant la lecture ou l'écriture de données (par exemple pour la connection à une base de données).
 	
+	%Expliquer la méthode UTManager::lierLesElements():
+	La méthode UTManager::lierLesElements() a pour rôle d'éviter les incohérences lors du chargement des données.
+	Elle permet, en faisant appel à la méthode Branche::link(), de vérifier que les profils dont les sigles correspondent aux attributs Qstring PCBString (sigle du PCB) et QStringlist psfString (sigle des PSF), sont correctement chargés lors de l'initialisation de la branche, c'est à dire à l'appel de la méthode UTManager::charger().
+	
+	
+	
+	
 		\subsubsection{}
 			\paragraph{}
 			\paragraph{}
@@ -185,6 +193,7 @@
 	\end{description}
 	
 	% Expliquer dans la partie II la pertinence du DP Strategy
+	La mise en place d'un mode d'autocomplétion relève du design pattern strategy, ce qui permet de répondre au besoin de mise en placé eventuelle d'une nouvelle méthode d'autcomplétion.
 	
 	
 		\subsubsection{}
