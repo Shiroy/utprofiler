@@ -127,7 +127,11 @@
 	\hline
 	\end{tabular}
 	
-	La colonne contenant la préférence de l'utilisateur concernant une éventuelle inscription est nécessaire à l'algorithme d'autocomplétion, ce dernier doit en effet tenir compte de l'avis de l'utilisateur afin de lui proposer une complétion de parcours pertinente.
+	La colonne contenant la préférence de l'utilisateur concernant une éventuelle inscription est nécessaire à l'algorithme d'autocomplétion, ce dernier doit en effet tenir compte de l'avis de l'utilisateur afin de lui proposer une complétion de parcours pertinente.\\\\
+    
+    Ainsi, MainWindow compose un attribut de type UVSearchModel. %Expliquer la raison, les nécessités pour l'affichage des UV
+    Raison pour laquelle on retrouve la structure du modèles de données en interface graphique.
+    
 	
 	\subsection{La classe Profil}\label{subsec:Profil}
 		% Expliquer ici les design patterns factory et strategy 
@@ -135,15 +139,17 @@
 	
 	
 		\subsubsection{}
-
+    \subsection{Edition des profils}\label{subsec:Edition des profils}
+        Il est possible d'éditer des profils, et Profile\_Editor inclut la possibilité de saisir des prédicats, c'est à dire chacune des conditions nécessaires de validation du profil.
+        
+        
 	\subsection{Edition des UV}\label{subsec:IC}
-		\subsubsection{UV\_Editor}
-		Une fois cochée la case "Mode Edition des UVs" de la mainwindow, il est possible d'accéder à l'éditeur d'UVs, afin de créer, de modifier ou de supprimer des UVs.\\
+    
+		Une fois cochée la case "Mode Edition des UVs" de la MainWindow, il est possible d'accéder à l'éditeur d'UVs, afin de créer, de modifier ou de supprimer des UVs.\\
 		Dans la fenêtre d'édition des UV, le ComboBox de choix de la catégorie est créée de manière dynamique.
 		Il en est de même pour les boutons radio de choix d'une ou de plusieurs branches auxquelles l'UV appartient.
         
-    \subsection{Edition des profils}\label{subsec:Edition des profils}
-        Il est possible d'éditer des profils, et Profile_Editor inclut la possibilité de saisir des prédicats, c'est à dire chacune des conditions nécessaires de validation du profil.
+
 		
 		
 			\paragraph{}
