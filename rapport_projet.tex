@@ -58,37 +58,38 @@
 	
 		Il s'agit de la classe abstraite qui présente l'interface de chargement et de sauvegarde des données.
 		En pratique, la classe concrête réalisant ces deux tâches est UVStreamXML. Le modèle de données XML associé est le suivant :
-		\begin{verbatim}
-<SectionUV>
-	<uv>
-		<code></code>
-		<nom></nom>
-		<credit type=""></credit>
-		<branche></branche>
-	</uv>
-</SectionUV>
-<SectionBranche>
-	<branche>
-		<sigle></sigle>
-		<nom></nom>
-		<PCB></PCB>
-		<PSF></PSF>
-	</branche>
-</SectionBranche>
-<SectionProfil>
-	<profil>
-		<nom></nom>		
-		<predicat type=" "> 
-			<donnee></donnee>
-			<donnee></donnee>
-		</predicat>
-	</profil>
-</SectionProfil>
-<Etudiant>
-	<prenom></prenom>
-	<nom></nom>
-</Etudiant>
-		\end{verbatim}
+		\begin{quote}
+
+<SectionUV>\\
+	\hspace*{1cm}<uv>\\
+	\hspace*{1cm}	\hspace*{1cm}<code></code>\\
+	\hspace*{1cm}	\hspace*{1cm}<nom></nom>\\
+	\hspace*{1cm}\hspace*{1cm}	<credit type=""></credit>\\
+	\hspace*{1cm}\hspace*{1cm}	<branche></branche>\\
+	\hspace*{1cm}</uv>\\
+</SectionUV>\\
+<SectionBranche>\\
+	\hspace*{1cm}<branche>\\
+	\hspace*{1cm}\hspace*{1cm}	<sigle></sigle>\\
+	\hspace*{1cm}\hspace*{1cm}	<nom></nom>\\
+	\hspace*{1cm}\hspace*{1cm}	<PCB></PCB>\\
+	\hspace*{1cm}\hspace*{1cm}	<PSF></PSF>\\
+	\hspace*{1cm}</branche>\\
+</SectionBranche>\\
+<SectionProfil>\\
+	\hspace*{1cm}<profil>\\
+	\hspace*{1cm}\hspace*{1cm}	<nom></nom>		\\
+	\hspace*{1cm}\hspace*{1cm}	<predicat type=" "> \\
+		\hspace*{1cm}\hspace*{1cm}\hspace*{1cm}	<donnee></donnee>\\
+		\hspace*{1cm}\hspace*{1cm}\hspace*{1cm}	<donnee></donnee>\\
+		\hspace*{1cm}\hspace*{1cm}</predicat>\\
+	\hspace*{1cm}</profil>\\
+</SectionProfil>\\
+<Etudiant>\\
+	\hspace*{1cm}<prenom></prenom>\\
+	\hspace*{1cm}<nom></nom>\\
+</Etudiant>\\
+		\end{quote}
 		
 	L'attribut \emph{type} de la balise \emph{credit} d'une UV permet de stocker la catégorie d'une UV.
 	Les profils communs de branches et les profils spécifiques de filières sont stockés et gérés sous un même type de balise, en accord avec l'implémentation d'une classe Profil commune aux PCB et aux PSF.
@@ -107,9 +108,11 @@
 	Par exemple, pour un prédicat de type 3 concernant la catégorie d'UV Techniques et Méthodes, le code XML correspondant est par exemple :
 	\begin{verbatim}
 <predicat type="3">
-		<donnee>TM</donnee>
-		<donnee>24</donnee>
+		\hspace*{1cm}<donnee>TM</donnee>
+		\hspace*{1cm}<donnee>24</donnee>
+</predicat>
 	\end{verbatim}
+	
 	
 	
 	\subsection{UVSearchModel}\label{subsec:UVSearchModel}
@@ -138,9 +141,9 @@
 		Une fois cochée la case "Mode Edition des UVs" de la mainwindow, il est possible d'accéder à l'éditeur d'UVs, afin de créer, de modifier ou de supprimer des UVs.\\
 		Dans la fenêtre d'édition des UV, le ComboBox de choix de la catégorie est créée de manière dynamique.
 		Il en est de même pour les boutons radio de choix d'une ou de plusieurs branches auxquelles l'UV appartient.
-		
-		
-		
+        
+    \subsection{Edition des profils}\label{subsec:Edition des profils}
+        Il est possible d'éditer des profils, et Profile_Editor inclut la possibilité de saisir des prédicats, c'est à dire chacune des conditions nécessaires de validation du profil.
 		
 		
 			\paragraph{}
