@@ -112,21 +112,27 @@
 	\end{verbatim}
 	
 	
+	\subsection{UVSearchModel}\label{subsec:UVSearchModel}
 	
+	Cette classe implémente le stockage des UV traitées par l'UTManager, elle dérive par conséquent de la classe QStandardItemModel
+	Le modèle de stockage des UV est le suivant :
+	
+	\begin{tabular}{|c||c|c|c|c|c|}
+	\hline
+	Index de la colonne :  & 0 & 1 & 2 & 3 & 4 \\ \hline
+	Contenu : & Code de l'UV & Intitulé de l'UV & Catégorie & Nombre de crédit(s) & Préférence de l'utilisateur \\
+	\hline
+	\end{tabular}
+	
+	La colonne contenant la préférence de l'utilisateur concernant une éventuelle inscription est nécessaire à l'algorithme d'autocomplétion, ce dernier doit en effet tenir compte de l'avis de l'utilisateur afin de lui proposer une complétion de parcours pertinente.
+	
+	\subsection{La classe Profil}\label{subsec:Profil}
+		% Expliquer ici les design patterns factory et strategy 
+		
 	
 	
 		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}	
+
 	\subsection{Edition des UV}\label{subsec:IC}
 		\subsubsection{UV\_Editor}
 		Une fois cochée la case "Mode Edition des UVs" de la mainwindow, il est possible d'accéder à l'éditeur d'UVs, afin de créer, de modifier ou de supprimer des UVs.\\
@@ -187,7 +193,7 @@
 	La mise en place d'un mode d'autocomplétion relève du design pattern strategy, ce qui permet de répondre au besoin de mise en place eventuelle d'une nouvelle méthode d'autcomplétion.
 	Ainsi, il suffit de dériver la classe abstraite StrategieAutocompletion et d'implémenter un nouvel algorithme dans la méhode Completer() de la classe fille pour pouvoir mettre un place une nouvelle façon d'aider une étudiant dans ses choix d'UV.\\\\
 	
-	En qui ce qui concerne l'éditeur d'UV, on remarquera que le remplissage de la comboBox permettant le choix de la catégorie d'UV et les checkBoxes se font de manière dynamique. Ainsi il est possible de créer de nouvelles catégories, de nouvelles branches (ou bien d'en supprimer) sans créer d'incohérence dans l'édition des UV.
+	En qui ce qui concerne l'éditeur d'UV, on remarquera que le remplissage de la comboBox permettant le choix de la catégorie d'UV et les checkBoxes se font de manière dynamique. Ainsi il est possible de créer de nouvelles catégories, de nouvelles branches (ou bien d'en supprimer) sans provoquer d'incohérence dans le système d'édition des UV.
 	
 	
 	
