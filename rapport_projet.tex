@@ -25,8 +25,7 @@
 \section*{Indroduction}\label{sec:Introduction}\addcontentsline{toc}{section}{Introduction}
 
 Ce rapport s'inscrit dans le cadre du projet de l'unité de valeur LO21.\\
-La première partie de ce rapport concerne une description de l'architecture de l'application UTProfiler, développée à l'aide de l'IDE QtCreator, et la seconde partie se concentre davantage sur une explication, une justification des choix concernant l'architecture adoptée pour l'application, notamment en ce qui concerne sa capacité à évoluer.
-% Essayer d'insister dans la partie 2 sur les quatres propriétés d'une application développée en orienté-objet, tels que vues dans le cadre du cours (2e partie du poly).
+La première partie de ce rapport concerne une description de l'architecture de l'application UTProfiler, développée à l'aide de l'IDE QtCreator, et la seconde partie se concentre davantage sur une explication, une justification des choix concernant l'architecture adoptée pour l'application, notamment en ce qui concerne sa capacité à évoluer (c'est-à-dire mettant en oeuvre les notions de modularité, d'extensibilité et de réutilisabilité).
 
 \newpage
 \section{Description de l'architecture}\label{sec:I}
@@ -175,11 +174,11 @@ La première partie de ce rapport concerne une description de l'architecture de 
 	
 	En qui ce qui concerne l'éditeur d'UV, on remarquera que le remplissage de la comboBox permettant le choix de la catégorie d'UV et les checkBoxes se font de manière dynamique. Ainsi il est possible de créer de nouvelles catégories, de nouvelles branches (ou bien d'en supprimer) sans provoquer d'incohérence dans le système d'édition des UV.
 	
-    	% Expliquer ici les design patterns abstract factory et strategy
+    	% Expliquer ici les design patterns factory et strategy
     Par la mise une place d'un Design Pattern Strategy en ce qui concerne les prédicats, on peut implémenter un nouveau type de prédicat en dérivant classe abstraite Predicat.
     Ainsi, la classe Profil possède un attribut QVector<Predicat*> conditions, qui permettra prendre en compte pour un profil chacune des classes filles de Predicat (par respect du principe de subsitution).
     
-    % Et abstract factory ?
+    % Et factory method ? Est-il necessaire de le justifier ?
 	
 	
 	
@@ -187,6 +186,7 @@ La première partie de ce rapport concerne une description de l'architecture de 
 	
 \newpage			
 \section*{Conclusion}\label{sec:Conclusion}\addcontentsline{toc}{section}{Conclusion}
+
 
 
 
