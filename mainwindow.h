@@ -25,6 +25,7 @@ public slots:
 
     void on_ac_data_loadFromXML_triggered();
     void on_ac_etu_loadFromXML_triggered();
+    void on_ac_data_saveToXML_triggered();
     void on_createUv_clicked();
     void on_uvPanel_doubleClicked(const QModelIndex& i);
 

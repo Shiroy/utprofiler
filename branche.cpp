@@ -34,4 +34,5 @@ void Branche::createPCB()
     PCBString = "PCB_" + getSigle();
 
     PCB = sUTManager->nouveauProfil(PCBString);
+    PCB->setNom(PCBString);
 }

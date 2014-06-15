@@ -45,25 +45,16 @@ public:
      * @brief Charge les donnÃ©e
      * @return
      */
-    bool charger();
-    /**
-     * @brief Permet de spÃ©cifier une mÃ©thode de chargement des donnÃ©es. Tous les chargeurs sont des classe UVStream spÃ©cialisÃ©e.
-     * @param stream Le chargeur
-     */
-    void setUTStream(UTStream* stream)
-    {
-        if(loader)
-            delete loader;
-        loader = stream;
-    }
+    bool charger(UTStream *loader);
+    bool sauver(UTStream* saver);
 
     UV* nouvelleUV(const QString& code);
     Branche* nouvelleBranche(const QString& sigle);
     Profil* nouveauProfil(const QString& nom);
 
     UVMap& getAllUVs();
-
     BrancheMap& getAllBranches();
+    ProfilMap& getAllProfiles() { return m_profils; }
 
     static CategorieUV categorieUVTextToEnum(const QString& txt);
     static QString categorieUVEnumToText(CategorieUV cat);
@@ -73,10 +64,8 @@ private:
     void clearAll();
 
     static UTManager* instance;
-    UTManager() : loader(0) {}
+    UTManager() {}
     ~UTManager();
-
-    UTStream* loader;
 
     QMap<QString, UV*> m_uvs;
     QMap<QString, Branche*> m_branches;

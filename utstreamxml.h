@@ -9,7 +9,7 @@ class UTStreamXML : public UTStream
 {
     QString file;
 public:
-    UTStreamXML(const QString& fileToOpen) : UTStream(), file(fileToOpen) {}
+    UTStreamXML() : UTStream(){}
 
     bool prepareLoading();
     bool load();
@@ -18,7 +18,8 @@ public:
     void uvSection(QDomNode& e);
     void profilSection(QDomNode& e);
 
-    bool save() { return true; }
+    bool prepareSaving();
+    bool save();
 };
 
 #endif // UTSTREAMXML_H

@@ -35,7 +35,7 @@ protected :
 public :
     virtual void Completer() = 0;
 
-    virtual void ConstruireCursus(const QList<UV*>& candidat) {/*TODO*/}
+    virtual void ConstruireCursus(const QList<UV*>& /*candidat*/) {/*TODO*/}
 };
 
 class StrategieAutocompletionConcreteSujet : protected StrategieAutocompletion

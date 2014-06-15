@@ -61,6 +61,11 @@ bool PredicatUVObligatoire::chargerParametres(QStringList &list)
     uv = list.first();
     return true;
 }
+void PredicatUVObligatoire::sauverParametre(QDomElement &elem)
+{
+    elem.setAttribute("type", PREDICAT_UV_OBLIGATOIRE);
+    elem.setAttribute("param", uv);
+}
 
 const QString PredicatUVObligatoire::recommanderUv() //Pour valider cette condition, il faut impérativement obtenir "uv", il est donc tout naturel de la recommander
 {
@@ -99,8 +104,21 @@ bool PredicatXUVParmis::predicatSatifait(QVector<const UV *> uvValidee)
 }
 bool PredicatXUVParmis::chargerParametres(QStringList &list)
 {
+    minimumUV = list.first().toInt();
+    list.removeFirst();
     candidats = list;
     return true;
+}
+void PredicatXUVParmis::sauverParametre(QDomElement &elem)
+{
+    QString param = QString::number(minimumUV);
+    for(int i = 0 ; i < candidats.size() ; i++)
+    {
+        param += "," + candidats[i];
+    }
+
+    elem.setAttribute("type", PREDICAT_X_UV_PARMIS);
+    elem.setAttribute("param", param);
 }
 
 const QString PredicatXUVParmis::recommanderUv() //On recommande l'UV qui rapporte le plus de crédit dans la liste
@@ -211,6 +229,12 @@ bool PredicatMinimumCreditInCategory::chargerParametres(QStringList &list)
 
     return true;
 }
+void PredicatMinimumCreditInCategory::sauverParametre(QDomElement &elem)
+{
+    elem.setAttribute("type", PREDICAT_MINIMUM_CREDIT_IN_CATEGORY);
+    QString param = QString::number(cat) + "," + QString::number(minimum);
+    elem.setAttribute("param", param);
+}
 
 bool PredicatMinimumCreditInCategory::peutAmeliorerLeCursus(const QString &uv)
 {
@@ -256,11 +280,16 @@ bool PredicatMinimumCredit::predicatSatifait(QVector<const UV *> uvValidee)
 bool PredicatMinimumCredit::chargerParametres(QStringList &list)
 {
     bool ok = true;
-    list.first().toInt(&ok);
+    minimum = list.first().toInt(&ok);
     if(!ok)
         return false;
 
     return true;
+}
+void PredicatMinimumCredit::sauverParametre(QDomElement &elem)
+{
+    elem.setAttribute("type", PREDICAT_MINIMUM_CREDIT);
+    elem.setAttribute("param", minimum);
 }
 QWidget* PredicatMinimumCredit::getEditorWidget(QWidget *parent)
 {

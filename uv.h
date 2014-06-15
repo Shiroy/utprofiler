@@ -28,13 +28,14 @@ class UV
     CategorieUV categorie;
     Branche* branche;
     QString brancheStr;
+    bool a, p;
 
 public:
     /**
      * @brief Construit un objet de type UV. Les paramètres sont recopiés dans les attributs de l'objet     
      */
 
-    UV() {}
+    UV() : a(false), p(false) {}
 
     /**
      * @brief Renvoie le code de l'UV
@@ -82,6 +83,12 @@ public:
     void linkInformation();
     const Branche* getBranche() const { return branche; }
     Branche* getBranche() { return branche; }
+
+    void setAutomne(bool b) { a = b; }
+    void setPrintemps(bool b) { p = b; }
+
+    bool automne() { return a; }
+    bool printemps() { return p; }
 };
 
 #endif // UV_H

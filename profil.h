@@ -4,6 +4,7 @@
 #include <QVector>
 #include <QString>
 #include <QObject>
+#include <QDomElement>
 
 class UV;
 
@@ -20,6 +21,7 @@ public:
     virtual bool predicatSatifait(QVector<const UV*> uvValidee) = 0;    
     virtual bool chargerParametres(QStringList& param) = 0;
     virtual QWidget* getEditorWidget(QWidget *parent) = 0;
+    virtual void sauverParametre(QDomElement& elem) = 0;
 
     virtual const QString recommanderUv() { return QString(); }
 

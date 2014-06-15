@@ -42,20 +42,28 @@ void MainWindow::on_quickSearch_textChanged(const QString &txt)
 
 void MainWindow::on_ac_data_loadFromXML_triggered()
 {
-    QString filename = QFileDialog::getOpenFileName(this, "Fichier de donnée", QString(), "Fixhier XML *.xml");
-
-    if(filename.isEmpty())
-        return;
-
-    UTStreamXML *xmlStream = new UTStreamXML(filename);
-    sUTManager->setUTStream(xmlStream);
+    UTStreamXML *xmlStream = new UTStreamXML;
     try
     {
-        sUTManager->charger();
+        sUTManager->charger(xmlStream);
     }
     catch(const UTProfilerException &e)
     {
         QMessageBox::critical(this, "Erreur au chargement des données", e.what());
+    }
+}
+
+void MainWindow::on_ac_data_saveToXML_triggered()
+{
+    UTStreamXML *xmlStream = new UTStreamXML();
+
+    try
+    {
+        sUTManager->sauver(xmlStream);
+    }
+    catch(const UTProfilerException &e)
+    {
+        QMessageBox::critical(this, "Erreur à la sauvegarde des données", e.what());
     }
 }
 
@@ -90,6 +98,7 @@ void MainWindow::on_createUv_clicked()
         // Recuperation d'un pointeur d'UV donne par le singleton UTManager :
         UV* ptUV = sUTManager->nouvelleUV(code);
         ptUV->setCode(code);
+        ptUV->setCategorie(CS); //Par défaut
 
         // On peut alors envoyer ce pointeur au constructeur de UV_Editor :
 
