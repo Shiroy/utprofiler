@@ -8,6 +8,8 @@ namespace Ui {
 class branch_editor;
 }
 
+///Cette classe fournis l'interface permettant d'éditer l'ensemble des branches de l'application.
+/// Elle permet également de les créer et des les supprimer
 class branch_editor : public QDialog
 {
     Q_OBJECT

@@ -5,6 +5,8 @@
 #include "semestrecours.h"
 #include "branche.h"
 
+///Cette classe représente le Cursus d'un étudiant.
+/// Elle permet d'acceder à toutes les informations relative à son parcours
 class Cursus
 {
     QVector<SemestreCours*> tousLesSemestres;
