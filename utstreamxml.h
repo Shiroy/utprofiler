@@ -14,7 +14,7 @@ public:
 
     ///Demande le fichier à ouvrir à l'utlisateur
     bool prepareLoading();
-    ///Analyse le fichier XML et remplie l'UTManager
+    ///Analyse le fichier XML et remplit l'UTManager
     bool load();
 
     ///Analyse les branches
@@ -24,9 +24,9 @@ public:
     ///Analyse les profils
     void profilSection(QDomNode& e);
 
-    ///Demande à l'utlisateur le nom du fichier dans lequel les informations doivent être enregistrée.
+    ///Demande à l'utilisateur le nom du fichier dans lequel les informations doivent être enregistrées.
     bool prepareSaving();
-    ///Sauvegardes les informations
+    ///Sauvegarde les informations
     bool save();
 };
 

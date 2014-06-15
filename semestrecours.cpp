@@ -31,7 +31,7 @@ QString Semestre::toString() const
     else if(s == Printemps)
         result = "P";
     else
-        UTPROFILER_EXCEPTION("Non, mais là si vous arrivez à planter ça, c'est vraiment que vous avez codé comme une grosse...bouse (Info utilie quand même, parce qu'on ne sait jamais, votre Semestre a une saison différente de Automne ou Printemps)");
+        UTPROFILER_EXCEPTION("Non, mais là si vous arrivez à planter ça, c'est vraiment que vous avez codé comme une grosse...bouse (Info utile quand même, parce qu'on ne sait jamais, votre Semestre a une saison différente de Automne ou Printemps)");
 
     result += QString::number(annee);
 

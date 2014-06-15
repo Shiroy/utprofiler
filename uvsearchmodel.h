@@ -4,7 +4,7 @@
 #include <QStandardItemModel>
 #include "uv.h"
 
-///Cette classe définie le modèle permettant l'affichage d'un résultat de recherche d'UV
+///Cette classe définit le modèle permettant l'affichage d'un résultat de recherche d'UV
 class UVSearchModel : public QStandardItemModel
 {
 public:

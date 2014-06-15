@@ -121,12 +121,24 @@ La première partie de ce rapport concerne une description de l'architecture de 
 	Contenu : & Code de l'UV & Intitulé de l'UV & Catégorie & Nombre de crédit(s) & Préférence \\
 	\hline
 	\end{tabular}
+    Ainsi, \emph{MainWindow} compose un attribut de type UVSearchModel, nécessaire à l'affichage des UV.\\ %Expliquer la raison ? les nécessités pour l'affichage des UV ??
+    
 	
-	La colonne contenant la préférence de l'utilisateur (concernant une éventuelle inscription à une UV) est nécessaire à l'algorithme d'autocomplétion, ce dernier doit en effet tenir compte de l'avis de l'utilisateur afin de lui proposer une complétion de parcours pertinente.\\
-    
-    Ainsi, \emph{MainWindow} compose un attribut de type UVSearchModel, nécessaire à l'affichage des UV. %Expliquer la raison ? les nécessités pour l'affichage des UV ??
+	La colonne contenant la préférence de l'utilisateur (concernant une éventuelle inscription à une UV) est nécessaire à l'algorithme d'autocomplétion, ce dernier doit en effet tenir compte de l'avis de l'utilisateur afin de lui proposer une complétion de parcours pertinente.
     
     
+        
+    \subsection{Autocomplétion}\label{subsec:Autocomplétion}
+On commence par récupérer les UV dans un \emph{UVMap}, ainsi que le cursus et le nom de la branche à valider.\\
+On récupère ensuite les prédicats qui représentent les conditions de validation de la branche.\\
+Un test est ensuite effectué sur l'intégralité des UV par l'utilisation d'un itérateur d'\emph{UV}.\\
+Enfin, un second itérateur de \emph{Predicat} est utilisé pour chaque UV, et sur l'ensemble des prédicats définis dans \emph{UTManager}.\\
+On distingue ensuite deux tests pour sélectionner les UV susceptibles de compléter le parcours de l'étudiant (lesquelles vont être stockées dans un \emph{QVector<const UV*>}) :
+\begin{enumerate}
+\item Un test qui cherche une correspondance directe entre les UV recommandées par le prédicat (test implémenté par la méthode \emph{Predicat::recommenderUv()};
+\item Un test qui cherche une possibilité plus souple compléter le cursus de l'étudiant avec l'UV, dans le cas où le premier test renvoie false (test implémenté par la méthode \emph{Predicat::peutAmeliorerLeCursus()}).
+\end{enumerate}
+
 	
 	
 		
@@ -203,6 +215,13 @@ Finalement, il reste aussi à implémenter la possibilité pour un étudiant de 
 %\bibliographystyle{plain}
 %\bibliography{biblio}
 
-%\appendix
-%\section*{Annexes}\label{sec:Annexes}\addcontentsline{toc}{section}{Annexes}
+\appendix
+\section*{Annexes}\label{sec:Annexes}\addcontentsline{toc}{section}{Annexes}
+	\begin{figure}[!h]
+				\begin{center}
+					\caption{\label{fig:diag} Diagramme UML de UTProfiler}
+					\includegraphics[scale=0.18]{utprofiler}
+				\end{center}
+			\end{figure}
+            
 \end{document}
