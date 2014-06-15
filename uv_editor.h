@@ -8,6 +8,7 @@ namespace Ui {
 class UV_Editor;
 }
 
+///Fourni l'interface d'édition des UVs
 class UV_Editor : public QDialog
 {
     Q_OBJECT

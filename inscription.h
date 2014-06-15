@@ -51,7 +51,9 @@ public:
      */
     void SetResultat(Resultat res) {m_resultat = res;}
 
+    ///Convertie une note du format chaine de caractère en Resultat. Cette méthode déclenche une exception en cas de problème
     static Resultat noteTextToEnum(const QString& note);
+    ///Convertie un Resultat en son équivalent en chaine de caractère. Cette méthode déclenche une exception en cas de problème
     static QString noteEnumToText(Resultat res);
 };
 

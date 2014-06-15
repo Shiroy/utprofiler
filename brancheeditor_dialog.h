@@ -10,6 +10,7 @@ namespace Ui {
 class BrancheEditor_dialog;
 }
 
+///Cette classe fournit l'interface permettant d'éditer une branche
 class BrancheEditor_dialog : public QDialog
 {
     Q_OBJECT

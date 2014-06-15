@@ -46,7 +46,9 @@ public:
      */
     const QVector<Inscription*> &getInscriptions() { return inscription; }
 
+    ///Détermine si une UV a été suivie ce semestre
     bool uvEnCours(const UV* uv);
+    ///Renvoie toutes les UVs suivies ce semestre
     QVector<const UV *> getUVs();
 };
 
