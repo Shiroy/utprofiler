@@ -18,13 +18,17 @@
 \title{LO21 : Rapport de projet}\maketitle
 
 \tableofcontents
+\newpage
 
 
 
 \section*{Indroduction}\label{sec:Introduction}\addcontentsline{toc}{section}{Introduction}
 
+Ce rapport s'inscrit dans le cadre du projet de l'unité de valeur LO21.\\
+La première partie de ce rapport concerne une description de l'architecture de l'application UTProfiler, développée à l'aide de l'IDE QtCreator, et la seconde partie se concentre davantage sur une explication, une justification des choix concernant l'architecture adoptée pour l'application, notamment en ce qui concerne sa capacité à évoluer.
+% Essayer d'insister dans la partie 2 sur les quatres propriétés d'une application développée en orienté-objet, tels que vues dans le cadre du cours (2e partie du poly).
 
-
+\newpage
 \section{Description de l'architecture}\label{sec:I}
 
 
@@ -40,55 +44,44 @@
 	\item Du chargement des fichiers de données XML	
 	\end{itemize}
 	Ainsi, se placer à un niveau de gestion au dessus de ce qu'un manager d'UV pourrait offrir en terme de fonctionnalités permet de ne pas avoir multiplier les classes de manager d'entités (UVManager, BrancheManager, ProfilManager ...)
-	
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
+
 				
 	\subsection{UTStream}\label{subsec:UTStream}
 	
 		Il s'agit de la classe abstraite qui présente l'interface de chargement et de sauvegarde des données.
 		En pratique, la classe concrête réalisant ces deux tâches est UVStreamXML. Le modèle de données XML associé est le suivant :
-		\begin{verbatim}
-<SectionUV>
-	<uv>
-		<code></code>
-		<nom></nom>
-		<credit type=""></credit>
-		<branche></branche>
-	</uv>
-</SectionUV>
-<SectionBranche>
-	<branche>
-		<sigle></sigle>
-		<nom></nom>
-		<PCB></PCB>
-		<PSF></PSF>
-	</branche>
-</SectionBranche>
-<SectionProfil>
-	<profil>
-		<nom></nom>		
-		<predicat type=" "> 
-			<donnee></donnee>
-			<donnee></donnee>
-		</predicat>
-	</profil>
-</SectionProfil>
-<Etudiant>
-	<prenom></prenom>
-	<nom></nom>
-</Etudiant>
-		\end{verbatim}
+		\begin{quote}
+
+<SectionUV>\\
+	\hspace*{1cm}<uv>\\
+	\hspace*{1cm}	\hspace*{1cm}<code></code>\\
+	\hspace*{1cm}	\hspace*{1cm}<nom></nom>\\
+	\hspace*{1cm}\hspace*{1cm}	<credit type=""></credit>\\
+	\hspace*{1cm}\hspace*{1cm}	<branche></branche>\\
+	\hspace*{1cm}</uv>\\
+</SectionUV>\\
+<SectionBranche>\\
+	\hspace*{1cm}<branche>\\
+	\hspace*{1cm}\hspace*{1cm}	<sigle></sigle>\\
+	\hspace*{1cm}\hspace*{1cm}	<nom></nom>\\
+	\hspace*{1cm}\hspace*{1cm}	<PCB></PCB>\\
+	\hspace*{1cm}\hspace*{1cm}	<PSF></PSF>\\
+	\hspace*{1cm}</branche>\\
+</SectionBranche>\\
+<SectionProfil>\\
+	\hspace*{1cm}<profil>\\
+	\hspace*{1cm}\hspace*{1cm}	<nom></nom>		\\
+	\hspace*{1cm}\hspace*{1cm}	<predicat type=" "> \\
+		\hspace*{1cm}\hspace*{1cm}\hspace*{1cm}	<donnee></donnee>\\
+		\hspace*{1cm}\hspace*{1cm}\hspace*{1cm}	<donnee></donnee>\\
+		\hspace*{1cm}\hspace*{1cm}</predicat>\\
+	\hspace*{1cm}</profil>\\
+</SectionProfil>\\
+<Etudiant>\\
+	\hspace*{1cm}<prenom></prenom>\\
+	\hspace*{1cm}<nom></nom>\\
+</Etudiant>\\
+		\end{quote}
 		
 	L'attribut \emph{type} de la balise \emph{credit} d'une UV permet de stocker la catégorie d'une UV.
 	Les profils communs de branches et les profils spécifiques de filières sont stockés et gérés sous un même type de balise, en accord avec l'implémentation d'une classe Profil commune aux PCB et aux PSF.
@@ -105,76 +98,68 @@
 	\end{enumerate}
 	Aussi, les balises de type \emph{donnee} d'un prédicat recueillent les informations nécessaires à l'interprétation d'un prédicat par UTManager.\\
 	Par exemple, pour un prédicat de type 3 concernant la catégorie d'UV Techniques et Méthodes, le code XML correspondant est par exemple :
-	\begin{verbatim}
-<predicat type="3">
-		<donnee>TM</donnee>
-		<donnee>24</donnee>
-	\end{verbatim}
+	\begin{quote}
+<predicat type="3">\\
+		\hspace*{1cm}<donnee>TM</donnee>\\
+		\hspace*{1cm}<donnee>24</donnee>\\
+</predicat>\\
+	\end{quote}
 	
 	
 	
+	\subsection{UVSearchModel}\label{subsec:UVSearchModel}
+	
+	Cette classe implémente le stockage des UV traitées par l'UTManager, elle dérive par conséquent de la classe QStandardItemModel
+	Le modèle de stockage des UV est le suivant :
+	
+	\begin{tabular}{|c||c|c|c|c|c|}
+	\hline
+	Index de la colonne :  & 0 & 1 & 2 & 3 & 4 \\ \hline
+	Contenu : & Code de l'UV & Intitulé de l'UV & Catégorie & Nombre de crédit(s) & Préférence \\
+	\hline
+	\end{tabular}
+	
+	La colonne contenant la préférence de l'utilisateur concernant une éventuelle inscription est nécessaire à l'algorithme d'autocomplétion, ce dernier doit en effet tenir compte de l'avis de l'utilisateur afin de lui proposer une complétion de parcours pertinente.\\\\
+    
+    Ainsi, MainWindow compose un attribut de type UVSearchModel, nécessaire à la manipulation des UV. %Expliquer la raison, les nécessités pour l'affichage des UV
+    
+    
 	
 	
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}	
-	\subsection{}\label{subsec:IC}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}	
+		
+	
+    \subsection{Edition des profils}\label{subsec:Edition des profils}
+        Il est possible d'éditer des profils, et Profile\_Editor inclut la possibilité de saisir des prédicats, c'est à dire chacune des conditions nécessaires de validation du profil.
+        
+        
+	\subsection{Edition des UV}\label{subsec:Edition des UV}
+    
+		Une fois cochée la case "Mode Edition des UVs" de MainWindow, il est possible d'accéder à l'éditeur d'UVs, afin de créer, de modifier ou de supprimer des UVs.\\
+		Dans la fenêtre d'édition des UV, le ComboBox de choix de la catégorie est créée de manière dynamique.
+		Il en est de même pour les boutons radio de choix d'une ou de plusieurs branches auxquelles l'UV appartient.
+        
+
+    \subsection{Signaux et slots}\label{subsec:signaux et slots}
+		L'utilisation du systèmes de signaux et de slot fourni par le framework Qt a été nécessaire pour la communication des classes entre elles, notamment en ce qui concerne la partie d'interface graphique de l'application.\\
+        Par exemple, le slot public on\_buttonBox\_accepted() de la classe UV\_Editor permet de récupérer les informations saisies par l'utilisateur dans la fenêtre graphique d'édition des UV, et d'aller effectuer ces modifications sur l'objet de type UV concerné.\\
+        De même, le slot on\_createUv\_clicked() de MainWindow permet de provoquer la création d'une nouvelle UV lorsque l'utilisateur clique sur le QPushButton createUv : 
+        
+        
+        
+        
 \section{Capacité de l'architecture à évoluer}\label{sec:II}
-	\subsection{}\label{subsec:IIA}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}	
-	\subsection{}\label{subsec:IIB}
+
 	
 	Le design pattern Strategy, employé dans les fonctionnalités de chargement et de sauvegarde des données, laisse le choix de l'utilisation d'un type de modèle de données par l'implémentation d'une classe fille correspondante.
 	Ainsi, la classe UVStreamXML a été implémentée (comme classe dérivée de UVStream), mais il aurait été aussi possible implémenter un second modèle de stockage des données (une classe UVStreamJSON, par exemple).\\\\
 	Par ailleurs, les méthodes virtuelles pures \emph{prepareLoading()} et \emph{prepareSaving()} permettent l'implémentation de modèles de stockages des données qui nécessitent des phases de préparation avant la lecture ou l'écriture de données (par exemple pour la connection à une base de données).
 	
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}	
-	\subsection{Autocompletion}\label{subsec:UV}
+	%Expliquer la méthode UTManager::lierLesElements():
+	La méthode UTManager::lierLesElements() a pour rôle d'éviter les incohérences lors du chargement des données.
+	Elle permet, en faisant appel à la méthode Branche::link(), de vérifier que les profils dont les sigles correspondent aux attributs Qstring PCBString (sigle du PCB) et QStringlist psfString (sigle des PSF), sont correctement chargés lors de l'initialisation de la branche, c'est à dire à l'appel de la méthode UTManager::charger().\\\\
 	
-	C'est cette classe qui implémente la fonctionnalité d'élaboration de fin  de parcours.
+	
+	Les fichiers sources et d'entête autocompletion contiennent les classes qui doivent implémenter la fonctionnalité d'élaboration de fin  de parcours.
 	L'étudiant devant avoir la possibilité d'exprimer son avis concernant une éventuelle inscription à une UV, le type énuméré \emph{ExigenceUV}, dont la valeur entière s'étend de $-2$ à $2$, représente ce choix : 
 	\begin{description}
 	\item[-2] L'étudiant choisit de ne pas être inscrit à l'UV ;
@@ -185,61 +170,22 @@
 	\end{description}
 	
 	% Expliquer dans la partie II la pertinence du DP Strategy
+	La mise en place d'un mode d'autocomplétion relève du design pattern strategy, ce qui permet de répondre au besoin de mise en place eventuelle d'une nouvelle méthode d'autcomplétion.
+	Ainsi, il suffit de dériver la classe abstraite StrategieAutocompletion et d'implémenter un nouvel algorithme dans la méhode Completer() de la classe fille pour pouvoir mettre un place une nouvelle façon d'aider une étudiant dans ses choix d'UV.\\\\
+	
+	En qui ce qui concerne l'éditeur d'UV, on remarquera que le remplissage de la comboBox permettant le choix de la catégorie d'UV et les checkBoxes se font de manière dynamique. Ainsi il est possible de créer de nouvelles catégories, de nouvelles branches (ou bien d'en supprimer) sans provoquer d'incohérence dans le système d'édition des UV.
+	
+    	% Expliquer ici les design patterns abstract factory et strategy
+    Par la mise une place d'un Design Pattern Strategy en ce qui concerne les prédicats, on peut implémenter un nouveau type de prédicat en dérivant classe abstraite Predicat.
+    Ainsi, la classe Profil possède un attribut QVector<Predicat*> conditions, qui permettra prendre en compte pour un profil chacune des classes filles de Predicat (par respect du principe de subsitution).
+    
+    % Et abstract factory ?
 	
 	
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}	
-\section{}\label{sec:III}
-	\subsection{}\label{subsec:IIIA}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}	
-	\subsection{}\label{subsec:IIIB}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}	
-	\subsection{}\label{subsec:IIIC}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-		\subsubsection{}
-			\paragraph{}
-			\paragraph{}
-			\paragraph{}
-			
+	
+	
+	
+\newpage			
 \section*{Conclusion}\label{sec:Conclusion}\addcontentsline{toc}{section}{Conclusion}
 
 
