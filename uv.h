@@ -79,15 +79,23 @@ public:
      */
     void setCategorie(CategorieUV cat) { categorie = cat; }
 
+    ///Permet de définir la branche pour laquelle l'UV est diplomante
     void setBrancheStr(const QString& str) { brancheStr = str; }
+    ///Permet de récuérer un pointeur vers la branche diplomante depuis l'UTManager
     void linkInformation();
+    ///Renvoie la branche diplomante
     const Branche* getBranche() const { return branche; }
+    ///Renvoie la branche diplomante
     Branche* getBranche() { return branche; }
 
+    ///Défini si l'UV est enseigné à l'automne
     void setAutomne(bool b) { a = b; }
+    ///Défini si l'UV est enseigner au printemps
     void setPrintemps(bool b) { p = b; }
 
+    ///Permet de savoir si l'UV est enseignée à l'automne
     bool automne() { return a; }
+    ///Permet de savoir si l'UV est enseignée au printemps
     bool printemps() { return p; }
 };
 

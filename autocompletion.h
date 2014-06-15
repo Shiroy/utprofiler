@@ -33,6 +33,7 @@ protected :
       *@param
       */
 public :
+    ///Execute l'algorithme d'autocomplétion
     virtual void Completer() = 0;
 
     virtual void ConstruireCursus(const QList<UV*>& /*candidat*/) {/*TODO*/}

@@ -12,7 +12,9 @@ class Etudiant
 public:
     Etudiant();
 
+    ///Renvoie le Cursus de l'étudiant
     const Cursus& getCursus() const { return cursus; }
+    ///Renvoie le Cursus de l'étudiant
     Cursus& getCursus() { return cursus; }
 
     void setNom(const QString& n_nom) { nom = n_nom; }

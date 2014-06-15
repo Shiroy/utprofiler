@@ -19,14 +19,19 @@ public:
     ~BrancheEditor_dialog();
 
 public slots:
+    ///Appelée quand une filière a été double cliqué. Cette méthode ouvre la fenetre d'édition des profils
     void on_psfList_itemDoubleClicked(QListWidgetItem * item);
+    ///Appelée quand on le bouton "Editer le PCB" est cliqué. Cette méthode ouvre la boite de d'édition des profils pour éditer le PCB.
     void on_editPcb_clicked();
+    ///Cette méthode déclenche la procédure de création d'un profil
     void on_addPsf_clicked();
 
 private:
+    ///Cette méthode mets à jour la liste des filières
     void update_psf();
     Ui::BrancheEditor_dialog *ui;
 
+    ///Pointeur vers la branche à éditer
     Branche *m_br;
 };
 

@@ -7,6 +7,7 @@
 
 #define UTPROFILER_EXCEPTION(m) throw UTProfilerException(__FILE__, __LINE__, m);
 
+///Cette classe formate une exception en indiquant le fichier, la ligne de lancement et le message d'exception
 class UTProfilerException : public std::exception
 {
     std::string file, msg;
