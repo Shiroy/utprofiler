@@ -131,12 +131,12 @@ La première partie de ce rapport concerne une description de l'architecture de 
     \subsection{Autocomplétion}\label{subsec:Autocomplétion}
 On commence par récupérer les UV dans un \emph{UVMap}, ainsi que le cursus et le nom de la branche à valider.\\
 On récupère ensuite les prédicats qui représentent les conditions de validation de la branche.\\
-Un test est ensuite effectué pour l'intégralité des UV par l'utilisation d'un itérateur d'\emph{UV}.\\
-Enfin, un second itérateur de \emph{Predicat} est utilisé pour effectuer une itération, par chaque UV, sur l'ensemble des prédicats définis dans \emph{UTManager}.\\
+Un test est ensuite effectué sur l'intégralité des UV par l'utilisation d'un itérateur d'\emph{UV}.\\
+Enfin, un second itérateur de \emph{Predicat} est utilisé pour chaque UV, et sur l'ensemble des prédicats définis dans \emph{UTManager}.\\
 On distingue ensuite deux tests pour sélectionner les UV susceptibles de compléter le parcours de l'étudiant (lesquelles vont être stockées dans un \emph{QVector<const UV*>}) :
 \begin{enumerate}
 \item Un test qui cherche une correspondance directe entre les UV recommandées par le prédicat (test implémenté par la méthode \emph{Predicat::recommenderUv()};
-\item Un test qui cherche une possibilité plus souple compléter le cursus de l'étudiant avec l'UV (test implémenté par la méthode \emph{Predicat::peutAmeliorerLeCursus()}).
+\item Un test qui cherche une possibilité plus souple compléter le cursus de l'étudiant avec l'UV, dans le cas où le premier test renvoie false (test implémenté par la méthode \emph{Predicat::peutAmeliorerLeCursus()}).
 \end{enumerate}
 
 	
