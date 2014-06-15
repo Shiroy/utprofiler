@@ -526,8 +526,15 @@ p, li { white-space: pre-wrap; }
      </property>
      <addaction name="ac_etu_loadFromXML"/>
     </widget>
+    <widget class="QMenu" name="menuSauver_les_donn_es">
+     <property name="title">
+      <string>Sauver les données</string>
+     </property>
+     <addaction name="ac_data_saveToXML"/>
+    </widget>
     <addaction name="menuCharger_un_profil"/>
     <addaction name="menuCharger_des_donn_es"/>
+    <addaction name="menuSauver_les_donn_es"/>
     <addaction name="separator"/>
     <addaction name="actionQuitter"/>
    </widget>
@@ -567,6 +574,11 @@ p, li { white-space: pre-wrap; }
   <action name="ac_editBranches">
    <property name="text">
     <string>Editer les branches</string>
+   </property>
+  </action>
+  <action name="ac_data_saveToXML">
+   <property name="text">
+    <string>Au format XML</string>
    </property>
   </action>
  </widget>

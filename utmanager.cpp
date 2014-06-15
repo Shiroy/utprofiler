@@ -6,8 +6,6 @@ UTManager* UTManager::instance = 0;
 
 UTManager::~UTManager()
 {
-    if(loader)
-        delete loader;
     clearAll();
 }
 
@@ -88,7 +86,7 @@ Profil* UTManager::nouveauProfil(const QString &nom)
     }
 }
 
-bool UTManager::charger()
+bool UTManager::charger(UTStream* loader)
 {
     try
     {
@@ -108,6 +106,30 @@ bool UTManager::charger()
     {
         clearAll();
         QMessageBox::critical(0, QString("Erreur au chargement"), QString(e.what()));
+        return false;
+    }
+
+    return true;
+}
+
+bool UTManager::sauver(UTStream *saver)
+{
+    try
+    {
+        if(!saver->prepareSaving())
+            return false;
+
+        if(!saver->save())
+        {
+            saver->clearAfterSave();
+            return false;
+        }
+        saver->clearAfterSave();
+    }
+    catch(UTProfilerException &e)
+    {
+        clearAll();
+        QMessageBox::critical(0, QString("Erreur à la sauvegarde"), QString(e.what()));
         return false;
     }
 
