@@ -7,7 +7,7 @@
   *@brief Classe implémentant les outils d'autocompletion
   *
   */
-/* Prise en compte de la classe abstraite Predicat pour gerer toutes les conditions de validation de l'autocompletion generees par les classes filles de cette classe abstraite.
+/* Prise en compte de la classe abstraite Predicat pour gerer toutes les conditions de validation de l'autocompletion générées par les classes filles de cette classe abstraite.
 
     */
 
@@ -23,7 +23,7 @@ enum ExigenceUV {
 
 class StrategieAutocompletion
 {
-    // Pour l'instant la classe Etudiant n'est pas implementee -> attribut principal : pointeur sur un Cursus
+    // Pour l'instant la classe Etudiant n'est pas implémentée -> attribut principal : pointeur sur un Cursus
 protected :
     Etudiant& refEtu; //Et on respecte bien la relation d'agrégation entre StrategieAutocompletion et Etudiant
     StrategieAutocompletion(Etudiant& e) : refEtu(e){}

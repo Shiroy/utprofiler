@@ -8,7 +8,7 @@ class Etudiant;
 class QDomElement;
 class SemestreCours;
 
-///Cette classe permet de gérer les données étudiante au format XML (Strategie)
+///Cette classe permet de gérer les données étudiantes au format XML (Stratégie)
 class EtudiantStreamXML : public EtudiantStream
 {
     QString filename;
@@ -19,10 +19,10 @@ public:
     EtudiantStreamXML(const QString &file, Etudiant& etu);
 
     ///Charge les données
-    /// Cette méthode ouvre le fichier, analyse les données XML et remplie l'étudiant et son cursus
+    /// Cette méthode ouvre le fichier, analyse les données XML et remplit l'étudiant et son cursus
     bool load() override;
     ///Sauvegarge les données
-    /// Cette méthode sauvegardes les données de l'étudiant au format XML (info personelles, cursus, semestre, etc)
+    /// Cette méthode sauvegarde les données de l'étudiant au format XML (info personelles, cursus, semestre, etc)
     bool save() override;
 
     ///Procédure analysant la section parcours du fichier XML

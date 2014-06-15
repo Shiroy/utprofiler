@@ -3,14 +3,14 @@
 
 #include <QString>
 /**
- * @brief CategorieUV Toutes les catÃ©gories d'UV
+ * @brief CategorieUV Toutes les catégories d'UV
  */
 enum CategorieUV
 {
-    CS=1, /*!< Connaissance scientifique*/
-    TM=2, /*!< Technique et mÃ©thode*/
-    TSH=3, /*!< Technologie et science de l'homme*/
-    SP=4 /*!< Stage et projet*/
+    CS=1, /*!< Connaissances scientifiques*/
+    TM=2, /*!< Techniques et méthodes*/
+    TSH=3, /*!< Technologies et science de l'homme*/
+    SP=4 /*!< Stages et projets*/
 };
 #define NB_CATEGORIE 4
 
@@ -18,7 +18,7 @@ enum CategorieUV
 class Branche;
 
 /**
- * @brief RÃ©prÃ©sente une UV
+ * @brief Représente une UV
  */
 
 class UV
@@ -48,12 +48,12 @@ public:
      */
     const QString& getTitre() const { return titre; }
     /**
-     * @brief Renvoie le nombre de crédit rapporté par l'UV
+     * @brief Renvoie le nombre de crédits rapportés par l'UV
      * @return
      */
     unsigned int getNombreCredit() const { return nombreCredit; }
     /**
-     * @brief Renvoie la catÃ©gorie à  laquelle appartient l'UV
+     * @brief Renvoie la catégorie à laquelle appartient l'UV
      * @return
      */
     CategorieUV getCategorie() const { return categorie; }
@@ -79,18 +79,18 @@ public:
      */
     void setCategorie(CategorieUV cat) { categorie = cat; }
 
-    ///Permet de définir la branche pour laquelle l'UV est diplomante
+    ///Permet de définir la branche pour laquelle l'UV est diplômante
     void setBrancheStr(const QString& str) { brancheStr = str; }
-    ///Permet de récuérer un pointeur vers la branche diplomante depuis l'UTManager
+    ///Permet de récupérer un pointeur vers la branche diplômante depuis l'UTManager
     void linkInformation();
-    ///Renvoie la branche diplomante
+    ///Renvoie la branche diplômante
     const Branche* getBranche() const { return branche; }
-    ///Renvoie la branche diplomante
+    ///Renvoie la branche diplômante
     Branche* getBranche() { return branche; }
 
-    ///Défini si l'UV est enseigné à l'automne
+    ///Définit si l'UV est enseigné à l'automne
     void setAutomne(bool b) { a = b; }
-    ///Défini si l'UV est enseigner au printemps
+    ///Définit si l'UV est enseigner au printemps
     void setPrintemps(bool b) { p = b; }
 
     ///Permet de savoir si l'UV est enseignée à l'automne

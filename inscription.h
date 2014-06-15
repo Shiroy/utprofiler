@@ -25,7 +25,7 @@ public:
      * @brief Unique constructeur
      * @param uv UV pour laquelle l'inscription est créée
      * @param smstr Semestre de l'inscription
-     * @param res Résultat eventuel de l'inscription. Par défaut l'inscription est considérée comme EN_COURS.
+     * @param res Résultat éventuel de l'inscription. Par défaut l'inscription est considérée comme EN_COURS.
      */
     Inscription(const UV* uv, const SemestreCours *smstr, Resultat res = EN_COURS) : m_uv(uv), semestre(*smstr), m_resultat(res) {}
 

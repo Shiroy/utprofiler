@@ -45,7 +45,7 @@ public:
     void setPCB(const QString& pcbStr) { PCBString = pcbStr; }
     ///Ajoute une filière
     /// @param newPsf Nom de la filière (tel qu'enregistré dans UTManager)
-    /// @param Pointeur vers la filière. Si le pointeur vaut 0, alors la méthode link devra être appelé pour mettre à jour le pointeur de PSF interne à la classe. Cette façon de faire est utilisée au chargement, quand toutes les filières n'ont pas encore été crées.
+    /// @param Pointeur vers la filière. Si le pointeur vaut 0, alors la méthode link devra être appelée pour mettre à jour le pointeur de PSF interne à la classe. Cette façon de faire est utilisée au chargement, quand toutes les filières n'ont pas encore été créées.
     void addPsf(const QString& newPsf, Profil* psf = 0)
     {
         if(!psfString.contains(newPsf))
@@ -56,7 +56,7 @@ public:
             PSF[newPsf] = psf;
         }
     }
-    ///Cette méthode permet de récupérer les pointeur de PCB et filière à partir de l'UTManager (c'est un peu comme si on faisait une édition de lien). Cette méthode déclenche une exception à la moindre anomalie de donnée.
+    ///Cette méthode permet de récupérer les pointeurs de PCB et filière à partir de l'UTManager (c'est un peu comme si on faisait une édition de lien). Cette méthode déclenche une exception à la moindre anomalie de donnée.
     void link();
 };
 

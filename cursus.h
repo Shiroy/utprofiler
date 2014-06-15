@@ -15,7 +15,7 @@ public:
     Cursus();
 
     /**
-      *@brief Renvoie tous les smestres que l'étudiant doit valider
+      *@brief Renvoie tous les semestres que l'étudiant doit valider
       */
     QVector<SemestreCours*>& getTousLesSemestres() { return tousLesSemestres; }
     /**
@@ -37,8 +37,8 @@ public:
     /// @param branche Sigle de la branche à valider
     void setBrancheAValider(const QString& branche) { brancheAValider = branche; }
 
-    ///Paracour le cursus et regarde si une UV donnée à été validée ou non
-    /// @param uv Pointeur vers l'UV a vérifier
+    ///Parcourt le cursus et regarde si une UV donnée à été validée ou non
+    /// @param uv Pointeur vers l'UV à vérifier
     bool uvDejaValidee(const UV* uv);
     ///Renvoie toutes les UV qui ont été validée
     QVector<const UV *> &getAllUV();

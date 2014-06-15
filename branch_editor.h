@@ -18,7 +18,7 @@ public:
     ~branch_editor();
 
 public slots:
-    ///Appelé quand une branche est double clicqué
+    ///Appelé quand une branche est double-cliquée
     /// Ouvre la boite de dialogue d'édition de branche
     void on_brancheList_itemDoubleClicked(QListWidgetItem* it);
     ///Appelé quand le bouton "Créer une une branche" est cliqué
