@@ -22,18 +22,13 @@ class UTManager
 
 public:    
 
-    /**
-     * @brief Renvoie l'instance actuelle de l'objet UTManager. Si aucune instance existe une nouvelle est crÃ©Ã©.
-     * @return
-     */
+    ///Renvoie un pointeur sur l'UTManager actuel
     static UTManager* getInstance();
-    /**
-     * @brief Détruit l'instance actuelle de l'UVManager
-     */
+    ///Detruit l'UTManager
     static void destroy();
 
     /**
-     * @brief Renvoie une rÃ©fÃ©rence constante sur un objet UV
+     * @brief Renvoie un pointeur sur un objet UV
      * @param code Code de l'UV dÃ©sirÃ©e
      * @return
      */
@@ -42,7 +37,7 @@ public:
     Profil* getProfile(const QString& nom);
 
     /**
-     * @brief Charge les donnée à partir d'un chargeur
+     * @brief Charge les données à partir d'un chargeur
      * @return
      */
     bool charger(UTStream *loader);
