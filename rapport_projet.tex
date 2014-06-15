@@ -108,7 +108,8 @@ La première partie de ce rapport concerne une description de l'architecture de 
 	
 	\subsection{UVSearchModel}\label{subsec:UVSearchModel}
 	
-	Cette classe implémente le stockage des UV traitées par l'UTManager, elle dérive par conséquent de la classe QStandardItemModel
+	Cette classe % façon dont on doit afficher les données
+     implémente le stockage des UV traitées par l'UTManager, elle dérive par conséquent de la classe QStandardItemModel
 	Le modèle de stockage des UV est le suivant :
 	
 	\begin{tabular}{|c||c|c|c|c|c|}
@@ -133,7 +134,7 @@ La première partie de ce rapport concerne une description de l'architecture de 
         
 	\subsection{Edition des UV}\label{subsec:Edition des UV}
     
-		Une fois cochée la case "Mode Edition des UVs" de MainWindow, il est possible d'accéder à l'éditeur d'UVs, afin de créer, de modifier ou de supprimer des UVs.\\
+		Une fois cochée la case "Mode Edition des UVs" de MainWindow, il est possible d'accéder à l'éditeur d'UVs, afin de créer ou de modifier des UVs.\\
 		Dans la fenêtre d'édition des UV, le ComboBox de choix de la catégorie est créée de manière dynamique.
 		Il en est de même pour les boutons radio de choix d'une ou de plusieurs branches auxquelles l'UV appartient.
         
@@ -187,8 +188,8 @@ La première partie de ce rapport concerne une description de l'architecture de 
 \newpage			
 \section*{Conclusion}\label{sec:Conclusion}\addcontentsline{toc}{section}{Conclusion}
 
-
-
+En conclusion, il reste certaines fonctionnalités à implémenter dans cette application, telles que la suppression d'une UV, la suppression d'un profil et suppression d'une branche (laquelle devrait engendrer la suppression des profils lui étant associés).
+Par ailleurs, bien que l'interface d'un mécanisme d'autocomplétion 
 
 
 
@@ -198,6 +199,6 @@ La première partie de ce rapport concerne une description de l'architecture de 
 %\bibliographystyle{plain}
 %\bibliography{biblio}
 
-\appendix
-\section*{Annexes}\label{sec:Annexes}\addcontentsline{toc}{section}{Annexes}
+%\appendix
+%\section*{Annexes}\label{sec:Annexes}\addcontentsline{toc}{section}{Annexes}
 \end{document}
